@@ -9,28 +9,50 @@
 /* Begin PBXBuildFile section */
 		920470682C9A6FC200D547FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470672C9A6FC200D547FB /* AppDelegate.swift */; };
 		9204706A2C9A6FC200D547FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470692C9A6FC200D547FB /* SceneDelegate.swift */; };
-		9204706C2C9A6FC200D547FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204706B2C9A6FC200D547FB /* ViewController.swift */; };
+		9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204706B2C9A6FC200D547FB /* CalendarViewController.swift */; };
 		920470712C9A6FC400D547FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920470702C9A6FC400D547FB /* Assets.xcassets */; };
 		920470742C9A6FC400D547FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 920470722C9A6FC400D547FB /* LaunchScreen.storyboard */; };
 		920470812C9A762200D547FB /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470802C9A762200D547FB /* Font.swift */; };
 		920470832C9A768200D547FB /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470822C9A768200D547FB /* UIFont+.swift */; };
 		920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470842C9A76F700D547FB /* UIFontMetrics+.swift */; };
 		9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204708A2C9A90C900D547FB /* MainButton.swift */; };
-		9204708E2C9A93B300D547FB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9204708D2C9A93B300D547FB /* SnapKit */; };
-		920470902C9A93B300D547FB /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9204708F2C9A93B300D547FB /* SnapKit-Dynamic */; };
 		9204709D2C9B2C2200D547FB /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204709C2C9B2C2200D547FB /* TextButton.swift */; };
 		9204709F2C9BB5CC00D547FB /* ToastProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204709E2C9BB5CC00D547FB /* ToastProtocol.swift */; };
 		920470A22C9BB92D00D547FB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470A12C9BB92D00D547FB /* ToastView.swift */; };
 		920470A52C9BBC6B00D547FB /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470A42C9BBC6B00D547FB /* UIImage+.swift */; };
 		920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470A82C9BC45B00D547FB /* PopUpView.swift */; };
 		920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */; };
+		9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9298888E2CDDC97E0011DE3C /* SnapKit */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		923742022CE35EC800A7BE19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9204705C2C9A6FC200D547FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 920470632C9A6FC200D547FB;
+			remoteInfo = echog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		923741F52CDDCAC700A7BE19 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		920470642C9A6FC200D547FB /* echog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		920470672C9A6FC200D547FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		920470692C9A6FC200D547FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9204706B2C9A6FC200D547FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9204706B2C9A6FC200D547FB /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		920470702C9A6FC400D547FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		920470732C9A6FC400D547FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		920470752C9A6FC400D547FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,15 +70,26 @@
 		920470A42C9BBC6B00D547FB /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		920470A82C9BC45B00D547FB /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
+		923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EchogUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		923741FD2CE35EC800A7BE19 /* EchogUITest */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EchogUITest; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		920470612C9A6FC200D547FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204708E2C9A93B300D547FB /* SnapKit in Frameworks */,
-				920470902C9A93B300D547FB /* SnapKit-Dynamic in Frameworks */,
+				9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		923741F92CE35EC800A7BE19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				920470662C9A6FC200D547FB /* echog */,
+				923741FD2CE35EC800A7BE19 /* EchogUITest */,
 				920470652C9A6FC200D547FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				920470642C9A6FC200D547FB /* echog.app */,
+				923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,7 +184,7 @@
 		920470912C9ACBA700D547FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9204706B2C9A6FC200D547FB /* ViewController.swift */,
+				9204706B2C9A6FC200D547FB /* CalendarViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -204,6 +239,7 @@
 				920470602C9A6FC200D547FB /* Sources */,
 				920470612C9A6FC200D547FB /* Frameworks */,
 				920470622C9A6FC200D547FB /* Resources */,
+				923741F52CDDCAC700A7BE19 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,12 +247,34 @@
 			);
 			name = echog;
 			packageProductDependencies = (
-				9204708D2C9A93B300D547FB /* SnapKit */,
-				9204708F2C9A93B300D547FB /* SnapKit-Dynamic */,
+				9298888E2CDDC97E0011DE3C /* SnapKit */,
 			);
 			productName = echog;
 			productReference = 920470642C9A6FC200D547FB /* echog.app */;
 			productType = "com.apple.product-type.application";
+		};
+		923741FB2CE35EC800A7BE19 /* EchogUITest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 923742042CE35EC800A7BE19 /* Build configuration list for PBXNativeTarget "EchogUITest" */;
+			buildPhases = (
+				923741F82CE35EC800A7BE19 /* Sources */,
+				923741F92CE35EC800A7BE19 /* Frameworks */,
+				923741FA2CE35EC800A7BE19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				923742032CE35EC800A7BE19 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				923741FD2CE35EC800A7BE19 /* EchogUITest */,
+			);
+			name = EchogUITest;
+			packageProductDependencies = (
+			);
+			productName = EchogUITest;
+			productReference = 923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -225,11 +283,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					920470632C9A6FC200D547FB = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					923741FB2CE35EC800A7BE19 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 920470632C9A6FC200D547FB;
 					};
 				};
 			};
@@ -243,13 +305,14 @@
 			);
 			mainGroup = 9204705B2C9A6FC200D547FB;
 			packageReferences = (
-				9204708C2C9A93B300D547FB /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9298888D2CDDC97E0011DE3C /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 920470652C9A6FC200D547FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				920470632C9A6FC200D547FB /* echog */,
+				923741FB2CE35EC800A7BE19 /* EchogUITest */,
 			);
 		};
 /* End PBXProject section */
@@ -264,6 +327,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		923741FA2CE35EC800A7BE19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -272,7 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				920470812C9A762200D547FB /* Font.swift in Sources */,
-				9204706C2C9A6FC200D547FB /* ViewController.swift in Sources */,
+				9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */,
 				9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */,
 				920470832C9A768200D547FB /* UIFont+.swift in Sources */,
 				9204709D2C9B2C2200D547FB /* TextButton.swift in Sources */,
@@ -287,7 +357,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		923741F82CE35EC800A7BE19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		923742032CE35EC800A7BE19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 920470632C9A6FC200D547FB /* echog */;
+			targetProxy = 923742022CE35EC800A7BE19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		920470722C9A6FC400D547FB /* LaunchScreen.storyboard */ = {
@@ -357,7 +442,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -432,6 +517,7 @@
 				INFOPLIST_FILE = echog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -459,6 +545,7 @@
 				INFOPLIST_FILE = echog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,6 +558,43 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		923742052CE35EC800A7BE19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BMG3X5CM6G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "mint-raum.EchogUITest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = echog;
+			};
+			name = Debug;
+		};
+		923742062CE35EC800A7BE19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BMG3X5CM6G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mint-raum.EchogUITest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = echog;
 			};
 			name = Release;
 		};
@@ -495,29 +619,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		923742042CE35EC800A7BE19 /* Build configuration list for PBXNativeTarget "EchogUITest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923742052CE35EC800A7BE19 /* Debug */,
+				923742062CE35EC800A7BE19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9204708C2C9A93B300D547FB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		9298888D2CDDC97E0011DE3C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
+				minimumVersion = 5.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9204708D2C9A93B300D547FB /* SnapKit */ = {
+		9298888E2CDDC97E0011DE3C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9204708C2C9A93B300D547FB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 9298888D2CDDC97E0011DE3C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		9204708F2C9A93B300D547FB /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9204708C2C9A93B300D547FB /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
