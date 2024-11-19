@@ -23,6 +23,10 @@
 		920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470A82C9BC45B00D547FB /* PopUpView.swift */; };
 		920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */; };
 		9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9298888E2CDDC97E0011DE3C /* SnapKit */; };
+		92DD8F412CEC9579001197D0 /* BaseURLResolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F402CEC9577001197D0 /* BaseURLResolvable.swift */; };
+		92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */; };
+		92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F442CEC9595001197D0 /* BaseURLType.swift */; };
+		92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */; };
 		92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F4C2CEC997F001197D0 /* UserDTO.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +76,10 @@
 		920470A82C9BC45B00D547FB /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
 		923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EchogUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DD8F402CEC9577001197D0 /* BaseURLResolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLResolvable.swift; sourceTree = "<group>"; };
+		92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLRegistrable.swift; sourceTree = "<group>"; };
+		92DD8F442CEC9595001197D0 /* BaseURLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLType.swift; sourceTree = "<group>"; };
+		92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLManager.swift; sourceTree = "<group>"; };
 		92DD8F4C2CEC997F001197D0 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +132,7 @@
 				920470912C9ACBA700D547FB /* Presentation */,
 				920470922C9ACBBA00D547FB /* Domain */,
 				920470932C9ACBBF00D547FB /* Data */,
+				92DD8F062CEC417D001197D0 /* Infrastructure */,
 				9204707C2C9A75DD00D547FB /* Design System */,
 				920470702C9A6FC400D547FB /* Assets.xcassets */,
 				920470722C9A6FC400D547FB /* LaunchScreen.storyboard */,
@@ -230,6 +239,34 @@
 				920470A12C9BB92D00D547FB /* ToastView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92DD8F062CEC417D001197D0 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				92DD8F072CEC418C001197D0 /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		92DD8F072CEC418C001197D0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				92DD8F3F2CEC9566001197D0 /* BaseURL */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+			isa = PBXGroup;
+		92DD8F3F2CEC9566001197D0 /* BaseURL */ = {
+			isa = PBXGroup;
+			children = (
+				92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */,
+				92DD8F442CEC9595001197D0 /* BaseURLType.swift */,
+				92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */,
+				92DD8F402CEC9577001197D0 /* BaseURLResolvable.swift */,
+			);
+			path = BaseURL;
 			sourceTree = "<group>";
 		};
 		92DD8F4B2CEC9979001197D0 /* Model */ = {
@@ -352,7 +389,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */,
 				92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */,
+				92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */,
 				920470812C9A762200D547FB /* Font.swift in Sources */,
 				9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */,
 				9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */,
@@ -360,7 +399,9 @@
 				9204709D2C9B2C2200D547FB /* TextButton.swift in Sources */,
 				920470682C9A6FC200D547FB /* AppDelegate.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
+				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
 				9204709F2C9BB5CC00D547FB /* ToastProtocol.swift in Sources */,
+				92DD8F412CEC9579001197D0 /* BaseURLResolvable.swift in Sources */,
 				920470A52C9BBC6B00D547FB /* UIImage+.swift in Sources */,
 				920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */,
 				920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */,
