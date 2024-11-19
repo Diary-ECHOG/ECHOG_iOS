@@ -39,6 +39,7 @@
 		92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F442CEC9595001197D0 /* BaseURLType.swift */; };
 		92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */; };
 		92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F4C2CEC997F001197D0 /* UserDTO.swift */; };
+		92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F4E2CEC9B93001197D0 /* KeyChain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		92DD8F442CEC9595001197D0 /* BaseURLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLType.swift; sourceTree = "<group>"; };
 		92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLManager.swift; sourceTree = "<group>"; };
 		92DD8F4C2CEC997F001197D0 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		92DD8F4E2CEC9B93001197D0 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -267,6 +269,7 @@
 		92DD8F062CEC417D001197D0 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				92DD8F4E2CEC9B93001197D0 /* KeyChain.swift */,
 				92DD8F072CEC418C001197D0 /* Network */,
 			);
 			path = Infrastructure;
@@ -489,6 +492,7 @@
 				920470682C9A6FC200D547FB /* AppDelegate.swift in Sources */,
 				92DD8F3E2CEC93EE001197D0 /* NetworkManager.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
+				92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */,
 				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
 				9204709F2C9BB5CC00D547FB /* ToastProtocol.swift in Sources */,
 				92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */,
