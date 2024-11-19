@@ -23,6 +23,7 @@
 		920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470A82C9BC45B00D547FB /* PopUpView.swift */; };
 		920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */; };
 		9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9298888E2CDDC97E0011DE3C /* SnapKit */; };
+		92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F082CEC41BB001197D0 /* HTTP.swift */; };
 		92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */; };
 		92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F272CEC82FA001197D0 /* NetworkSerializable.swift */; };
 		92DD8F2A2CEC830F001197D0 /* NetworkDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F292CEC830E001197D0 /* NetworkDeserializable.swift */; };
@@ -30,7 +31,9 @@
 		92DD8F312CEC8371001197D0 /* JSONNetworkDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F302CEC8370001197D0 /* JSONNetworkDeserializer.swift */; };
 		92DD8F342CEC879A001197D0 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F332CEC8793001197D0 /* NetworkSessionProtocol.swift */; };
 		92DD8F362CEC87B1001197D0 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F352CEC87B0001197D0 /* NetworkSession.swift */; };
+		92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F372CEC87D1001197D0 /* NetworkError.swift */; };
 		92DD8F3A2CEC8A38001197D0 /* NetworkBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F392CEC8A36001197D0 /* NetworkBuilderProtocol.swift */; };
+		92DD8F3E2CEC93EE001197D0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F3D2CEC93E9001197D0 /* NetworkManager.swift */; };
 		92DD8F412CEC9579001197D0 /* BaseURLResolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F402CEC9577001197D0 /* BaseURLResolvable.swift */; };
 		92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */; };
 		92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F442CEC9595001197D0 /* BaseURLType.swift */; };
@@ -84,6 +87,7 @@
 		920470A82C9BC45B00D547FB /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
 		923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EchogUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DD8F082CEC41BB001197D0 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPluginProtocol.swift; sourceTree = "<group>"; };
 		92DD8F272CEC82FA001197D0 /* NetworkSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSerializable.swift; sourceTree = "<group>"; };
 		92DD8F292CEC830E001197D0 /* NetworkDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializable.swift; sourceTree = "<group>"; };
@@ -91,7 +95,9 @@
 		92DD8F302CEC8370001197D0 /* JSONNetworkDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkDeserializer.swift; sourceTree = "<group>"; };
 		92DD8F332CEC8793001197D0 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
 		92DD8F352CEC87B0001197D0 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		92DD8F372CEC87D1001197D0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		92DD8F392CEC8A36001197D0 /* NetworkBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBuilderProtocol.swift; sourceTree = "<group>"; };
+		92DD8F3D2CEC93E9001197D0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		92DD8F402CEC9577001197D0 /* BaseURLResolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLResolvable.swift; sourceTree = "<group>"; };
 		92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLRegistrable.swift; sourceTree = "<group>"; };
 		92DD8F442CEC9595001197D0 /* BaseURLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLType.swift; sourceTree = "<group>"; };
@@ -269,6 +275,9 @@
 		92DD8F072CEC418C001197D0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				92DD8F3D2CEC93E9001197D0 /* NetworkManager.swift */,
+				92DD8F372CEC87D1001197D0 /* NetworkError.swift */,
+				92DD8F082CEC41BB001197D0 /* HTTP.swift */,
 				92DD8F3F2CEC9566001197D0 /* BaseURL */,
 				92DD8F322CEC878C001197D0 /* Session */,
 				92DD8F3C2CEC8AB6001197D0 /* Plugin */,
@@ -472,17 +481,20 @@
 				9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */,
 				92DD8F2A2CEC830F001197D0 /* NetworkDeserializable.swift in Sources */,
 				9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */,
+				92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */,
 				920470832C9A768200D547FB /* UIFont+.swift in Sources */,
 				9204709D2C9B2C2200D547FB /* TextButton.swift in Sources */,
 				92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */,
 				92DD8F342CEC879A001197D0 /* NetworkSessionProtocol.swift in Sources */,
 				920470682C9A6FC200D547FB /* AppDelegate.swift in Sources */,
+				92DD8F3E2CEC93EE001197D0 /* NetworkManager.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
 				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
 				9204709F2C9BB5CC00D547FB /* ToastProtocol.swift in Sources */,
 				92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */,
 				92DD8F412CEC9579001197D0 /* BaseURLResolvable.swift in Sources */,
 				920470A52C9BBC6B00D547FB /* UIImage+.swift in Sources */,
+				92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */,
 				920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */,
 				920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */,
 				920470A22C9BB92D00D547FB /* ToastView.swift in Sources */,
