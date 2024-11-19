@@ -23,6 +23,7 @@
 		920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470A82C9BC45B00D547FB /* PopUpView.swift */; };
 		920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */; };
 		9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9298888E2CDDC97E0011DE3C /* SnapKit */; };
+		92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */; };
 		92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F272CEC82FA001197D0 /* NetworkSerializable.swift */; };
 		92DD8F2A2CEC830F001197D0 /* NetworkDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F292CEC830E001197D0 /* NetworkDeserializable.swift */; };
 		92DD8F2F2CEC8365001197D0 /* JSONNetworkSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F2E2CEC8363001197D0 /* JSONNetworkSerializer.swift */; };
@@ -82,6 +83,7 @@
 		920470A82C9BC45B00D547FB /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
 		923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EchogUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPluginProtocol.swift; sourceTree = "<group>"; };
 		92DD8F272CEC82FA001197D0 /* NetworkSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSerializable.swift; sourceTree = "<group>"; };
 		92DD8F292CEC830E001197D0 /* NetworkDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializable.swift; sourceTree = "<group>"; };
 		92DD8F2E2CEC8363001197D0 /* JSONNetworkSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkSerializer.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				92DD8F3F2CEC9566001197D0 /* BaseURL */,
 				92DD8F322CEC878C001197D0 /* Session */,
+				92DD8F3C2CEC8AB6001197D0 /* Plugin */,
 				92DD8F2B2CEC8325001197D0 /* Serializer */,
 			);
 			path = Network;
@@ -306,6 +309,14 @@
 				92DD8F332CEC8793001197D0 /* NetworkSessionProtocol.swift */,
 			);
 			path = Session;
+			sourceTree = "<group>";
+		};
+		92DD8F3C2CEC8AB6001197D0 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */,
+			);
+			path = Plugin;
 			sourceTree = "<group>";
 		};
 		92DD8F3F2CEC9566001197D0 /* BaseURL */ = {
@@ -457,6 +468,7 @@
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
 				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
 				9204709F2C9BB5CC00D547FB /* ToastProtocol.swift in Sources */,
+				92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */,
 				92DD8F412CEC9579001197D0 /* BaseURLResolvable.swift in Sources */,
 				920470A52C9BBC6B00D547FB /* UIImage+.swift in Sources */,
 				920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */,
