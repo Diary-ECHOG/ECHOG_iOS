@@ -10,20 +10,17 @@ import Foundation
 final class NetworkManager {
     private let baseURLResolver: BaseURLResolvable
     private let plugins: [NetworkPluginProtocol]
-    private let session: NetworkSessionProtocol
     
     init(baseURLResolver: BaseURLResolvable,
-         plugins: [NetworkPluginProtocol],
-         session: NetworkSessionProtocol) {
+         plugins: [NetworkPluginProtocol]) {
         self.baseURLResolver = baseURLResolver
         self.plugins = plugins
-        self.session = session
     }
     
     // MARK: - Public
     func fetchData<Builder: NetworkBuilderProtocol>(_ builder: Builder) async throws -> Builder.Response {
         let request = try await makeRequest(builder)
-        let (data, response) = try await session.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
         let decodedData: Builder.Response = try await builder.deserializer.deserialize(data)
         
         guard let httpResponse = response as? HTTPURLResponse else {
