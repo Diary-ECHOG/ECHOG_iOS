@@ -5,6 +5,7 @@
 //  Created by minsong kim on 9/19/24.
 //
 
+/*
 import UIKit
 import SnapKit
 
@@ -111,3 +112,4 @@ class PopUpView: UIView {
         }
     }
 }
+*/
