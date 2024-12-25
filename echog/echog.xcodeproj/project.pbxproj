@@ -28,6 +28,7 @@
 		92365B872D073447001D4A71 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365B592D05DEC3001D4A71 /* TextFieldView.swift */; };
 		92365B882D073453001D4A71 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365B5D2D06A12B001D4A71 /* UITextField+.swift */; };
 		92365B892D073465001D4A71 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365B5B2D06A066001D4A71 /* UIControl+.swift */; };
+		92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BC12D1C16A0001D4A71 /* HeaderView.swift */; };
 		9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9298888E2CDDC97E0011DE3C /* SnapKit */; };
 		92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F082CEC41BB001197D0 /* HTTP.swift */; };
 		92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */; };
@@ -103,6 +104,7 @@
 		92365B592D05DEC3001D4A71 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		92365B5B2D06A066001D4A71 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
 		92365B5D2D06A12B001D4A71 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		92365BC12D1C16A0001D4A71 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EchogUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DD8F082CEC41BB001197D0 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPluginProtocol.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		9204707C2C9A75DD00D547FB /* Design System */ = {
 			isa = PBXGroup;
 			children = (
+				92365BBE2D1BC1F5001D4A71 /* Cell */,
 				920470A32C9BBC5B00D547FB /* Extension */,
 				920470882C9A909A00D547FB /* Compoment */,
 				9204707D2C9A75F000D547FB /* Font */,
@@ -295,6 +298,14 @@
 				920470A12C9BB92D00D547FB /* ToastView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92365BBE2D1BC1F5001D4A71 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				92365BC12D1C16A0001D4A71 /* HeaderView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		92DD8F062CEC417D001197D0 /* Infrastructure */ = {
@@ -552,6 +563,7 @@
 				92365B892D073465001D4A71 /* UIControl+.swift in Sources */,
 				92DD8F312CEC8371001197D0 /* JSONNetworkDeserializer.swift in Sources */,
 				92DD8F2F2CEC8365001197D0 /* JSONNetworkSerializer.swift in Sources */,
+				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,
 				92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */,
 				92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */,
 				92DD8F3A2CEC8A38001197D0 /* NetworkBuilderProtocol.swift in Sources */,
