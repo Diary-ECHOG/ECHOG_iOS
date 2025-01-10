@@ -32,6 +32,11 @@
 		92365BA52D09B0C4001D4A71 /* DiaryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BA42D09B0BF001D4A71 /* DiaryDTO.swift */; };
 		92365BC02D1BC201001D4A71 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BBF2D1BC1FB001D4A71 /* DiaryCell.swift */; };
 		92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BC12D1C16A0001D4A71 /* HeaderView.swift */; };
+		92365BDC2D1D0440001D4A71 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BDB2D1D043A001D4A71 /* MyPageViewController.swift */; };
+		92365BDE2D1D72BC001D4A71 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BDD2D1D72B7001D4A71 /* MyPage.swift */; };
+		92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BE02D1D7387001D4A71 /* MyVoteListViewController.swift */; };
+		92365BFD2D2EBBCF001D4A71 /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BFC2D2EBBC4001D4A71 /* UnderlineSegmentedControl.swift */; };
+		92365BFF2D2EC56E001D4A71 /* VoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BFE2D2EC565001D4A71 /* VoteCell.swift */; };
 		9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9298888E2CDDC97E0011DE3C /* SnapKit */; };
 		92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F082CEC41BB001197D0 /* HTTP.swift */; };
 		92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */; };
@@ -111,6 +116,11 @@
 		92365BA42D09B0BF001D4A71 /* DiaryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDTO.swift; sourceTree = "<group>"; };
 		92365BBF2D1BC1FB001D4A71 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		92365BC12D1C16A0001D4A71 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		92365BDB2D1D043A001D4A71 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		92365BDD2D1D72B7001D4A71 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		92365BE02D1D7387001D4A71 /* MyVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteListViewController.swift; sourceTree = "<group>"; };
+		92365BFC2D2EBBC4001D4A71 /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
+		92365BFE2D2EC565001D4A71 /* VoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCell.swift; sourceTree = "<group>"; };
 		923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EchogUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DD8F082CEC41BB001197D0 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPluginProtocol.swift; sourceTree = "<group>"; };
@@ -188,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				92DD8F662CECB396001197D0 /* Mock */,
-				92DD8F4B2CEC9979001197D0 /* Model */,
 				92DD8F482CEC9942001197D0 /* User */,
 				9204707B2C9A75D000D547FB /* Application */,
 				920470912C9ACBA700D547FB /* Presentation */,
@@ -239,6 +248,7 @@
 		920470882C9A909A00D547FB /* Compoment */ = {
 			isa = PBXGroup;
 			children = (
+				92365BFC2D2EBBC4001D4A71 /* UnderlineSegmentedControl.swift */,
 				920470A72C9BC44B00D547FB /* View */,
 				920470A62C9BC42400D547FB /* Protocol */,
 				920470892C9A90AD00D547FB /* Button */,
@@ -257,6 +267,7 @@
 		920470912C9ACBA700D547FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				92365BDF2D1D737A001D4A71 /* MyPage */,
 				92365B572D05D96D001D4A71 /* InformationViewController.swift */,
 				9204706B2C9A6FC200D547FB /* CalendarViewController.swift */,
 				92365B9A2D0833DA001D4A71 /* HomeViewController.swift */,
@@ -274,6 +285,7 @@
 		920470932C9ACBBF00D547FB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				92DD8F4B2CEC9979001197D0 /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -310,10 +322,20 @@
 		92365BBE2D1BC1F5001D4A71 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				92365BFE2D2EC565001D4A71 /* VoteCell.swift */,
 				92365BC12D1C16A0001D4A71 /* HeaderView.swift */,
 				92365BBF2D1BC1FB001D4A71 /* DiaryCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		92365BDF2D1D737A001D4A71 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				92365BE02D1D7387001D4A71 /* MyVoteListViewController.swift */,
+				92365BDB2D1D043A001D4A71 /* MyPageViewController.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		92DD8F062CEC417D001197D0 /* Infrastructure */ = {
@@ -405,6 +427,7 @@
 		92DD8F4B2CEC9979001197D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92365BDD2D1D72B7001D4A71 /* MyPage.swift */,
 				92365BA42D09B0BF001D4A71 /* DiaryDTO.swift */,
 				92DD8F4C2CEC997F001197D0 /* UserDTO.swift */,
 			);
@@ -581,6 +604,7 @@
 				92365BA52D09B0C4001D4A71 /* DiaryDTO.swift in Sources */,
 				92DD8F4A2CEC995C001197D0 /* UserLoginNetworkBuilder.swift in Sources */,
 				92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */,
+				92365BFD2D2EBBCF001D4A71 /* UnderlineSegmentedControl.swift in Sources */,
 				920470812C9A762200D547FB /* Font.swift in Sources */,
 				9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */,
 				92365B872D073447001D4A71 /* TextFieldView.swift in Sources */,
@@ -588,10 +612,14 @@
 				9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */,
 				92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */,
 				920470832C9A768200D547FB /* UIFont+.swift in Sources */,
+				92365BDC2D1D0440001D4A71 /* MyPageViewController.swift in Sources */,
+				92365BDE2D1D72BC001D4A71 /* MyPage.swift in Sources */,
 				92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */,
 				920470682C9A6FC200D547FB /* AppDelegate.swift in Sources */,
 				92DD8F3E2CEC93EE001197D0 /* NetworkManager.swift in Sources */,
+				92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */,
 				92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */,
+				92365BFF2D2EC56E001D4A71 /* VoteCell.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
 				92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */,
 				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
