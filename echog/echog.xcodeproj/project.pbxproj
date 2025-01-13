@@ -64,6 +64,7 @@
 		92DFD3F82D327653008CFE95 /* InformationLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */; };
 		92DFD3FB2D32C75A008CFE95 /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3FA2D32C753008CFE95 /* OnBoardingModel.swift */; };
 		92DFD3FD2D32C79A008CFE95 /* OnBoardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3FC2D32C794008CFE95 /* OnBoardingState.swift */; };
+		92DFD3FF2D335198008CFE95 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3FE2D335190008CFE95 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingViewController.swift; sourceTree = "<group>"; };
 		92DFD3FA2D32C753008CFE95 /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		92DFD3FC2D32C794008CFE95 /* OnBoardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingState.swift; sourceTree = "<group>"; };
+		92DFD3FE2D335190008CFE95 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -213,6 +215,7 @@
 		920470662C9A6FC200D547FB /* echog */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4022D335448008CFE95 /* Coordinator */,
 				92DFD3F02D3227DF008CFE95 /* Intent */,
 				92DD8F662CECB396001197D0 /* Mock */,
 				92DD8F482CEC9942001197D0 /* User */,
@@ -498,6 +501,15 @@
 			path = Information;
 			sourceTree = "<group>";
 		};
+		92DFD4022D335448008CFE95 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				92DFD3FE2D335190008CFE95 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+			);
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -692,6 +704,7 @@
 				920470A52C9BBC6B00D547FB /* UIImage+.swift in Sources */,
 				92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */,
 				920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */,
+				92DFD3FF2D335198008CFE95 /* Coordinator.swift in Sources */,
 				920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */,
 				920470A22C9BB92D00D547FB /* ToastView.swift in Sources */,
 				9204706A2C9A6FC200D547FB /* SceneDelegate.swift in Sources */,
