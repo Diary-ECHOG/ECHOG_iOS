@@ -15,6 +15,17 @@ class OnBoardingViewController: UIViewController {
     private let intent = PassthroughSubject<OnBoardingIntent, Never>()
     private var cancellables = Set<AnyCancellable>()
     
+    weak var coordinator: OnBoardingNavigation!
+    
+    init(coordinator: OnBoardingNavigation) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let titleImageView: UIImageView = {
         let view = UIImageView(image: UIImage.logo)
         
@@ -33,7 +44,7 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         
         configureBackgoundView()
         configureView()
@@ -54,6 +65,7 @@ class OnBoardingViewController: UIViewController {
         state.sink { [weak self] state in
             if state == .start {
                 //화면 전환
+                self?.coordinator.goToInformationViewController()
             } else {
                 self?.updateUI(image: state.detail?.image, title: state.detail?.title, isStartButton: state.detail?.isStartButton)
             }
