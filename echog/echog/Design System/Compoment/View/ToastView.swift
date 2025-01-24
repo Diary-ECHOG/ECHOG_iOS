@@ -19,7 +19,7 @@ class ToastView: UIView {
     let messageLabel: UILabel = {
         let label = UILabel()
         label.font = .mediumTitle15
-        label.textColor = .primary30
+        label.textColor = .countBlue
         
         return label
     }()
@@ -29,7 +29,7 @@ class ToastView: UIView {
         self.backgroundColor = .grayscale100
         self.layer.cornerRadius = 10
         self.messageLabel.text = text
-        self.iconImageView.image = image.resize(newWidth: 20).changeImageColor(.primary30)
+        self.iconImageView.image = image.resize(newWidth: 20)
         
         configureUI()
     }
