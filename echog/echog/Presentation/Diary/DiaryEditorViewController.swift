@@ -57,7 +57,7 @@ class DiaryEditorViewController: UIViewController {
     
     private let lineView: UIView = {
         let view = UIView()
-        view.backgroundColor = .grayscale30
+        view.backgroundColor = .slate100
         
         return view
     }()

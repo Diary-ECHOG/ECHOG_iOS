@@ -26,7 +26,7 @@ class ToastView: UIView {
     
     convenience init(icon image: UIImage, text: String) {
         self.init()
-        self.backgroundColor = .grayscale100
+        self.backgroundColor = .slate800
         self.layer.cornerRadius = 10
         self.messageLabel.text = text
         self.iconImageView.image = image.resize(newWidth: 20)

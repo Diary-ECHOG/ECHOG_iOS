@@ -14,6 +14,7 @@ class VoteCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .semiboldTitle15
+        label.textColor = .slate800
         
         return label
     }()
@@ -21,7 +22,7 @@ class VoteCell: UITableViewCell {
     private let contentsLabel: UILabel = {
         let label = UILabel()
         label.font = .mediumTitle14
-        label.textColor = .grayscale70
+        label.textColor = .slate600
         
         return label
     }()
@@ -29,7 +30,7 @@ class VoteCell: UITableViewCell {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.font = .regularTitle13
-        label.textColor = .grayscale50Caption
+        label.textColor = .slate400
         
         return label
     }()
@@ -45,7 +46,7 @@ class VoteCell: UITableViewCell {
     private let voteNumberLabel: UILabel = {
         let label = UILabel()
         label.font = .regularTitle13
-        label.textColor = .grayscale50Caption
+        label.textColor = .slate400
         label.textAlignment = .right
         
         return label
