@@ -7,15 +7,14 @@
 
 import UIKit
 
-/*
+
 protocol PopUpProtocol where Self: UIViewController {
     var window: UIWindow? { get set }
 //    var popUpView: PopUpView { get set }
 }
 
 extension PopUpProtocol {
-    func showPopUp(popUpView: PopUpView) {
-        
+    func showPopUp(view: PopUpView) {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
             return
         }
@@ -23,25 +22,21 @@ extension PopUpProtocol {
         window?.windowLevel = .alert
         window?.backgroundColor = .black.withAlphaComponent(0.48)
         
-        window?.addSubview(popUpView)
-        popUpView.sizeToFit()
-        let popUpHeight = popUpView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-                
+        window?.addSubview(view)
+        view.sizeToFit()
         
-        popUpView.snp.makeConstraints { make in
+        view.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
-            make.height.equalTo(popUpHeight)
+            make.height.equalTo(150)
+            make.width.equalTo(300)
         }
         
         window?.isHidden = false
     }
     
-    func dismissPopUp() {
-//        popUpView.removeFromSuperview()
+    func dismissPopUp(view: PopUpView) {
+        view.removeFromSuperview()
         window?.isHidden = true
         window = nil
     }
 }
-*/

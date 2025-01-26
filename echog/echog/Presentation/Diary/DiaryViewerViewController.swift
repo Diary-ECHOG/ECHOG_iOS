@@ -8,7 +8,9 @@
 import UIKit
 import SnapKit
 
-class DiaryViewerViewController: UIViewController {
+class DiaryViewerViewController: UIViewController, PopUpProtocol {
+    var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
+    
     private let backButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
         configuration.image = UIImage(systemName: "arrow.backward")
@@ -19,17 +21,22 @@ class DiaryViewerViewController: UIViewController {
         return button
     }()
     
-    private let detailButton: UIButton = {
+    private let deletePopUp = PopUpView(message: "삭제한 일기는 복구할 수 없어요.\n정말 삭제할까요?", leftMessage: "취소", rightMessage: "삭제하기")
+    
+    private lazy var detailButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
         configuration.image = UIImage(systemName: "ellipsis")
         configuration.baseForegroundColor = .slate800
         
         let button = UIButton(configuration: configuration)
-        let actionHandler = {(action: UIAction) in
-            print(action.title)}
+        
         button.menu = UIMenu(children: [
-            UIAction(title: "수정하기", image: UIImage(resource: .pencil), handler: actionHandler),
-            UIAction(title: "삭제하기", image: UIImage(resource: .delete),handler: actionHandler)
+            (UIAction(title: "수정하기", image: UIImage(resource: .pencil)) { _ in
+                print("수정하기")
+            }),
+            (UIAction(title: "삭제하기", image: UIImage(resource: .delete), attributes: .destructive) { _ in
+                self.showPopUp(view: self.deletePopUp)
+            })
         ])
         button.showsMenuAsPrimaryAction = true
         

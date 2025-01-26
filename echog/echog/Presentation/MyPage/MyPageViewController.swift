@@ -101,7 +101,7 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let line = UIView(frame: CGRect(x: 0, y:0, width: tableView.frame.width, height: 1))
-        line.backgroundColor = .grayscale30
+        line.backgroundColor = .slate100
         
         return line
     }

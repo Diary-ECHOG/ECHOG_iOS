@@ -18,18 +18,22 @@ class HomeViewController: UIViewController {
     }()
     
     private let barVoteButton: UIButton = {
-        var config = UIButton.Configuration.bordered()
-        config.title = "투표보기"
-        config.titleAlignment = .trailing
-        config.baseForegroundColor = .black
-        config.baseBackgroundColor = .white
-        config.image = UIImage(resource: .voteCheckButton)
-        config.cornerStyle = .capsule
-        config.imagePadding = 4
-        let button = UIButton(configuration: config)
+        var titleContainer = AttributeContainer()
+        titleContainer.font = UIFont.semiboldTitle14
+        
+        var configuration = UIButton.Configuration.bordered()
+        configuration.attributedTitle = AttributedString("투표보기", attributes: titleContainer)
+        configuration.titleAlignment = .trailing
+        configuration.baseForegroundColor = .slate800
+        configuration.baseBackgroundColor = .white
+        configuration.image = UIImage(resource: .voteCheckButton)
+        configuration.cornerStyle = .capsule
+        configuration.imagePadding = 4
+        
+        let button = UIButton(configuration: configuration)
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 1.0
-        button.layer.shadowColor = UIColor.grayscale40Disabled.cgColor
+        button.layer.shadowColor = UIColor.slate100.cgColor
         button.layer.shadowOffset = .zero
         
         return button
@@ -38,7 +42,7 @@ class HomeViewController: UIViewController {
     private let myPageButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "ellipsis"), for: .normal)
-        button.tintColor = .grayscale60
+        button.tintColor = .slate300
         
         return button
     }()
@@ -51,7 +55,7 @@ class HomeViewController: UIViewController {
         button.layer.cornerRadius = 30
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10
-        button.layer.shadowColor = UIColor.grayscale40Disabled.cgColor
+        button.layer.shadowColor = UIColor.slate100.cgColor
         button.layer.shadowOffset = .zero
         
         return button
@@ -72,7 +76,7 @@ class HomeViewController: UIViewController {
     }
     
     private func configureBackgoundView() {
-        let backgoundView = UIImageView(image: UIImage(resource: .backgound))
+        let backgoundView = UIImageView(image: UIImage(resource: .background2))
         
         view.addSubview(backgoundView)
         
@@ -102,7 +106,7 @@ class HomeViewController: UIViewController {
         barVoteButton.snp.makeConstraints { make in
             make.centerY.equalTo(titleView.snp.centerY)
             make.height.equalTo(30)
-            make.width.equalTo(104)
+            make.width.equalTo(100)
             make.trailing.equalTo(myPageButton.snp.leading).offset(-4)
         }
     }

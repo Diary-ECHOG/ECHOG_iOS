@@ -21,9 +21,9 @@ class TextFieldView: UIStackView {
         let text = UITextField()
         text.font = .mediumTitle15
         text.layer.cornerRadius = 10
-        text.layer.borderColor = UIColor.grayscale30.cgColor
+        text.layer.borderColor = UIColor.border.cgColor
         text.layer.borderWidth = 1
-        text.textColor = .grayscale50Caption
+        text.textColor = .textSub
         text.addLeftPadding()
         
         return text

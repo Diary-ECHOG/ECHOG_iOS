@@ -14,7 +14,7 @@ class DiaryCell: UICollectionViewCell, Identifiable {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .semiboldTitle15
-        label.textColor = .black
+        label.textColor = .slate800
         
         return label
     }()
@@ -22,7 +22,7 @@ class DiaryCell: UICollectionViewCell, Identifiable {
     private let contentLabel: UILabel = {
         let label = UILabel()
         label.font = .mediumTitle14
-        label.textColor = .grayscale60
+        label.textColor = .slate600
         
         return label
     }()
@@ -30,7 +30,7 @@ class DiaryCell: UICollectionViewCell, Identifiable {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.font = .regularTitle13
-        label.textColor = .grayscale40Disabled
+        label.textColor = .slate400
         
         return label
     }()

@@ -57,7 +57,7 @@ class DiaryEditorViewController: UIViewController {
     
     private let lineView: UIView = {
         let view = UIView()
-        view.backgroundColor = .grayscale30
+        view.backgroundColor = .slate300
         
         return view
     }()
@@ -96,7 +96,7 @@ class DiaryEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         
         configureTitleBar()
         configureTextField()

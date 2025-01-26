@@ -108,7 +108,7 @@ class OnBoardingViewController: UIViewController {
     }
     
     private func configureBackgoundView() {
-        let backgoundView = UIImageView(image: UIImage(resource: .backgound))
+        let backgoundView = UIImageView(image: UIImage(resource: .background))
         
         view.addSubview(backgoundView)
         
