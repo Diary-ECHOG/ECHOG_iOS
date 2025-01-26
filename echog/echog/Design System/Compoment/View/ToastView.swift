@@ -19,14 +19,14 @@ class ToastView: UIView {
     let messageLabel: UILabel = {
         let label = UILabel()
         label.font = .mediumTitle15
-        label.textColor = .countBlue
+        label.textColor = .white
         
         return label
     }()
     
     convenience init(icon image: UIImage, text: String) {
         self.init()
-        self.backgroundColor = .slate800
+        self.backgroundColor = .black.withAlphaComponent(0.8)
         self.layer.cornerRadius = 10
         self.messageLabel.text = text
         self.iconImageView.image = image.resize(newWidth: 20)
@@ -43,7 +43,7 @@ class ToastView: UIView {
         self.addSubview(iconImageView)
         
         iconImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
+            make.leading.equalToSuperview().offset(20)
             make.height.width.equalTo(20)
             make.centerY.equalToSuperview()
         }
@@ -54,7 +54,7 @@ class ToastView: UIView {
         
         messageLabel.snp.makeConstraints { make in
             make.leading.equalTo(iconImageView.snp.trailing).offset(8)
-            make.trailing.equalToSuperview().offset(-16)
+            make.trailing.equalToSuperview().offset(-20)
             make.centerY.equalToSuperview()
         }
     }

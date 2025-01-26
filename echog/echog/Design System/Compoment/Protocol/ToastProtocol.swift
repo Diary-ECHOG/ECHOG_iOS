@@ -29,7 +29,7 @@ extension ToastProtocol {
             make.height.equalTo(60)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().inset(100)
+            make.top.equalToSuperview().inset(100)
         }
         
         self.window?.isHidden = false
