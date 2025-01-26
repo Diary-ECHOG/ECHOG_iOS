@@ -5,111 +5,103 @@
 //  Created by minsong kim on 9/19/24.
 //
 
-/*
+
 import UIKit
 import SnapKit
 
 class PopUpView: UIView {
-    private let iconImageView: UIImageView = {
-        let view = UIImageView(image: .echo)
-        view.contentMode = .scaleAspectFit
-        
-        return view
-    }()
-    
     private let messageLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .grayscale0
-        label.textAlignment = .center
-        label.font = .mediumBody1
+        label.numberOfLines = 0
         
         return label
     }()
     
-    private let grayButton = MainButton(color: .gray, title: "")
-    private let echogButton = MainButton(color: .light, title: "")
+    private let divideHLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .slate50
+        
+        return view
+    }()
     
-    convenience init(icon image: UIImage?, message: String, grayMessage: String?, echogMessage: String) {
+    private let divideVLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .slate50
+        
+        return view
+    }()
+    
+    private let leftButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = .mediumTitle15
+        button.setTitleColor(.slate700, for: .normal)
+ 
+        return button
+    }()
+ 
+    private let rightButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = .mediumTitle15
+        button.setTitleColor(.red500, for: .normal)
+ 
+        return button
+    }()
+ 
+    convenience init(message: String, leftMessage: String?, rightMessage: String) {
         self.init()
-        self.backgroundColor = .grayscale100
-        self.layer.cornerRadius = 10
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 20
         
-        if let grayMessage {
-            self.grayButton.setTitle(grayMessage, for: .normal)
-            self.echogButton.setTitle(echogMessage, for: .normal)
-            configureButtons()
-        } else {
-            self.echogButton.setTitle(echogMessage, for: .normal)
-            configureEchogButton()
-        }
+        messageLabel.setTextWithLineSpacing(message, font: .regularTitle15, lineSpacing: 8)
+        leftButton.setTitle(leftMessage, for: .normal)
+        rightButton.setTitle(rightMessage, for: .normal)
         
-        if let image {
-            self.iconImageView.image = image.resize(newWidth: 80)
-            self.messageLabel.text = message
-            configureIconView()
-        } else {
-            self.messageLabel.text = message
-            configureLabel()
-        }
-    }
-    
-    private func configureIconView() {
-        self.addSubview(iconImageView)
-        self.addSubview(messageLabel)
-        
-        iconImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(40)
-            make.centerX.equalToSuperview()
-            make.height.width.equalTo(80)
-        }
-        
-        messageLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(echogButton.snp.top).offset(-44)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
-            make.top.equalTo(iconImageView.snp.bottom).offset(24)
-        }
+        configureLabel()
+        configureLines()
+        configureButtons()
     }
     
     private func configureLabel() {
         self.addSubview(messageLabel)
         
         messageLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(echogButton.snp.top).offset(-44)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.top.equalToSuperview().offset(40)
+            make.top.equalToSuperview().offset(30)
         }
     }
     
-    private func configureEchogButton() {
-        self.addSubview(echogButton)
+    private func configureLines() {
+        self.addSubview(divideHLine)
+        self.addSubview(divideVLine)
         
-        echogButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-20)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+        divideHLine.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(50)
+            make.height.equalTo(1)
+        }
+        
+        divideVLine.snp.makeConstraints { make in
+            make.width.equalTo(1)
             make.height.equalTo(50)
+            make.centerX.bottom.equalToSuperview()
         }
     }
     
     private func configureButtons() {
-        self.addSubview(grayButton)
-        self.addSubview(echogButton)
+        self.addSubview(leftButton)
+        self.addSubview(rightButton)
         
-        grayButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.bottom.equalToSuperview().offset(-20)
-            make.trailing.equalTo(self.snp.centerX).offset(-5)
-            make.height.equalTo(50)
+        leftButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalTo(divideVLine.snp.leading)
+            make.centerY.equalTo(divideVLine.snp.centerY)
         }
         
-        echogButton.snp.makeConstraints { make in
-            make.leading.equalTo(self.snp.centerX).offset(5)
-            make.bottom.equalToSuperview().offset(-20)
-            make.trailing.equalToSuperview().offset(-16)
-            make.height.equalTo(50)
+        rightButton.snp.makeConstraints { make in
+            make.leading.equalTo(divideVLine.snp.trailing)
+            make.trailing.equalToSuperview()
+            make.centerY.equalTo(divideVLine.snp.centerY)
         }
     }
 }
-*/
