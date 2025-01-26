@@ -34,7 +34,7 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol {
             (UIAction(title: "수정하기", image: UIImage(resource: .pencil)) { _ in
                 print("수정하기")
             }),
-            (UIAction(title: "삭제하기", image: UIImage(resource: .delete)) { _ in
+            (UIAction(title: "삭제하기", image: UIImage(resource: .delete), attributes: .destructive) { _ in
                 self.showPopUp(view: self.deletePopUp)
             })
         ])
