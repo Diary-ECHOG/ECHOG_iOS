@@ -70,9 +70,7 @@
 		92DFD4062D335A8B008CFE95 /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4052D335A83008CFE95 /* OnBoardingCoordinator.swift */; };
 		92DFD4082D339FD2008CFE95 /* InformationLoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4072D339FCA008CFE95 /* InformationLoadingState.swift */; };
 		92DFD40A2D33A046008CFE95 /* InformationLoadingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4092D33A03C008CFE95 /* InformationLoadingIntent.swift */; };
-		92DFD40E2D33CAE7008CFE95 /* InformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD40D2D33CAE3008CFE95 /* InformationModel.swift */; };
-		92DFD4102D33DD18008CFE95 /* InformationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD40F2D33DD13008CFE95 /* InformationState.swift */; };
-		92DFD4122D33DD36008CFE95 /* InformationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4112D33DD30008CFE95 /* InformationIntent.swift */; };
+		92DFD40E2D33CAE7008CFE95 /* InformationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD40D2D33CAE3008CFE95 /* InformationReducer.swift */; };
 		92DFD44E2D3537C7008CFE95 /* DiaryViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD44D2D3537C0008CFE95 /* DiaryViewerViewController.swift */; };
 		92DFD4512D354303008CFE95 /* DiaryViewerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4502D3542FE008CFE95 /* DiaryViewerState.swift */; };
 		92DFD4542D354316008CFE95 /* DiaryViewerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4532D35430F008CFE95 /* DiaryViewerIntent.swift */; };
@@ -187,9 +185,7 @@
 		92DFD4052D335A83008CFE95 /* OnBoardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinator.swift; sourceTree = "<group>"; };
 		92DFD4072D339FCA008CFE95 /* InformationLoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingState.swift; sourceTree = "<group>"; };
 		92DFD4092D33A03C008CFE95 /* InformationLoadingIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingIntent.swift; sourceTree = "<group>"; };
-		92DFD40D2D33CAE3008CFE95 /* InformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationModel.swift; sourceTree = "<group>"; };
-		92DFD40F2D33DD13008CFE95 /* InformationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationState.swift; sourceTree = "<group>"; };
-		92DFD4112D33DD30008CFE95 /* InformationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationIntent.swift; sourceTree = "<group>"; };
+		92DFD40D2D33CAE3008CFE95 /* InformationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationReducer.swift; sourceTree = "<group>"; };
 		92DFD44D2D3537C0008CFE95 /* DiaryViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewerViewController.swift; sourceTree = "<group>"; };
 		92DFD4502D3542FE008CFE95 /* DiaryViewerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewerState.swift; sourceTree = "<group>"; };
 		92DFD4532D35430F008CFE95 /* DiaryViewerIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewerIntent.swift; sourceTree = "<group>"; };
@@ -486,8 +482,8 @@
 		92DD8F482CEC9942001197D0 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4AD2D51D653008CFE95 /* Builder */,
 				92DD8F502CEC9BD5001197D0 /* UserNetwork.swift */,
-				92DD8F492CEC9952001197D0 /* UserLoginNetworkBuilder.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -541,9 +537,6 @@
 		92DFD3F92D3276BD008CFE95 /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				92DFD4092D33A03C008CFE95 /* InformationLoadingIntent.swift */,
-				92DFD4072D339FCA008CFE95 /* InformationLoadingState.swift */,
-				92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */,
 				92365B572D05D96D001D4A71 /* InformationViewController.swift */,
 			);
 			path = Information;
@@ -578,9 +571,7 @@
 		92DFD40C2D33CADA008CFE95 /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				92DFD4112D33DD30008CFE95 /* InformationIntent.swift */,
-				92DFD40F2D33DD13008CFE95 /* InformationState.swift */,
-				92DFD40D2D33CAE3008CFE95 /* InformationModel.swift */,
+				92DFD40D2D33CAE3008CFE95 /* InformationReducer.swift */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -762,18 +753,16 @@
 				92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */,
 				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,
 				92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */,
-				92DFD4122D33DD36008CFE95 /* InformationIntent.swift in Sources */,
 				92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */,
 				92DD8F3A2CEC8A38001197D0 /* NetworkBuilderProtocol.swift in Sources */,
 				92DFD46D2D43511B008CFE95 /* MyPageCoordinator.swift in Sources */,
 				92DFD46F2D435129008CFE95 /* LogInCoordinator.swift in Sources */,
 				92365BA52D09B0C4001D4A71 /* DiaryDTO.swift in Sources */,
-				92DD8F4A2CEC995C001197D0 /* UserLoginNetworkBuilder.swift in Sources */,
 				92DFD4B32D522850008CFE95 /* View.swift in Sources */,
 				92DFD4082D339FD2008CFE95 /* InformationLoadingState.swift in Sources */,
 				92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */,
 				92365BFD2D2EBBCF001D4A71 /* UnderlineSegmentedControl.swift in Sources */,
-				92DFD40E2D33CAE7008CFE95 /* InformationModel.swift in Sources */,
+				92DFD40E2D33CAE7008CFE95 /* InformationReducer.swift in Sources */,
 				920470812C9A762200D547FB /* Font.swift in Sources */,
 				92DFD4852D467E6A008CFE95 /* BottomSheetProtocol.swift in Sources */,
 				92DFD3FD2D32C79A008CFE95 /* OnBoardingState.swift in Sources */,
@@ -791,7 +780,6 @@
 				920470832C9A768200D547FB /* UIFont+.swift in Sources */,
 				92365BDC2D1D0440001D4A71 /* MyPageViewController.swift in Sources */,
 				92DFD4682D4350E9008CFE95 /* VoteHomeCoordinator.swift in Sources */,
-				92DFD4102D33DD18008CFE95 /* InformationState.swift in Sources */,
 				92365BDE2D1D72BC001D4A71 /* MyPage.swift in Sources */,
 				92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */,
 				92DFD4012D335256008CFE95 /* AppCoordinator.swift in Sources */,
