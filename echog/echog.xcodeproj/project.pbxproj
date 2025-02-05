@@ -84,6 +84,7 @@
 		92DFD4712D43D09F008CFE95 /* CellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4702D43D09A008CFE95 /* CellButton.swift */; };
 		92DFD4832D450C71008CFE95 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4822D450C6C008CFE95 /* UILabel+.swift */; };
 		92DFD4852D467E6A008CFE95 /* BottomSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4842D467E5F008CFE95 /* BottomSheetProtocol.swift */; };
+		92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */; };
 		92DFD4A42D51C1A4008CFE95 /* DefalutDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +199,7 @@
 		92DFD4702D43D09A008CFE95 /* CellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellButton.swift; sourceTree = "<group>"; };
 		92DFD4822D450C6C008CFE95 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		92DFD4842D467E5F008CFE95 /* BottomSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetProtocol.swift; sourceTree = "<group>"; };
+		92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailRequestNetworkBuilder.swift; sourceTree = "<group>"; };
 		92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefalutDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -593,6 +595,7 @@
 			path = DiaryViewer;
 			sourceTree = "<group>";
 		};
+				92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */,
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -792,6 +795,7 @@
 				92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */,
 				92365BFF2D2EC56E001D4A71 /* VoteCell.swift in Sources */,
 				92DFD4512D354303008CFE95 /* DiaryViewerState.swift in Sources */,
+				92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
 				92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */,
 				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
