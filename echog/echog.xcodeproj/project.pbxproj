@@ -87,6 +87,7 @@
 		92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */; };
 		92DFD4A42D51C1A4008CFE95 /* DefalutDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */; };
 		92DFD4B32D522850008CFE95 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4B22D522849008CFE95 /* View.swift */; };
+		92DFD4B52D522925008CFE95 /* ReducerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4B42D52291F008CFE95 /* ReducerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,7 @@
 		92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailRequestNetworkBuilder.swift; sourceTree = "<group>"; };
 		92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefalutDTO.swift; sourceTree = "<group>"; };
 		92DFD4B22D522849008CFE95 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		92DFD4B42D52291F008CFE95 /* ReducerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -328,6 +330,7 @@
 		920470912C9ACBA700D547FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4B42D52291F008CFE95 /* ReducerProtocol.swift */,
 				92DFD4B22D522849008CFE95 /* View.swift */,
 				92DFD4022D335448008CFE95 /* Coordinator */,
 				92DFD3F02D3227DF008CFE95 /* Intent */,
@@ -780,6 +783,7 @@
 				92DD8F2A2CEC830F001197D0 /* NetworkDeserializable.swift in Sources */,
 				9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */,
 				92DFD40A2D33A046008CFE95 /* InformationLoadingIntent.swift in Sources */,
+				92DFD4B52D522925008CFE95 /* ReducerProtocol.swift in Sources */,
 				92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */,
 				92DFD3F22D322809008CFE95 /* OnBoardingIntent.swift in Sources */,
 				92DFD4712D43D09F008CFE95 /* CellButton.swift in Sources */,
