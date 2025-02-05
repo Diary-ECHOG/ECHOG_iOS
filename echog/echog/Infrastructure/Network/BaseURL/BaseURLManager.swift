@@ -7,6 +7,7 @@
 
 import Foundation
 
+//개발 서버와 라이브 서버를 교체할 수 있도록 (QA용)
 final class BaseURLManager: BaseURLResolvable, BaseURLRegistrable {
     private var baseURLMap: [BaseURLType: URL] = [:]
 
