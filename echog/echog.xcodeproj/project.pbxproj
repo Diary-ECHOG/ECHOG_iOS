@@ -84,6 +84,7 @@
 		92DFD4712D43D09F008CFE95 /* CellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4702D43D09A008CFE95 /* CellButton.swift */; };
 		92DFD4832D450C71008CFE95 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4822D450C6C008CFE95 /* UILabel+.swift */; };
 		92DFD4852D467E6A008CFE95 /* BottomSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4842D467E5F008CFE95 /* BottomSheetProtocol.swift */; };
+		92DFD4A42D51C1A4008CFE95 /* DefalutDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +198,7 @@
 		92DFD4702D43D09A008CFE95 /* CellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellButton.swift; sourceTree = "<group>"; };
 		92DFD4822D450C6C008CFE95 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		92DFD4842D467E5F008CFE95 /* BottomSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetProtocol.swift; sourceTree = "<group>"; };
+		92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefalutDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -485,6 +487,7 @@
 		92DD8F4B2CEC9979001197D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */,
 				92365BDD2D1D72B7001D4A71 /* MyPage.swift */,
 				92365BA42D09B0BF001D4A71 /* DiaryDTO.swift */,
 				92DD8F4C2CEC997F001197D0 /* UserDTO.swift */,
@@ -783,6 +786,7 @@
 				92DFD4012D335256008CFE95 /* AppCoordinator.swift in Sources */,
 				920470682C9A6FC200D547FB /* AppDelegate.swift in Sources */,
 				92DD8F3E2CEC93EE001197D0 /* NetworkManager.swift in Sources */,
+				92DFD4A42D51C1A4008CFE95 /* DefalutDTO.swift in Sources */,
 				92DFD4542D354316008CFE95 /* DiaryViewerIntent.swift in Sources */,
 				92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */,
 				92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */,
