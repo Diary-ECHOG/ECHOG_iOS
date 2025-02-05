@@ -86,6 +86,7 @@
 		92DFD4852D467E6A008CFE95 /* BottomSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4842D467E5F008CFE95 /* BottomSheetProtocol.swift */; };
 		92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */; };
 		92DFD4A42D51C1A4008CFE95 /* DefalutDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */; };
+		92DFD4B32D522850008CFE95 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4B22D522849008CFE95 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +202,7 @@
 		92DFD4842D467E5F008CFE95 /* BottomSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetProtocol.swift; sourceTree = "<group>"; };
 		92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailRequestNetworkBuilder.swift; sourceTree = "<group>"; };
 		92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefalutDTO.swift; sourceTree = "<group>"; };
+		92DFD4B22D522849008CFE95 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -326,6 +328,7 @@
 		920470912C9ACBA700D547FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4B22D522849008CFE95 /* View.swift */,
 				92DFD4022D335448008CFE95 /* Coordinator */,
 				92DFD3F02D3227DF008CFE95 /* Intent */,
 				92DFD44C2D34F180008CFE95 /* LogIn */,
@@ -763,6 +766,7 @@
 				92DFD46F2D435129008CFE95 /* LogInCoordinator.swift in Sources */,
 				92365BA52D09B0C4001D4A71 /* DiaryDTO.swift in Sources */,
 				92DD8F4A2CEC995C001197D0 /* UserLoginNetworkBuilder.swift in Sources */,
+				92DFD4B32D522850008CFE95 /* View.swift in Sources */,
 				92DFD4082D339FD2008CFE95 /* InformationLoadingState.swift in Sources */,
 				92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */,
 				92365BFD2D2EBBCF001D4A71 /* UnderlineSegmentedControl.swift in Sources */,
