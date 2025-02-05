@@ -17,7 +17,7 @@ class TextFieldView: UIStackView {
         
         return label
     }()
-    private let mainTextField: UITextField = {
+    let mainTextField: UITextField = {
         let text = UITextField()
         text.font = .mediumTitle15
         text.layer.cornerRadius = 10
