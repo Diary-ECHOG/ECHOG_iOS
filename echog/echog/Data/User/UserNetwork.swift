@@ -13,9 +13,14 @@ final class UserNetwork {
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
+    
+    func emailCodeRequest(email: String) async throws -> DefalutDTO {
+        let builder = UserEmailRequestNetworkBuilder(email: email)
+        return try await networkManager.fetchData(builder)
+    }
 
     func login(email: String, password: String, completion: @escaping (Result<UserDTO, Error>) -> Void) {
-        let builder = UserLoginNetworkBuilder(loginId: email, password: password)
+        let builder = UserLogInNetworkBuilder(loginId: email, password: password)
 
         Task {
             do {

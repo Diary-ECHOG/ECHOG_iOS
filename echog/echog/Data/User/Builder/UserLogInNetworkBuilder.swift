@@ -1,5 +1,5 @@
 //
-//  UserLoginNetworkBuilder.swift
+//  UserLogInNetworkBuilder.swift
 //  echog
 //
 //  Created by minsong kim on 11/19/24.
@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct UserLoginNetworkBuilder: NetworkBuilderProtocol {
+struct UserLogInNetworkBuilder: NetworkBuilderProtocol {
     typealias Response = UserDTO
     
-    var method: HTTPMethod { .post }
     var baseURL: BaseURLType { .api }
-    var path: String { "/auth/login" }
+    var path: String { "/api/users/login" }
+    var queries: [URLQueryItem]? = nil
+    var method: HTTPMethod { .post }
     let parameters: [String: Any]
     let deserializer: NetworkDeserializable = JSONNetworkDeserializer(decoder: JSONDecoder())
 
