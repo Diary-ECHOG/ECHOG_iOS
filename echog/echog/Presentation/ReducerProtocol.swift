@@ -14,18 +14,6 @@ protocol ReducerProtocol {
     
     var initialState: State { get }
     
-    init (networkManager: NetworkManager)
-    
-    func mutate(action: Intent) -> AnyPublisher<Mutation, Never>
+    func mutate(action: Intent) -> AnyPublisher<Mutation, Never>?
     func reduce(state: State, mutation: Mutation) -> State
-}
-
-extension ReducerProtocol {
-    func sideEffect(_ effect: @escaping () -> Void) {
-        effect()
-    }
-}
-
-protocol MutationProtocol {
-    
 }
