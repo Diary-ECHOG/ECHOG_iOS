@@ -11,6 +11,8 @@ protocol Coordinator: AnyObject {
     var parentCoordinator: Coordinator? { get set }
     var children: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
+//    var networkManager: NetworkManager { get set }
+    
     func start()
 }
 
