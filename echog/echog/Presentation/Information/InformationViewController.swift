@@ -79,6 +79,8 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        emailTextField.mainTextField.delegate = self
+        codeTextField.mainTextField.delegate = self
         passwordTextField.mainTextField.delegate = self
         checkPasswordTextField.mainTextField.delegate = self
         
@@ -212,7 +214,8 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
         
         nextButton.publisher(for: .touchUpInside)
             .sink { [weak self] in
-                self?.store.dispatch(.showTermPage)
+                guard let self = self else { return }
+                self.store.dispatch(.showTermPage(self.store))
             }
             .store(in: &cancellables)
     }
@@ -302,10 +305,21 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
 }
 
 extension InformationViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == passwordTextField.mainTextField || textField == checkPasswordTextField.mainTextField {
-            activeTextField = textField
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField.mainTextField {
+            codeTextField.mainTextField.becomeFirstResponder()
+        } else if textField == codeTextField.mainTextField {
+            passwordTextField.mainTextField.becomeFirstResponder()
+        } else if textField == passwordTextField.mainTextField {
+            checkPasswordTextField.mainTextField.becomeFirstResponder()
+        } else if textField == checkPasswordTextField.mainTextField {
+            textField.resignFirstResponder()
         }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

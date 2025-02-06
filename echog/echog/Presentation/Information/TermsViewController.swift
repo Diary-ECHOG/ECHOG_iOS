@@ -10,7 +10,9 @@ import UIKit
 import SnapKit
 //import WebKit
 
-class TermsViewController: UIViewController, View {
+class TermsViewController: UIViewController, ToastProtocol {
+    var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
+    
     var store: InformationStore
     private var cancellables = Set<AnyCancellable>()
     
@@ -26,8 +28,8 @@ class TermsViewController: UIViewController, View {
     
     private let nextButton = MainButton(title: "확인", isEnabled: true)
     
-    required init(reducer: InformationReducer) {
-        self.store = InformationStore(reducer: reducer)
+    required init(store: InformationStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,13 +43,33 @@ class TermsViewController: UIViewController, View {
         view.backgroundColor = .white
         
         configureTitleLabel()
+        setUpBind()
         bind()
+    }
+    
+    private func setUpBind() {
+        store.$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newState in
+                self?.render(newState)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func render(_ state: InformationReducer.State) {
+        if state.isRegisterSuccess == .success {
+            self.dismiss(animated: true)
+        } else if state.isRegisterSuccess == .failure {
+            self.showToast(icon: .colorXmark, message: "다시 시도해주세요")
+        }
     }
     
     private func bind() {
         nextButton.publisher(for: .touchUpInside)
             .sink { [weak self] in
-                self?.store.dispatch(.goToNextPage)
+                guard let self = self else { return }
+                print(store.state)
+                self.store.dispatch(.goToNextPage(email: self.store.state.email, password: self.store.state.password ?? ""))
             }
             .store(in: &cancellables)
     }

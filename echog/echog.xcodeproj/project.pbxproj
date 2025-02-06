@@ -86,6 +86,8 @@
 		92DFD4CD2D539555008CFE95 /* InformationLoadingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4CC2D53954B008CFE95 /* InformationLoadingStore.swift */; };
 		92DFD4CF2D545AA5008CFE95 /* SubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4CE2D545A9F008CFE95 /* SubButton.swift */; };
 		92DFD4D12D545DDA008CFE95 /* UserCodeCheckNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D02D545DCC008CFE95 /* UserCodeCheckNetworkBuilder.swift */; };
+		92DFD4D32D5500AF008CFE95 /* UserRegisterNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D22D5500A4008CFE95 /* UserRegisterNetworkBuilder.swift */; };
+		92DFD4D52D5500F2008CFE95 /* RegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +203,8 @@
 		92DFD4CC2D53954B008CFE95 /* InformationLoadingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingStore.swift; sourceTree = "<group>"; };
 		92DFD4CE2D545A9F008CFE95 /* SubButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubButton.swift; sourceTree = "<group>"; };
 		92DFD4D02D545DCC008CFE95 /* UserCodeCheckNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodeCheckNetworkBuilder.swift; sourceTree = "<group>"; };
+		92DFD4D22D5500A4008CFE95 /* UserRegisterNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterNetworkBuilder.swift; sourceTree = "<group>"; };
+		92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -493,6 +497,7 @@
 		92DD8F4B2CEC9979001197D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */,
 				92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */,
 				92365BDD2D1D72B7001D4A71 /* MyPage.swift */,
 				92365BA42D09B0BF001D4A71 /* DiaryDTO.swift */,
@@ -589,6 +594,7 @@
 		92DFD4AD2D51D653008CFE95 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4D22D5500A4008CFE95 /* UserRegisterNetworkBuilder.swift */,
 				92DFD4D02D545DCC008CFE95 /* UserCodeCheckNetworkBuilder.swift */,
 				92DD8F492CEC9952001197D0 /* UserLogInNetworkBuilder.swift */,
 				92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */,
@@ -779,6 +785,7 @@
 				92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */,
 				92DFD4712D43D09F008CFE95 /* CellButton.swift in Sources */,
 				92DFD3ED2D321A35008CFE95 /* OnBoardingViewController.swift in Sources */,
+				92DFD4D32D5500AF008CFE95 /* UserRegisterNetworkBuilder.swift in Sources */,
 				920470832C9A768200D547FB /* UIFont+.swift in Sources */,
 				92365BDC2D1D0440001D4A71 /* MyPageViewController.swift in Sources */,
 				92365BDE2D1D72BC001D4A71 /* MyPage.swift in Sources */,
@@ -815,6 +822,7 @@
 				920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */,
 				920470A22C9BB92D00D547FB /* ToastView.swift in Sources */,
 				9204706A2C9A6FC200D547FB /* SceneDelegate.swift in Sources */,
+				92DFD4D52D5500F2008CFE95 /* RegisterDTO.swift in Sources */,
 				92365B862D073439001D4A71 /* InformationViewController.swift in Sources */,
 				92365B882D073453001D4A71 /* UITextField+.swift in Sources */,
 				92DFD44E2D3537C7008CFE95 /* DiaryViewerViewController.swift in Sources */,

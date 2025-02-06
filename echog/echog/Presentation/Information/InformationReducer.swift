@@ -16,8 +16,8 @@ struct InformationReducer: ReducerProtocol {
         case checkPasswordForm(String)
         case checkPassword(password: String, confirmPassword: String)
         case checkCanGoNext(isCodeCheckSuccess: TryState, isCheckPasswordSuccess: TryState)
-        case showTermPage
-        case goToNextPage
+        case showTermPage(InformationStore)
+        case goToNextPage(email: String, password: String)
     }
     
     enum Mutation {
@@ -33,6 +33,8 @@ struct InformationReducer: ReducerProtocol {
         case passwordFormUnPass
         case goToNextStep
         case showTermsPage(UIViewController)
+        case registerSuccess
+        case registerFailure
     }
     
     struct State {
@@ -45,6 +47,7 @@ struct InformationReducer: ReducerProtocol {
         var isCodeCheckSuccess: TryState = .notYet
         var isPasswordCheckSuccess: TryState = .notYet
         var canShowTerms: TryState = .notYet
+        var isRegisterSuccess: TryState = .notYet
     }
     
     let initialState = State()
@@ -113,14 +116,22 @@ struct InformationReducer: ReducerProtocol {
             } else {
                 return nil
             }
-        case .showTermPage:
-            let termsViewController = TermsViewController(reducer: self)
+        case .showTermPage(let store):
+            let termsViewController = TermsViewController(store: store)
             return Just(Mutation.showTermsPage(termsViewController))
                 .eraseToAnyPublisher()
-        case .goToNextPage:
-            //네트워크 연결
-            delegate?.popInformationViewController()
-            return nil
+        case .goToNextPage(let email, let password):
+            return Future<Mutation, Never> { promise in
+                Task { @MainActor in
+                    do {
+                        _ = try await userNetwork.register(email: email, password: password, agreement: true)
+                        promise(.success(Mutation.registerSuccess))
+                        delegate?.popInformationViewController()
+                    } catch {
+                        promise(.success(Mutation.registerFailure))
+                    }
+                }
+            }.eraseToAnyPublisher()
         }
     }
     
@@ -153,6 +164,12 @@ struct InformationReducer: ReducerProtocol {
             newState.canShowTerms = .success
         case .showTermsPage(let termsViewController):
             newState.termsViewController = termsViewController
+        case .registerSuccess:
+            newState.isRegisterSuccess = .success
+            newState.termsViewController = nil
+        case .registerFailure:
+            newState.isRegisterSuccess = .failure
+            newState.termsViewController = nil
         }
         
         return newState
