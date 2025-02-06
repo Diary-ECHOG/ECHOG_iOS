@@ -18,6 +18,11 @@ final class UserNetwork {
         let builder = UserEmailRequestNetworkBuilder(email: email)
         return try await networkManager.fetchData(builder)
     }
+    
+    func checkCode(email: String, code: String) async throws -> DefalutDTO {
+        let builder = UserCodeCheckNetworkBuilder(parameters: ["email":email, "token": code])
+        return try await networkManager.fetchData(builder)
+    }
 
     func login(email: String, password: String, completion: @escaping (Result<UserDTO, Error>) -> Void) {
         let builder = UserLogInNetworkBuilder(loginId: email, password: password)
