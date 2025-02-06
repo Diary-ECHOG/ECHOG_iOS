@@ -9,16 +9,13 @@ import Combine
 import UIKit
 import SnapKit
 
-class OnBoardingViewController: UIViewController {
-    private var page: Int = 0
-    private var state = CurrentValueSubject<OnBoardingState, Never>(.logo)
-    private let intent = PassthroughSubject<OnBoardingIntent, Never>()
+class OnBoardingViewController: UIViewController, View {
+    var store: OnBoardingStore
     private var cancellables = Set<AnyCancellable>()
     
-    weak var coordinator: OnBoardingNavigation!
-    
-    init(coordinator: OnBoardingNavigation) {
-        self.coordinator = coordinator
+    required init(reducer: OnBoardingReducer) {
+        self.store = OnBoardingStore(reducer: reducer)
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -49,28 +46,21 @@ class OnBoardingViewController: UIViewController {
         configureBackgoundView()
         configureView()
         setUpTapGesture()
-        setUpBindings()
+        setUpBind()
     }
     
-    private func setUpBindings() {
-        intent.sink { [weak self] intent in
-            guard let self else {
-                return
+    private func setUpBind() {
+        store.$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newState in
+                self?.render(newState)
             }
-            
-            self.state.send(intent.reducer())
-        }
-        .store(in: &cancellables)
-        
-        state.sink { [weak self] state in
-            if state == .start {
-                //화면 전환
-                self?.coordinator.goToInformationViewController()
-            } else {
-                self?.updateUI(image: state.detail?.image, title: state.detail?.title, isStartButton: state.detail?.isStartButton)
-            }
-        }
-        .store(in: &cancellables)
+            .store(in: &cancellables)
+    }
+    
+    private func render(_ state: OnBoardingReducer.State) {
+        //뷰 관리
+        updateUI(image: state.image, title: state.title, isStartButton: state.isStartButton)
     }
     
     private func updateUI(image: UIImage?, title: String?, isStartButton: Bool?) {
@@ -95,14 +85,14 @@ class OnBoardingViewController: UIViewController {
                     return
                 }
                 
-                self.page += 1
-                self.intent.send(.goToNext(page: page))
+                let nextPage = self.store.state.page
+                self.store.dispatch(.goToNext(nextPage))
             }
             .store(in: &cancellables)
         
         startButton.publisher(for: .touchUpInside)
             .sink { [weak self] in
-                self?.intent.send(.goToStart)
+                self?.store.dispatch(.goToStart)
             }
             .store(in: &cancellables)
     }
@@ -134,7 +124,7 @@ class OnBoardingViewController: UIViewController {
 }
 
 //#Preview {
-//    let vc = OnBoardingViewController()
+//    let vc = OnBoardingViewController(coordinator: OnBoardingCoordinator(navigationController: UINavigationController()))
 //    
 //    return vc
 //}
