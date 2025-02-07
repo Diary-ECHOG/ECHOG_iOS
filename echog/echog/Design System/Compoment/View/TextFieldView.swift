@@ -17,7 +17,7 @@ class TextFieldView: UIStackView {
         
         return label
     }()
-    private let mainTextField: UITextField = {
+    let mainTextField: UITextField = {
         let text = UITextField()
         text.font = .mediumTitle15
         text.layer.cornerRadius = 10
@@ -30,7 +30,7 @@ class TextFieldView: UIStackView {
     }()
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .red
+        label.textColor = .red500
         label.font = .regularTitle13
         
         return label
@@ -66,6 +66,8 @@ class TextFieldView: UIStackView {
     private func configureUI() {
         self.addArrangedSubview(titleLabel)
         self.addArrangedSubview(mainTextField)
+        self.addSubview(descriptionLabel)
+        
         
         titleLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
@@ -75,14 +77,27 @@ class TextFieldView: UIStackView {
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(40)
         }
-    }
-    
-    func addDescriptionLabel(_ text: String) {
-        self.addSubview(descriptionLabel)
         
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(mainTextField.snp.bottom).offset(4)
             make.leading.trailing.equalToSuperview()
         }
+    }
+    
+    func showErrorDescriptionLabel(_ text: String) {
+        descriptionLabel.text = text
+        mainTextField.layer.borderColor = UIColor.red500.cgColor
+    }
+    
+    func removeErrorDescriptionLabel() {
+        descriptionLabel.text = ""
+        mainTextField.layer.borderColor = UIColor.border.cgColor
+    }
+    
+    func makeMainTextFieldIsEnabledFalse() {
+        mainTextField.isEnabled = false
+        mainTextField.backgroundColor = .slate25
+        mainTextField.layer.borderColor = UIColor.slate100.cgColor
+        mainTextField.textColor = .slate100
     }
 }

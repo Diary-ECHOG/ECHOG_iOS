@@ -27,7 +27,10 @@ class OnBoardingCoordinator: Coordinator {
 
 extension OnBoardingCoordinator: OnBoardingNavigation {
     func goToOnBoardingViewController() {
-        let onBoardingViewController = OnBoardingViewController(coordinator: self)
+        var reducer = OnBoardingReducer()
+        reducer.delegate = self
+        
+        let onBoardingViewController = OnBoardingViewController(reducer: reducer)
         navigationController.pushViewController(onBoardingViewController, animated: false)
     }
     

@@ -51,39 +51,43 @@
 		92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */; };
 		92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F442CEC9595001197D0 /* BaseURLType.swift */; };
 		92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */; };
-		92DD8F4A2CEC995C001197D0 /* UserLoginNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F492CEC9952001197D0 /* UserLoginNetworkBuilder.swift */; };
+		92DD8F4A2CEC995C001197D0 /* UserLogInNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F492CEC9952001197D0 /* UserLogInNetworkBuilder.swift */; };
 		92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F4C2CEC997F001197D0 /* UserDTO.swift */; };
 		92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F4E2CEC9B93001197D0 /* KeyChain.swift */; };
 		92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F502CEC9BD5001197D0 /* UserNetwork.swift */; };
 		92DD8F6D2CEDA40B001197D0 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F532CECAC43001197D0 /* MockURLProtocol.swift */; };
 		92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */; };
 		92DFD3ED2D321A35008CFE95 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3EC2D321A2C008CFE95 /* OnBoardingViewController.swift */; };
-		92DFD3F22D322809008CFE95 /* OnBoardingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3F12D3227FF008CFE95 /* OnBoardingIntent.swift */; };
 		92DFD3F42D323391008CFE95 /* UIGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3F32D323390008CFE95 /* UIGestureRecognizer+.swift */; };
 		92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3F52D3236C2008CFE95 /* UIView+.swift */; };
 		92DFD3F82D327653008CFE95 /* InformationLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */; };
-		92DFD3FB2D32C75A008CFE95 /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3FA2D32C753008CFE95 /* OnBoardingModel.swift */; };
-		92DFD3FD2D32C79A008CFE95 /* OnBoardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3FC2D32C794008CFE95 /* OnBoardingState.swift */; };
 		92DFD3FF2D335198008CFE95 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3FE2D335190008CFE95 /* Coordinator.swift */; };
 		92DFD4012D335256008CFE95 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4002D33524F008CFE95 /* AppCoordinator.swift */; };
 		92DFD4042D335475008CFE95 /* InformationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4032D33545E008CFE95 /* InformationCoordinator.swift */; };
 		92DFD4062D335A8B008CFE95 /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4052D335A83008CFE95 /* OnBoardingCoordinator.swift */; };
-		92DFD4082D339FD2008CFE95 /* InformationLoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4072D339FCA008CFE95 /* InformationLoadingState.swift */; };
-		92DFD40A2D33A046008CFE95 /* InformationLoadingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4092D33A03C008CFE95 /* InformationLoadingIntent.swift */; };
-		92DFD40E2D33CAE7008CFE95 /* InformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD40D2D33CAE3008CFE95 /* InformationModel.swift */; };
-		92DFD4102D33DD18008CFE95 /* InformationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD40F2D33DD13008CFE95 /* InformationState.swift */; };
-		92DFD4122D33DD36008CFE95 /* InformationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4112D33DD30008CFE95 /* InformationIntent.swift */; };
+		92DFD40E2D33CAE7008CFE95 /* InformationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD40D2D33CAE3008CFE95 /* InformationReducer.swift */; };
 		92DFD44E2D3537C7008CFE95 /* DiaryViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD44D2D3537C0008CFE95 /* DiaryViewerViewController.swift */; };
 		92DFD4512D354303008CFE95 /* DiaryViewerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4502D3542FE008CFE95 /* DiaryViewerState.swift */; };
 		92DFD4542D354316008CFE95 /* DiaryViewerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4532D35430F008CFE95 /* DiaryViewerIntent.swift */; };
 		92DFD4662D4350DC008CFE95 /* DiaryHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4652D4350D4008CFE95 /* DiaryHomeCoordinator.swift */; };
-		92DFD4682D4350E9008CFE95 /* VoteHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4672D4350E3008CFE95 /* VoteHomeCoordinator.swift */; };
-		92DFD46B2D435111008CFE95 /* DiaryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD46A2D43510D008CFE95 /* DiaryCoordinator.swift */; };
-		92DFD46D2D43511B008CFE95 /* MyPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD46C2D435115008CFE95 /* MyPageCoordinator.swift */; };
-		92DFD46F2D435129008CFE95 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD46E2D435123008CFE95 /* LogInCoordinator.swift */; };
 		92DFD4712D43D09F008CFE95 /* CellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4702D43D09A008CFE95 /* CellButton.swift */; };
 		92DFD4832D450C71008CFE95 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4822D450C6C008CFE95 /* UILabel+.swift */; };
 		92DFD4852D467E6A008CFE95 /* BottomSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4842D467E5F008CFE95 /* BottomSheetProtocol.swift */; };
+		92DFD4972D4CE2C7008CFE95 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4962D4CE2BF008CFE95 /* TermsViewController.swift */; };
+		92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */; };
+		92DFD4A42D51C1A4008CFE95 /* DefalutDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */; };
+		92DFD4B32D522850008CFE95 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4B22D522849008CFE95 /* View.swift */; };
+		92DFD4B52D522925008CFE95 /* ReducerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4B42D52291F008CFE95 /* ReducerProtocol.swift */; };
+		92DFD4BB2D52E14A008CFE95 /* StoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4BA2D52E143008CFE95 /* StoreProtocol.swift */; };
+		92DFD4BD2D52E243008CFE95 /* InformationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4BC2D52E23B008CFE95 /* InformationStore.swift */; };
+		92DFD4C72D531D7C008CFE95 /* OnBoardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4C62D531D72008CFE95 /* OnBoardingReducer.swift */; };
+		92DFD4C92D532197008CFE95 /* OnBoardingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4C82D532190008CFE95 /* OnBoardingStore.swift */; };
+		92DFD4CB2D5392CE008CFE95 /* InformationLoadingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4CA2D5392C1008CFE95 /* InformationLoadingReducer.swift */; };
+		92DFD4CD2D539555008CFE95 /* InformationLoadingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4CC2D53954B008CFE95 /* InformationLoadingStore.swift */; };
+		92DFD4CF2D545AA5008CFE95 /* SubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4CE2D545A9F008CFE95 /* SubButton.swift */; };
+		92DFD4D12D545DDA008CFE95 /* UserCodeCheckNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D02D545DCC008CFE95 /* UserCodeCheckNetworkBuilder.swift */; };
+		92DFD4D32D5500AF008CFE95 /* UserRegisterNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D22D5500A4008CFE95 /* UserRegisterNetworkBuilder.swift */; };
+		92DFD4D52D5500F2008CFE95 /* RegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,7 +167,7 @@
 		92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLRegistrable.swift; sourceTree = "<group>"; };
 		92DD8F442CEC9595001197D0 /* BaseURLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLType.swift; sourceTree = "<group>"; };
 		92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLManager.swift; sourceTree = "<group>"; };
-		92DD8F492CEC9952001197D0 /* UserLoginNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginNetworkBuilder.swift; sourceTree = "<group>"; };
+		92DD8F492CEC9952001197D0 /* UserLogInNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogInNetworkBuilder.swift; sourceTree = "<group>"; };
 		92DD8F4C2CEC997F001197D0 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		92DD8F4E2CEC9B93001197D0 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		92DD8F502CEC9BD5001197D0 /* UserNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
@@ -171,32 +175,36 @@
 		92DD8F5C2CECB2DE001197D0 /* NetworkTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditorViewController.swift; sourceTree = "<group>"; };
 		92DFD3EC2D321A2C008CFE95 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
-		92DFD3F12D3227FF008CFE95 /* OnBoardingIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingIntent.swift; sourceTree = "<group>"; };
 		92DFD3F32D323390008CFE95 /* UIGestureRecognizer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+.swift"; sourceTree = "<group>"; };
 		92DFD3F52D3236C2008CFE95 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingViewController.swift; sourceTree = "<group>"; };
-		92DFD3FA2D32C753008CFE95 /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
-		92DFD3FC2D32C794008CFE95 /* OnBoardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingState.swift; sourceTree = "<group>"; };
 		92DFD3FE2D335190008CFE95 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		92DFD4002D33524F008CFE95 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		92DFD4032D33545E008CFE95 /* InformationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCoordinator.swift; sourceTree = "<group>"; };
 		92DFD4052D335A83008CFE95 /* OnBoardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinator.swift; sourceTree = "<group>"; };
-		92DFD4072D339FCA008CFE95 /* InformationLoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingState.swift; sourceTree = "<group>"; };
-		92DFD4092D33A03C008CFE95 /* InformationLoadingIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingIntent.swift; sourceTree = "<group>"; };
-		92DFD40D2D33CAE3008CFE95 /* InformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationModel.swift; sourceTree = "<group>"; };
-		92DFD40F2D33DD13008CFE95 /* InformationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationState.swift; sourceTree = "<group>"; };
-		92DFD4112D33DD30008CFE95 /* InformationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationIntent.swift; sourceTree = "<group>"; };
+		92DFD40D2D33CAE3008CFE95 /* InformationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationReducer.swift; sourceTree = "<group>"; };
 		92DFD44D2D3537C0008CFE95 /* DiaryViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewerViewController.swift; sourceTree = "<group>"; };
 		92DFD4502D3542FE008CFE95 /* DiaryViewerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewerState.swift; sourceTree = "<group>"; };
 		92DFD4532D35430F008CFE95 /* DiaryViewerIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewerIntent.swift; sourceTree = "<group>"; };
 		92DFD4652D4350D4008CFE95 /* DiaryHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryHomeCoordinator.swift; sourceTree = "<group>"; };
-		92DFD4672D4350E3008CFE95 /* VoteHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteHomeCoordinator.swift; sourceTree = "<group>"; };
-		92DFD46A2D43510D008CFE95 /* DiaryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCoordinator.swift; sourceTree = "<group>"; };
-		92DFD46C2D435115008CFE95 /* MyPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCoordinator.swift; sourceTree = "<group>"; };
-		92DFD46E2D435123008CFE95 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
 		92DFD4702D43D09A008CFE95 /* CellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellButton.swift; sourceTree = "<group>"; };
 		92DFD4822D450C6C008CFE95 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		92DFD4842D467E5F008CFE95 /* BottomSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetProtocol.swift; sourceTree = "<group>"; };
+		92DFD4962D4CE2BF008CFE95 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailRequestNetworkBuilder.swift; sourceTree = "<group>"; };
+		92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefalutDTO.swift; sourceTree = "<group>"; };
+		92DFD4B22D522849008CFE95 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		92DFD4B42D52291F008CFE95 /* ReducerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerProtocol.swift; sourceTree = "<group>"; };
+		92DFD4BA2D52E143008CFE95 /* StoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProtocol.swift; sourceTree = "<group>"; };
+		92DFD4BC2D52E23B008CFE95 /* InformationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStore.swift; sourceTree = "<group>"; };
+		92DFD4C62D531D72008CFE95 /* OnBoardingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingReducer.swift; sourceTree = "<group>"; };
+		92DFD4C82D532190008CFE95 /* OnBoardingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingStore.swift; sourceTree = "<group>"; };
+		92DFD4CA2D5392C1008CFE95 /* InformationLoadingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingReducer.swift; sourceTree = "<group>"; };
+		92DFD4CC2D53954B008CFE95 /* InformationLoadingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingStore.swift; sourceTree = "<group>"; };
+		92DFD4CE2D545A9F008CFE95 /* SubButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubButton.swift; sourceTree = "<group>"; };
+		92DFD4D02D545DCC008CFE95 /* UserCodeCheckNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodeCheckNetworkBuilder.swift; sourceTree = "<group>"; };
+		92DFD4D22D5500A4008CFE95 /* UserRegisterNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterNetworkBuilder.swift; sourceTree = "<group>"; };
+		92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -313,6 +321,7 @@
 		920470892C9A90AD00D547FB /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4CE2D545A9F008CFE95 /* SubButton.swift */,
 				92DFD4702D43D09A008CFE95 /* CellButton.swift */,
 				9204708A2C9A90C900D547FB /* MainButton.swift */,
 			);
@@ -322,6 +331,9 @@
 		920470912C9ACBA700D547FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4BA2D52E143008CFE95 /* StoreProtocol.swift */,
+				92DFD4B42D52291F008CFE95 /* ReducerProtocol.swift */,
+				92DFD4B22D522849008CFE95 /* View.swift */,
 				92DFD4022D335448008CFE95 /* Coordinator */,
 				92DFD3F02D3227DF008CFE95 /* Intent */,
 				92DFD44C2D34F180008CFE95 /* LogIn */,
@@ -476,8 +488,8 @@
 		92DD8F482CEC9942001197D0 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4AD2D51D653008CFE95 /* Builder */,
 				92DD8F502CEC9BD5001197D0 /* UserNetwork.swift */,
-				92DD8F492CEC9952001197D0 /* UserLoginNetworkBuilder.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -485,6 +497,8 @@
 		92DD8F4B2CEC9979001197D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */,
+				92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */,
 				92365BDD2D1D72B7001D4A71 /* MyPage.swift */,
 				92365BA42D09B0BF001D4A71 /* DiaryDTO.swift */,
 				92DD8F4C2CEC997F001197D0 /* UserDTO.swift */,
@@ -512,6 +526,8 @@
 		92DFD3E92D3219B4008CFE95 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4C82D532190008CFE95 /* OnBoardingStore.swift */,
+				92DFD4C62D531D72008CFE95 /* OnBoardingReducer.swift */,
 				92DFD3EC2D321A2C008CFE95 /* OnBoardingViewController.swift */,
 			);
 			path = OnBoarding;
@@ -521,8 +537,6 @@
 			isa = PBXGroup;
 			children = (
 				92DFD44F2D3542F1008CFE95 /* DiaryViewer */,
-				92DFD40C2D33CADA008CFE95 /* Information */,
-				92DFD40B2D33CAC3008CFE95 /* OnBoarding */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -530,10 +544,11 @@
 		92DFD3F92D3276BD008CFE95 /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				92DFD4092D33A03C008CFE95 /* InformationLoadingIntent.swift */,
-				92DFD4072D339FCA008CFE95 /* InformationLoadingState.swift */,
-				92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */,
+				92DFD4962D4CE2BF008CFE95 /* TermsViewController.swift */,
+				92DFD4BC2D52E23B008CFE95 /* InformationStore.swift */,
+				92DFD40D2D33CAE3008CFE95 /* InformationReducer.swift */,
 				92365B572D05D96D001D4A71 /* InformationViewController.swift */,
+				92DFD4992D4CEB5C008CFE95 /* Loading */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -541,10 +556,6 @@
 		92DFD4022D335448008CFE95 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				92DFD46E2D435123008CFE95 /* LogInCoordinator.swift */,
-				92DFD46C2D435115008CFE95 /* MyPageCoordinator.swift */,
-				92DFD46A2D43510D008CFE95 /* DiaryCoordinator.swift */,
-				92DFD4672D4350E3008CFE95 /* VoteHomeCoordinator.swift */,
 				92DFD4652D4350D4008CFE95 /* DiaryHomeCoordinator.swift */,
 				92DFD4032D33545E008CFE95 /* InformationCoordinator.swift */,
 				92DFD4052D335A83008CFE95 /* OnBoardingCoordinator.swift */,
@@ -552,26 +563,6 @@
 				92DFD4002D33524F008CFE95 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		92DFD40B2D33CAC3008CFE95 /* OnBoarding */ = {
-			isa = PBXGroup;
-			children = (
-				92DFD3FA2D32C753008CFE95 /* OnBoardingModel.swift */,
-				92DFD3FC2D32C794008CFE95 /* OnBoardingState.swift */,
-				92DFD3F12D3227FF008CFE95 /* OnBoardingIntent.swift */,
-			);
-			path = OnBoarding;
-			sourceTree = "<group>";
-		};
-		92DFD40C2D33CADA008CFE95 /* Information */ = {
-			isa = PBXGroup;
-			children = (
-				92DFD4112D33DD30008CFE95 /* InformationIntent.swift */,
-				92DFD40F2D33DD13008CFE95 /* InformationState.swift */,
-				92DFD40D2D33CAE3008CFE95 /* InformationModel.swift */,
-			);
-			path = Information;
 			sourceTree = "<group>";
 		};
 		92DFD44C2D34F180008CFE95 /* LogIn */ = {
@@ -588,6 +579,27 @@
 				92DFD4502D3542FE008CFE95 /* DiaryViewerState.swift */,
 			);
 			path = DiaryViewer;
+			sourceTree = "<group>";
+		};
+		92DFD4992D4CEB5C008CFE95 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				92DFD4CC2D53954B008CFE95 /* InformationLoadingStore.swift */,
+				92DFD4CA2D5392C1008CFE95 /* InformationLoadingReducer.swift */,
+				92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		92DFD4AD2D51D653008CFE95 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				92DFD4D22D5500A4008CFE95 /* UserRegisterNetworkBuilder.swift */,
+				92DFD4D02D545DCC008CFE95 /* UserCodeCheckNetworkBuilder.swift */,
+				92DD8F492CEC9952001197D0 /* UserLogInNetworkBuilder.swift */,
+				92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -741,7 +753,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92365B892D073465001D4A71 /* UIControl+.swift in Sources */,
-				92DFD46B2D435111008CFE95 /* DiaryCoordinator.swift in Sources */,
 				92DD8F312CEC8371001197D0 /* JSONNetworkDeserializer.swift in Sources */,
 				92DD8F2F2CEC8365001197D0 /* JSONNetworkSerializer.swift in Sources */,
 				92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */,
@@ -750,44 +761,48 @@
 				92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */,
 				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,
 				92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */,
-				92DFD4122D33DD36008CFE95 /* InformationIntent.swift in Sources */,
 				92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */,
 				92DD8F3A2CEC8A38001197D0 /* NetworkBuilderProtocol.swift in Sources */,
-				92DFD46D2D43511B008CFE95 /* MyPageCoordinator.swift in Sources */,
-				92DFD46F2D435129008CFE95 /* LogInCoordinator.swift in Sources */,
 				92365BA52D09B0C4001D4A71 /* DiaryDTO.swift in Sources */,
-				92DD8F4A2CEC995C001197D0 /* UserLoginNetworkBuilder.swift in Sources */,
-				92DFD4082D339FD2008CFE95 /* InformationLoadingState.swift in Sources */,
+				92DFD4C72D531D7C008CFE95 /* OnBoardingReducer.swift in Sources */,
+				92DFD4B32D522850008CFE95 /* View.swift in Sources */,
+				92DD8F4A2CEC995C001197D0 /* UserLogInNetworkBuilder.swift in Sources */,
+				92DFD4972D4CE2C7008CFE95 /* TermsViewController.swift in Sources */,
 				92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */,
 				92365BFD2D2EBBCF001D4A71 /* UnderlineSegmentedControl.swift in Sources */,
-				92DFD40E2D33CAE7008CFE95 /* InformationModel.swift in Sources */,
+				92DFD4CF2D545AA5008CFE95 /* SubButton.swift in Sources */,
+				92DFD40E2D33CAE7008CFE95 /* InformationReducer.swift in Sources */,
 				920470812C9A762200D547FB /* Font.swift in Sources */,
 				92DFD4852D467E6A008CFE95 /* BottomSheetProtocol.swift in Sources */,
-				92DFD3FD2D32C79A008CFE95 /* OnBoardingState.swift in Sources */,
 				92DFD4062D335A8B008CFE95 /* OnBoardingCoordinator.swift in Sources */,
 				9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */,
 				92365B872D073447001D4A71 /* TextFieldView.swift in Sources */,
+				92DFD4CD2D539555008CFE95 /* InformationLoadingStore.swift in Sources */,
 				92DD8F2A2CEC830F001197D0 /* NetworkDeserializable.swift in Sources */,
 				9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */,
-				92DFD40A2D33A046008CFE95 /* InformationLoadingIntent.swift in Sources */,
+				92DFD4CB2D5392CE008CFE95 /* InformationLoadingReducer.swift in Sources */,
+				92DFD4B52D522925008CFE95 /* ReducerProtocol.swift in Sources */,
 				92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */,
-				92DFD3F22D322809008CFE95 /* OnBoardingIntent.swift in Sources */,
 				92DFD4712D43D09F008CFE95 /* CellButton.swift in Sources */,
 				92DFD3ED2D321A35008CFE95 /* OnBoardingViewController.swift in Sources */,
+				92DFD4D32D5500AF008CFE95 /* UserRegisterNetworkBuilder.swift in Sources */,
 				920470832C9A768200D547FB /* UIFont+.swift in Sources */,
 				92365BDC2D1D0440001D4A71 /* MyPageViewController.swift in Sources */,
-				92DFD4682D4350E9008CFE95 /* VoteHomeCoordinator.swift in Sources */,
-				92DFD4102D33DD18008CFE95 /* InformationState.swift in Sources */,
 				92365BDE2D1D72BC001D4A71 /* MyPage.swift in Sources */,
 				92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */,
 				92DFD4012D335256008CFE95 /* AppCoordinator.swift in Sources */,
 				920470682C9A6FC200D547FB /* AppDelegate.swift in Sources */,
+				92DFD4D12D545DDA008CFE95 /* UserCodeCheckNetworkBuilder.swift in Sources */,
 				92DD8F3E2CEC93EE001197D0 /* NetworkManager.swift in Sources */,
+				92DFD4A42D51C1A4008CFE95 /* DefalutDTO.swift in Sources */,
+				92DFD4BB2D52E14A008CFE95 /* StoreProtocol.swift in Sources */,
 				92DFD4542D354316008CFE95 /* DiaryViewerIntent.swift in Sources */,
 				92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */,
 				92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */,
 				92365BFF2D2EC56E001D4A71 /* VoteCell.swift in Sources */,
 				92DFD4512D354303008CFE95 /* DiaryViewerState.swift in Sources */,
+				92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */,
+				92DFD4C92D532197008CFE95 /* OnBoardingStore.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
 				92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */,
 				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
@@ -795,6 +810,7 @@
 				92DFD4042D335475008CFE95 /* InformationCoordinator.swift in Sources */,
 				92DFD4662D4350DC008CFE95 /* DiaryHomeCoordinator.swift in Sources */,
 				92DFD3F82D327653008CFE95 /* InformationLoadingViewController.swift in Sources */,
+				92DFD4BD2D52E243008CFE95 /* InformationStore.swift in Sources */,
 				92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */,
 				92DFD3F42D323391008CFE95 /* UIGestureRecognizer+.swift in Sources */,
 				92DD8F412CEC9579001197D0 /* BaseURLResolvable.swift in Sources */,
@@ -806,9 +822,9 @@
 				920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */,
 				920470A22C9BB92D00D547FB /* ToastView.swift in Sources */,
 				9204706A2C9A6FC200D547FB /* SceneDelegate.swift in Sources */,
+				92DFD4D52D5500F2008CFE95 /* RegisterDTO.swift in Sources */,
 				92365B862D073439001D4A71 /* InformationViewController.swift in Sources */,
 				92365B882D073453001D4A71 /* UITextField+.swift in Sources */,
-				92DFD3FB2D32C75A008CFE95 /* OnBoardingModel.swift in Sources */,
 				92DFD44E2D3537C7008CFE95 /* DiaryViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ final class NetworkManager {
     private let plugins: [NetworkPluginProtocol]
     
     init(baseURLResolver: BaseURLResolvable,
-         plugins: [NetworkPluginProtocol]) {
+         plugins: [NetworkPluginProtocol] = []) {
         self.baseURLResolver = baseURLResolver
         self.plugins = plugins
     }
@@ -21,6 +21,10 @@ final class NetworkManager {
     func fetchData<Builder: NetworkBuilderProtocol>(_ builder: Builder) async throws -> Builder.Response {
         let request = try await makeRequest(builder)
         let (data, response) = try await URLSession.shared.data(for: request)
+        if let string = String(data: data, encoding: .utf8) {
+            print("Response Body:", string)
+        }
+        //Error
         let decodedData: Builder.Response = try await builder.deserializer.deserialize(data)
         
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -41,7 +45,9 @@ final class NetworkManager {
             throw NetworkError.urlNotFound
         }
 
-        let url = baseURL.appendingPathComponent(builder.path)
+        var url = baseURL.appendingPathComponent(builder.path)
+        url.append(queryItems: builder.queries ?? [])
+        
         var request = URLRequest(url: url)
         builder.headers.forEach { (key, value) in
             request.setValue(value, forHTTPHeaderField: key)
@@ -56,4 +62,14 @@ final class NetworkManager {
         request.httpBody = try await builder.serializer.serialize(builder.parameters)
         return plugins.reduce(request) { $1.prepare($0) }
     }
+    
+//    private func configureQuery(_ query: [URLQueryItem]?) -> [URLQueryItem] {
+//        var queries: [URLQueryItem] = []
+//        
+//        query?.forEach({ URLQueryItem in
+//            queries.append(URLQueryItem)
+//        })
+//        
+//        return queries
+//    }
 }

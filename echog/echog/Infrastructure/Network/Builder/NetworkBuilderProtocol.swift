@@ -12,6 +12,7 @@ protocol NetworkBuilderProtocol {
 
     var baseURL: BaseURLType { get }
     var path: String { get }
+    var queries: [URLQueryItem]? { get }
     var method: HTTPMethod { get }
     var headers: [String: String] { get }
     var parameters: [String: Any] { get }

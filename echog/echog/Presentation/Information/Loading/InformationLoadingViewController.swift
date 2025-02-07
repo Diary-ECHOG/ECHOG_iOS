@@ -10,9 +10,18 @@ import UIKit
 import SnapKit
 
 class InformationLoadingViewController: UIViewController {
-    private var state = CurrentValueSubject<InformationLoadingState, Never>(.start)
-    private let intent = PassthroughSubject<InformationLoadingIntent, Never>()
+    var store: InformationLoadingStore
     private var cancellables = Set<AnyCancellable>()
+    
+    required init(reducer: InformationLoadingReducer) {
+        self.store = InformationLoadingStore(reducer: reducer)
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -23,51 +32,43 @@ class InformationLoadingViewController: UIViewController {
         return label
     }()
     
-    weak var coordinator: InformationCoordinator!
-    
-    init(coordinator: InformationCoordinator!) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         configureTitleLabel()
-        setUpBindings()
+        setUpBind()
         setUpTapGesture()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        intent.send(.goToFinish)
+        self.store.dispatch(.changeWelcomeText)
     }
     
-    private func setUpBindings() {
-        intent.sink { [weak self] intent in
-            guard let self else {
-                return
+    private func setUpBind() {
+        store.$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newState in
+                self?.render(newState)
             }
-            
-            self.state.send(intent.reducer())
-        }
-        .store(in: &cancellables)
-        
-        state.sink { [weak self] state in
-            self?.titleLabel.text = state.text
-        }
-        .store(in: &cancellables)
+            .store(in: &cancellables)
+    }
+    
+    private func render(_ state: InformationLoadingReducer.State) {
+        //뷰 관리
+        titleLabel.text = state.text
     }
     
     private func setUpTapGesture() {
         view.throttleTapGesturePublisher()
             .sink { [weak self] _ in
-                self?.coordinator.pushInformationViewController()
+                guard let self else {
+                    return
+                }
+                
+                let newPage = self.store.state.page
+                self.store.dispatch(.goToNext(newPage))
             }
             .store(in: &cancellables)
     }
