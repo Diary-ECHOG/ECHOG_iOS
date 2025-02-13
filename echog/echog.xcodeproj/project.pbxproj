@@ -95,8 +95,9 @@
 		92E697352D5CDF180059D3AE /* VoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697342D5CDF150059D3AE /* VoteCell.swift */; };
 		92E6973F2D5D8E350059D3AE /* VoteViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6973E2D5D8E180059D3AE /* VoteViewerViewController.swift */; };
 		92E697412D5D9D440059D3AE /* ChipLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697402D5D9D3B0059D3AE /* ChipLabel.swift */; };
-		92E697442D5DA38C0059D3AE /* VoteSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697432D5DA3860059D3AE /* VoteSelectionView.swift */; };
-		92E697462D5DA8A80059D3AE /* SelectButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697452D5DA8A20059D3AE /* SelectButtonView.swift */; };
+		92E697442D5DA38C0059D3AE /* VoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697432D5DA3860059D3AE /* VoteView.swift */; };
+		92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */; };
+		92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,8 +221,9 @@
 		92E697342D5CDF150059D3AE /* VoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCell.swift; sourceTree = "<group>"; };
 		92E6973E2D5D8E180059D3AE /* VoteViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewerViewController.swift; sourceTree = "<group>"; };
 		92E697402D5D9D3B0059D3AE /* ChipLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipLabel.swift; sourceTree = "<group>"; };
-		92E697432D5DA3860059D3AE /* VoteSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteSelectionView.swift; sourceTree = "<group>"; };
-		92E697452D5DA8A20059D3AE /* SelectButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButtonView.swift; sourceTree = "<group>"; };
+		92E697432D5DA3860059D3AE /* VoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteView.swift; sourceTree = "<group>"; };
+		92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteSelectLineView.swift; sourceTree = "<group>"; };
+		92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResultLineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -402,11 +404,12 @@
 		920470A72C9BC44B00D547FB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				92E697432D5DA3860059D3AE /* VoteSelectionView.swift */,
+				92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */,
+				92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */,
+				92E697432D5DA3860059D3AE /* VoteView.swift */,
 				92365B592D05DEC3001D4A71 /* TextFieldView.swift */,
 				920470A82C9BC45B00D547FB /* PopUpView.swift */,
 				920470A12C9BB92D00D547FB /* ToastView.swift */,
-				92E697452D5DA8A20059D3AE /* SelectButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -801,13 +804,14 @@
 				92365B892D073465001D4A71 /* UIControl+.swift in Sources */,
 				92DD8F312CEC8371001197D0 /* JSONNetworkDeserializer.swift in Sources */,
 				92DD8F2F2CEC8365001197D0 /* JSONNetworkSerializer.swift in Sources */,
+				92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */,
 				92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */,
 				92365BC02D1BC201001D4A71 /* DiaryCell.swift in Sources */,
 				92365B9B2D0833DA001D4A71 /* HomeViewController.swift in Sources */,
 				92E697332D5CDA7C0059D3AE /* VoteDTO.swift in Sources */,
 				92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */,
 				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,
-				92E697462D5DA8A80059D3AE /* SelectButtonView.swift in Sources */,
+				92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */,
 				92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */,
 				92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */,
 				92E697352D5CDF180059D3AE /* VoteCell.swift in Sources */,
@@ -854,7 +858,7 @@
 				92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */,
 				92DFD4C92D532197008CFE95 /* OnBoardingStore.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
-				92E697442D5DA38C0059D3AE /* VoteSelectionView.swift in Sources */,
+				92E697442D5DA38C0059D3AE /* VoteView.swift in Sources */,
 				92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */,
 				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
 				9204709F2C9BB5CC00D547FB /* ToastProtocol.swift in Sources */,
