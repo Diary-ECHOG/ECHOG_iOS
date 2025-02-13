@@ -93,6 +93,7 @@
 		92E6972F2D5CD3C00059D3AE /* particle.json in Resources */ = {isa = PBXBuildFile; fileRef = 92E6972E2D5CD3C00059D3AE /* particle.json */; };
 		92E697332D5CDA7C0059D3AE /* VoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697322D5CDA5E0059D3AE /* VoteDTO.swift */; };
 		92E697352D5CDF180059D3AE /* VoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697342D5CDF150059D3AE /* VoteCell.swift */; };
+		92E697412D5D9D440059D3AE /* ChipLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697402D5D9D3B0059D3AE /* ChipLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +215,7 @@
 		92E6972E2D5CD3C00059D3AE /* particle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = particle.json; sourceTree = "<group>"; };
 		92E697322D5CDA5E0059D3AE /* VoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDTO.swift; sourceTree = "<group>"; };
 		92E697342D5CDF150059D3AE /* VoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCell.swift; sourceTree = "<group>"; };
+		92E697402D5D9D3B0059D3AE /* ChipLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -323,6 +325,7 @@
 		920470882C9A909A00D547FB /* Compoment */ = {
 			isa = PBXGroup;
 			children = (
+				92E697422D5DA3770059D3AE /* Label */,
 				92365BFC2D2EBBC4001D4A71 /* UnderlineSegmentedControl.swift */,
 				920470A72C9BC44B00D547FB /* View */,
 				920470A62C9BC42400D547FB /* Protocol */,
@@ -624,6 +627,14 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
+		92E697422D5DA3770059D3AE /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				92E697402D5D9D3B0059D3AE /* ChipLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -828,6 +839,7 @@
 				92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */,
 				92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */,
 				92365BFF2D2EC56E001D4A71 /* MyVoteCell.swift in Sources */,
+				92E697412D5D9D440059D3AE /* ChipLabel.swift in Sources */,
 				92DFD4512D354303008CFE95 /* DiaryViewerState.swift in Sources */,
 				92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */,
 				92DFD4C92D532197008CFE95 /* OnBoardingStore.swift in Sources */,
