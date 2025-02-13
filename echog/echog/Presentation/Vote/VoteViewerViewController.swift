@@ -57,7 +57,7 @@ final class VoteViewerViewController: UIViewController {
         return label
     }()
     
-    private let voteSelectionView = VoteSelectionView()
+    private let voteView = VoteView()
     private let voteButton = MainButton(title: "투표하기", isEnabled: false)
     
     override func viewDidLoad() {
@@ -118,21 +118,25 @@ final class VoteViewerViewController: UIViewController {
         view.addSubview(voteDateLabel)
         
         voteDateLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(voteSelectionView.snp.top).offset(-8)
-            make.leading.equalTo(voteSelectionView)
+            make.bottom.equalTo(voteView.snp.top).offset(-8)
+            make.leading.equalTo(voteView)
         }
     }
     
     //투표 설정
     private func configureVoteView() {
-        voteSelectionView.configure( totalVotes: 5, options: [SelectionOption(title: "돈까스"), SelectionOption(title: "냉면"), SelectionOption(title: "삼겹살")])
+        voteView.configure( totalVotes: 5, options: [SelectionOption(title: "돈까스"), SelectionOption(title: "냉면"), SelectionOption(title: "삼겹살"), SelectionOption(title: "치킨")])
         
-        view.addSubview(voteSelectionView)
+        view.addSubview(voteView)
         
-        voteSelectionView.snp.makeConstraints { make in
+        voteView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(22)
             make.bottom.equalTo(voteButton.snp.top).offset(-12)
         }
+    }
+    
+    private func updateVoteView() {
+        voteView.update(totalVotes: 5, options: [VoteOption(title: "돈까스", votes: 3, percentage: 60), VoteOption(title: "냉면", votes: 1, percentage: 20), VoteOption(title: "치킨", votes: 1, percentage: 20) ])
     }
     
     //투표 버튼 설정

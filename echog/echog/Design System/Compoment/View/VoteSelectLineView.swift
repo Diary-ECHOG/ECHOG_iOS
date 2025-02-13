@@ -1,5 +1,5 @@
 //
-//  SelectButtonView.swift
+//  VoteSelectLineView.swift
 //  echog
 //
 //  Created by minsong kim on 2/13/25.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 //투표 항목 선택 버튼
-class SelectButtonView: UIView {
+class VoteSelectLineView: UIView {
     private let selectButton: UIButton = {
         let button = UIButton(type: .custom)
         // 미선택 이미지 (빈 원)

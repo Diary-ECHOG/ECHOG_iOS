@@ -1,5 +1,5 @@
 //
-//  VoteSelectionView.swift
+//  VoteView.swift
 //  echog
 //
 //  Created by minsong kim on 2/13/25.
@@ -13,7 +13,7 @@ struct SelectionOption {
     let title: String
 }
 
-class VoteSelectionView: UIView {
+class VoteView: UIView {
     private let titleImageView: UIImageView = {
         let view = UIImageView(image: UIImage(resource: .voteCheckButton))
         
@@ -102,7 +102,22 @@ class VoteSelectionView: UIView {
         
         // 항목별로 버튼 + 라벨 구성
         for (index, option) in options.enumerated() {
-            let rowView = SelectButtonView(title: option.title, index: index)
+            let rowView = VoteSelectLineView(title: option.title, index: index)
+            
+            stackView.addArrangedSubview(rowView)
+        }
+    }
+    
+    //내가 투표했을 경우 결과 보여주기
+    func update(totalVotes: Int, options: [VoteOption]) {
+        totalVotesLabel.text = "\(totalVotes)명 투표"
+        
+        //기존 스택뷰 항목 제거
+        stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        // 항목별로 버튼 + 라벨 구성
+        for option in options {
+            let rowView = VoteResultLineView(options: option)
             
             stackView.addArrangedSubview(rowView)
         }
