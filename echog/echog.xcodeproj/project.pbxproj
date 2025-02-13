@@ -36,8 +36,7 @@
 		92365BDE2D1D72BC001D4A71 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BDD2D1D72B7001D4A71 /* MyPage.swift */; };
 		92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BE02D1D7387001D4A71 /* MyVoteListViewController.swift */; };
 		92365BFD2D2EBBCF001D4A71 /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BFC2D2EBBC4001D4A71 /* UnderlineSegmentedControl.swift */; };
-		92365BFF2D2EC56E001D4A71 /* VoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BFE2D2EC565001D4A71 /* VoteCell.swift */; };
-		9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9298888E2CDDC97E0011DE3C /* SnapKit */; };
+		92365BFF2D2EC56E001D4A71 /* MyVoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BFE2D2EC565001D4A71 /* MyVoteCell.swift */; };
 		92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F082CEC41BB001197D0 /* HTTP.swift */; };
 		92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */; };
 		92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F272CEC82FA001197D0 /* NetworkSerializable.swift */; };
@@ -82,12 +81,18 @@
 		92DFD4BD2D52E243008CFE95 /* InformationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4BC2D52E23B008CFE95 /* InformationStore.swift */; };
 		92DFD4C72D531D7C008CFE95 /* OnBoardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4C62D531D72008CFE95 /* OnBoardingReducer.swift */; };
 		92DFD4C92D532197008CFE95 /* OnBoardingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4C82D532190008CFE95 /* OnBoardingStore.swift */; };
-		92DFD4CB2D5392CE008CFE95 /* InformationLoadingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4CA2D5392C1008CFE95 /* InformationLoadingReducer.swift */; };
-		92DFD4CD2D539555008CFE95 /* InformationLoadingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4CC2D53954B008CFE95 /* InformationLoadingStore.swift */; };
 		92DFD4CF2D545AA5008CFE95 /* SubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4CE2D545A9F008CFE95 /* SubButton.swift */; };
 		92DFD4D12D545DDA008CFE95 /* UserCodeCheckNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D02D545DCC008CFE95 /* UserCodeCheckNetworkBuilder.swift */; };
 		92DFD4D32D5500AF008CFE95 /* UserRegisterNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D22D5500A4008CFE95 /* UserRegisterNetworkBuilder.swift */; };
 		92DFD4D52D5500F2008CFE95 /* RegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */; };
+		92DFD4E92D561611008CFE95 /* VoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD4E82D561609008CFE95 /* VoteListViewController.swift */; };
+		92E697202D5CCE750059D3AE /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 92E6971F2D5CCE750059D3AE /* Lottie */; };
+		92E697252D5CCED60059D3AE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92E697242D5CCED60059D3AE /* SnapKit */; };
+		92E697292D5CD02B0059D3AE /* join_check.json in Resources */ = {isa = PBXBuildFile; fileRef = 92E697282D5CD02B0059D3AE /* join_check.json */; };
+		92E6972B2D5CD09A0059D3AE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6972A2D5CD0940059D3AE /* WelcomeViewController.swift */; };
+		92E6972F2D5CD3C00059D3AE /* particle.json in Resources */ = {isa = PBXBuildFile; fileRef = 92E6972E2D5CD3C00059D3AE /* particle.json */; };
+		92E697332D5CDA7C0059D3AE /* VoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697322D5CDA5E0059D3AE /* VoteDTO.swift */; };
+		92E697352D5CDF180059D3AE /* VoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697342D5CDF150059D3AE /* VoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,7 +157,7 @@
 		92365BDD2D1D72B7001D4A71 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		92365BE02D1D7387001D4A71 /* MyVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteListViewController.swift; sourceTree = "<group>"; };
 		92365BFC2D2EBBC4001D4A71 /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
-		92365BFE2D2EC565001D4A71 /* VoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCell.swift; sourceTree = "<group>"; };
+		92365BFE2D2EC565001D4A71 /* MyVoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteCell.swift; sourceTree = "<group>"; };
 		923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EchogUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DD8F082CEC41BB001197D0 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPluginProtocol.swift; sourceTree = "<group>"; };
@@ -199,12 +204,16 @@
 		92DFD4BC2D52E23B008CFE95 /* InformationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStore.swift; sourceTree = "<group>"; };
 		92DFD4C62D531D72008CFE95 /* OnBoardingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingReducer.swift; sourceTree = "<group>"; };
 		92DFD4C82D532190008CFE95 /* OnBoardingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingStore.swift; sourceTree = "<group>"; };
-		92DFD4CA2D5392C1008CFE95 /* InformationLoadingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingReducer.swift; sourceTree = "<group>"; };
-		92DFD4CC2D53954B008CFE95 /* InformationLoadingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLoadingStore.swift; sourceTree = "<group>"; };
 		92DFD4CE2D545A9F008CFE95 /* SubButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubButton.swift; sourceTree = "<group>"; };
 		92DFD4D02D545DCC008CFE95 /* UserCodeCheckNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodeCheckNetworkBuilder.swift; sourceTree = "<group>"; };
 		92DFD4D22D5500A4008CFE95 /* UserRegisterNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterNetworkBuilder.swift; sourceTree = "<group>"; };
 		92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDTO.swift; sourceTree = "<group>"; };
+		92DFD4E82D561609008CFE95 /* VoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteListViewController.swift; sourceTree = "<group>"; };
+		92E697282D5CD02B0059D3AE /* join_check.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = join_check.json; sourceTree = "<group>"; };
+		92E6972A2D5CD0940059D3AE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		92E6972E2D5CD3C00059D3AE /* particle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = particle.json; sourceTree = "<group>"; };
+		92E697322D5CDA5E0059D3AE /* VoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDTO.swift; sourceTree = "<group>"; };
+		92E697342D5CDF150059D3AE /* VoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -217,7 +226,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9298888F2CDDC97E0011DE3C /* SnapKit in Frameworks */,
+				92E697252D5CCED60059D3AE /* SnapKit in Frameworks */,
+				92E697202D5CCE750059D3AE /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +273,7 @@
 			children = (
 				92DD8F662CECB396001197D0 /* Mock */,
 				9204707B2C9A75D000D547FB /* Application */,
+				92DFD4E72D5615BE008CFE95 /* Interface */,
 				920470912C9ACBA700D547FB /* Presentation */,
 				920470932C9ACBBF00D547FB /* Data */,
 				92DD8F062CEC417D001197D0 /* Infrastructure */,
@@ -270,6 +281,8 @@
 				920470702C9A6FC400D547FB /* Assets.xcassets */,
 				920470722C9A6FC400D547FB /* LaunchScreen.storyboard */,
 				920470752C9A6FC400D547FB /* Info.plist */,
+				92E6972E2D5CD3C00059D3AE /* particle.json */,
+				92E697282D5CD02B0059D3AE /* join_check.json */,
 			);
 			path = echog;
 			sourceTree = "<group>";
@@ -331,15 +344,13 @@
 		920470912C9ACBA700D547FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				92DFD4BA2D52E143008CFE95 /* StoreProtocol.swift */,
-				92DFD4B42D52291F008CFE95 /* ReducerProtocol.swift */,
-				92DFD4B22D522849008CFE95 /* View.swift */,
 				92DFD4022D335448008CFE95 /* Coordinator */,
-				92DFD3F02D3227DF008CFE95 /* Intent */,
-				92DFD44C2D34F180008CFE95 /* LogIn */,
-				92DFD3F92D3276BD008CFE95 /* Information */,
 				92DFD3E92D3219B4008CFE95 /* OnBoarding */,
+				92DFD3F92D3276BD008CFE95 /* Information */,
+				92DFD44C2D34F180008CFE95 /* LogIn */,
 				92DFD3E62D310445008CFE95 /* Diary */,
+				92DFD4E62D5615AC008CFE95 /* Vote */,
+				92DFD3F02D3227DF008CFE95 /* Intent */,
 				92365BDF2D1D737A001D4A71 /* MyPage */,
 				9204706B2C9A6FC200D547FB /* CalendarViewController.swift */,
 				92365B9A2D0833DA001D4A71 /* HomeViewController.swift */,
@@ -392,7 +403,8 @@
 		92365BBE2D1BC1F5001D4A71 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				92365BFE2D2EC565001D4A71 /* VoteCell.swift */,
+				92E697342D5CDF150059D3AE /* VoteCell.swift */,
+				92365BFE2D2EC565001D4A71 /* MyVoteCell.swift */,
 				92365BC12D1C16A0001D4A71 /* HeaderView.swift */,
 				92365BBF2D1BC1FB001D4A71 /* DiaryCell.swift */,
 			);
@@ -497,6 +509,7 @@
 		92DD8F4B2CEC9979001197D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92E697322D5CDA5E0059D3AE /* VoteDTO.swift */,
 				92DFD4D42D5500EE008CFE95 /* RegisterDTO.swift */,
 				92DFD4A32D51C19C008CFE95 /* DefalutDTO.swift */,
 				92365BDD2D1D72B7001D4A71 /* MyPage.swift */,
@@ -544,11 +557,12 @@
 		92DFD3F92D3276BD008CFE95 /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				92DFD4962D4CE2BF008CFE95 /* TermsViewController.swift */,
 				92DFD4BC2D52E23B008CFE95 /* InformationStore.swift */,
 				92DFD40D2D33CAE3008CFE95 /* InformationReducer.swift */,
+				92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */,
 				92365B572D05D96D001D4A71 /* InformationViewController.swift */,
-				92DFD4992D4CEB5C008CFE95 /* Loading */,
+				92DFD4962D4CE2BF008CFE95 /* TermsViewController.swift */,
+				92E6972A2D5CD0940059D3AE /* WelcomeViewController.swift */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -581,16 +595,6 @@
 			path = DiaryViewer;
 			sourceTree = "<group>";
 		};
-		92DFD4992D4CEB5C008CFE95 /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				92DFD4CC2D53954B008CFE95 /* InformationLoadingStore.swift */,
-				92DFD4CA2D5392C1008CFE95 /* InformationLoadingReducer.swift */,
-				92DFD3F72D327646008CFE95 /* InformationLoadingViewController.swift */,
-			);
-			path = Loading;
-			sourceTree = "<group>";
-		};
 		92DFD4AD2D51D653008CFE95 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +604,24 @@
 				92DFD4A12D51C10F008CFE95 /* UserEmailRequestNetworkBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		92DFD4E62D5615AC008CFE95 /* Vote */ = {
+			isa = PBXGroup;
+			children = (
+				92DFD4E82D561609008CFE95 /* VoteListViewController.swift */,
+			);
+			path = Vote;
+			sourceTree = "<group>";
+		};
+		92DFD4E72D5615BE008CFE95 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				92DFD4BA2D52E143008CFE95 /* StoreProtocol.swift */,
+				92DFD4B42D52291F008CFE95 /* ReducerProtocol.swift */,
+				92DFD4B22D522849008CFE95 /* View.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -620,7 +642,8 @@
 			);
 			name = echog;
 			packageProductDependencies = (
-				9298888E2CDDC97E0011DE3C /* SnapKit */,
+				92E6971F2D5CCE750059D3AE /* Lottie */,
+				92E697242D5CCED60059D3AE /* SnapKit */,
 			);
 			productName = echog;
 			productReference = 920470642C9A6FC200D547FB /* echog.app */;
@@ -705,7 +728,8 @@
 			);
 			mainGroup = 9204705B2C9A6FC200D547FB;
 			packageReferences = (
-				9298888D2CDDC97E0011DE3C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				92E6971E2D5CCE750059D3AE /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				92E697232D5CCED60059D3AE /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 920470652C9A6FC200D547FB /* Products */;
 			projectDirPath = "";
@@ -723,9 +747,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E697292D5CD02B0059D3AE /* join_check.json in Resources */,
 				92365B5F2D06B108001D4A71 /* Pretendard-SemiBold.otf in Resources */,
 				92365B612D06B127001D4A71 /* Pretendard-Medium.otf in Resources */,
 				92365B602D06B121001D4A71 /* Pretendard-Regular.otf in Resources */,
+				92E6972F2D5CD3C00059D3AE /* particle.json in Resources */,
 				920470742C9A6FC400D547FB /* LaunchScreen.storyboard in Resources */,
 				920470712C9A6FC400D547FB /* Assets.xcassets in Resources */,
 			);
@@ -758,10 +784,12 @@
 				92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */,
 				92365BC02D1BC201001D4A71 /* DiaryCell.swift in Sources */,
 				92365B9B2D0833DA001D4A71 /* HomeViewController.swift in Sources */,
+				92E697332D5CDA7C0059D3AE /* VoteDTO.swift in Sources */,
 				92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */,
 				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,
 				92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */,
 				92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */,
+				92E697352D5CDF180059D3AE /* VoteCell.swift in Sources */,
 				92DD8F3A2CEC8A38001197D0 /* NetworkBuilderProtocol.swift in Sources */,
 				92365BA52D09B0C4001D4A71 /* DiaryDTO.swift in Sources */,
 				92DFD4C72D531D7C008CFE95 /* OnBoardingReducer.swift in Sources */,
@@ -774,13 +802,12 @@
 				92DFD40E2D33CAE7008CFE95 /* InformationReducer.swift in Sources */,
 				920470812C9A762200D547FB /* Font.swift in Sources */,
 				92DFD4852D467E6A008CFE95 /* BottomSheetProtocol.swift in Sources */,
+				92DFD4E92D561611008CFE95 /* VoteListViewController.swift in Sources */,
 				92DFD4062D335A8B008CFE95 /* OnBoardingCoordinator.swift in Sources */,
 				9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */,
 				92365B872D073447001D4A71 /* TextFieldView.swift in Sources */,
-				92DFD4CD2D539555008CFE95 /* InformationLoadingStore.swift in Sources */,
 				92DD8F2A2CEC830F001197D0 /* NetworkDeserializable.swift in Sources */,
 				9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */,
-				92DFD4CB2D5392CE008CFE95 /* InformationLoadingReducer.swift in Sources */,
 				92DFD4B52D522925008CFE95 /* ReducerProtocol.swift in Sources */,
 				92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */,
 				92DFD4712D43D09F008CFE95 /* CellButton.swift in Sources */,
@@ -788,6 +815,7 @@
 				92DFD4D32D5500AF008CFE95 /* UserRegisterNetworkBuilder.swift in Sources */,
 				920470832C9A768200D547FB /* UIFont+.swift in Sources */,
 				92365BDC2D1D0440001D4A71 /* MyPageViewController.swift in Sources */,
+				92E6972B2D5CD09A0059D3AE /* WelcomeViewController.swift in Sources */,
 				92365BDE2D1D72BC001D4A71 /* MyPage.swift in Sources */,
 				92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */,
 				92DFD4012D335256008CFE95 /* AppCoordinator.swift in Sources */,
@@ -799,7 +827,7 @@
 				92DFD4542D354316008CFE95 /* DiaryViewerIntent.swift in Sources */,
 				92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */,
 				92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */,
-				92365BFF2D2EC56E001D4A71 /* VoteCell.swift in Sources */,
+				92365BFF2D2EC56E001D4A71 /* MyVoteCell.swift in Sources */,
 				92DFD4512D354303008CFE95 /* DiaryViewerState.swift in Sources */,
 				92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */,
 				92DFD4C92D532197008CFE95 /* OnBoardingStore.swift in Sources */,
@@ -1164,20 +1192,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9298888D2CDDC97E0011DE3C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		92E6971E2D5CCE750059D3AE /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+		92E697232D5CCED60059D3AE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
+				minimumVersion = 5.7.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9298888E2CDDC97E0011DE3C /* SnapKit */ = {
+		92E6971F2D5CCE750059D3AE /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9298888D2CDDC97E0011DE3C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 92E6971E2D5CCE750059D3AE /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		92E697242D5CCED60059D3AE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92E697232D5CCED60059D3AE /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
