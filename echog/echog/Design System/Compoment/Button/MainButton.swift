@@ -14,8 +14,8 @@ class MainButton: UIButton {
                 self.backgroundColor = .black
                 self.setTitleColor(.white, for: .normal)
             } else {
-                self.backgroundColor = .slate400
-                self.setTitleColor(.white, for: .normal)
+                self.backgroundColor = .primaryDisabled
+                self.setTitleColor(.textDisabled, for: .normal)
             }
         }
     }
