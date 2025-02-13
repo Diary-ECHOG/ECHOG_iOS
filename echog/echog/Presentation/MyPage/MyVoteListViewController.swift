@@ -76,7 +76,7 @@ class MyVoteListViewController: UIViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(VoteCell.self, forCellReuseIdentifier: VoteCell.identifier)
+        tableView.register(MyVoteCell.self, forCellReuseIdentifier: MyVoteCell.identifier)
         tableView.sectionHeaderTopPadding = 0
         
         view.addSubview(tableView)
@@ -95,7 +95,7 @@ extension MyVoteListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: VoteCell.identifier, for: indexPath) as? VoteCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MyVoteCell.identifier, for: indexPath) as? MyVoteCell else {
             return UITableViewCell()
         }
         

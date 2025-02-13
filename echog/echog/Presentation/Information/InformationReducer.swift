@@ -10,6 +10,7 @@ import UIKit
 
 struct InformationReducer: ReducerProtocol {
     enum Intent {
+        case goToFillInformation
         case checkEmailForm(String)
         case sendEmail(String)
         case checkCode(email: String, code: String)
@@ -61,6 +62,9 @@ struct InformationReducer: ReducerProtocol {
     
     func mutate(action: Intent) -> AnyPublisher<Mutation, Never>? {
         switch action {
+        case .goToFillInformation:
+            delegate?.pushInformationViewController()
+            return nil
         case .checkEmailForm(let newEmail):
             if checkEmailForm(newEmail) {
                 return Just(Mutation.emailFormPass)
@@ -126,7 +130,7 @@ struct InformationReducer: ReducerProtocol {
                     do {
                         _ = try await userNetwork.register(email: email, password: password, agreement: true)
                         promise(.success(Mutation.registerSuccess))
-                        delegate?.popInformationViewController()
+                        delegate?.pushWelcomeViewController()
                     } catch {
                         promise(.success(Mutation.registerFailure))
                     }

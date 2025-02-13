@@ -2,13 +2,13 @@
 //  VoteCell.swift
 //  echog
 //
-//  Created by minsong kim on 2/12/25.
+//  Created by minsong kim on 1/8/25.
 //
 
 import UIKit
 import SnapKit
 
-class VoteCell: UICollectionViewCell {
+class MyVoteCell: UITableViewCell {
     static let identifier = "VoteCell"
     
     private let titleLabel: UILabel = {
@@ -52,18 +52,6 @@ class VoteCell: UICollectionViewCell {
         return label
     }()
     
-    private func configureCellShadowAndCornerRadius() {
-        contentView.backgroundColor = .white
-        contentView.layer.cornerRadius = 10
-        contentView.layer.masksToBounds = true
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 4
-        layer.masksToBounds = false
-    }
-    
     private func configureLabels() {
         self.addSubview(titleLabel)
         self.addSubview(contentsLabel)
@@ -93,14 +81,12 @@ class VoteCell: UICollectionViewCell {
         }
     }
     
-    func configureCells(title: String, contents: String, date: String, voteNumber: Int) {
+    func configureCells(title: String, contents: String, date: Date, voteNumber: Int) {
         titleLabel.text = title
         contentsLabel.text = contents
-        let dateString = dateFormatter.date(from: date)
-        dateLabel.text = dateFormatter.string(from: dateString ?? Date())
+        dateLabel.text = dateFormatter.string(from: date)
         voteNumberLabel.text = "\(voteNumber)명 투표"
         
-        configureCellShadowAndCornerRadius()
         configureLabels()
     }
 }

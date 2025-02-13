@@ -43,6 +43,7 @@ class TextFieldView: UIStackView {
         self.axis = .vertical
         self.spacing = 8
         self.mainTextField.placeholder = placeHolder
+        self.mainTextField.smartDashesType = .no
         self.titleLabel.text = title
         
         if isNeedSecure {

@@ -85,7 +85,7 @@ class TermsViewController: UIViewController, ToastProtocol {
         
         nextButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-50)
             make.height.equalTo(50)
         }
     }

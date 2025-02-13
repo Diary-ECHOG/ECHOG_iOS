@@ -10,11 +10,11 @@ import UIKit
 import SnapKit
 
 class InformationLoadingViewController: UIViewController {
-    var store: InformationLoadingStore
+    var store: InformationStore
     private var cancellables = Set<AnyCancellable>()
     
-    required init(reducer: InformationLoadingReducer) {
-        self.store = InformationLoadingStore(reducer: reducer)
+    required init(reducer: InformationReducer) {
+        self.store = InformationStore(reducer: reducer)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,8 +23,9 @@ class InformationLoadingViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
+        label.text = "먼저 당신의 정보를\n알고 싶어요"
         label.textAlignment = .center
         label.font = .semiboldSubheadline22
         label.numberOfLines = 2
@@ -37,27 +38,7 @@ class InformationLoadingViewController: UIViewController {
         view.backgroundColor = .white
         
         configureTitleLabel()
-        setUpBind()
         setUpTapGesture()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.store.dispatch(.changeWelcomeText)
-    }
-    
-    private func setUpBind() {
-        store.$state
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] newState in
-                self?.render(newState)
-            }
-            .store(in: &cancellables)
-    }
-    
-    private func render(_ state: InformationLoadingReducer.State) {
-        //뷰 관리
-        titleLabel.text = state.text
     }
     
     private func setUpTapGesture() {
@@ -67,8 +48,7 @@ class InformationLoadingViewController: UIViewController {
                     return
                 }
                 
-                let newPage = self.store.state.page
-                self.store.dispatch(.goToNext(newPage))
+                self.store.dispatch(.goToFillInformation)
             }
             .store(in: &cancellables)
     }

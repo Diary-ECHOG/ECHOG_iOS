@@ -30,7 +30,7 @@ class InformationCoordinator: Coordinator {
 
 extension InformationCoordinator: InformationNavigation {
     func pushInformationLoadingViewController() {
-        var reducer = InformationLoadingReducer()
+        var reducer = InformationReducer(networkManager: networkManager)
         reducer.delegate = self
         
         let informationLoadingViewController = InformationLoadingViewController(reducer: reducer)
@@ -45,9 +45,12 @@ extension InformationCoordinator: InformationNavigation {
         navigationController.pushViewController(informationViewController, animated: true)
     }
     
-    func popInformationViewController() {
-        navigationController.popViewController(animated: false)
-//        children.removeLast()
+    func pushWelcomeViewController() {
+        var reducer = InformationReducer(networkManager: networkManager)
+        reducer.delegate = self
+        
+        let welcomeViewController = WelcomeViewController()
+        navigationController.pushViewController(welcomeViewController, animated: true)
     }
     
     func goToLogInViewController() {
