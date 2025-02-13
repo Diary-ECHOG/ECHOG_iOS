@@ -121,7 +121,7 @@ class VoteListViewController: UIViewController {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(100)
-            make.leading.equalToSuperview().inset(24)
+            make.leading.equalToSuperview().inset(16)
             make.height.equalTo(32)
             make.width.equalTo(90)
         }
@@ -174,8 +174,8 @@ class VoteListViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         let width = view.bounds.inset(by: view.safeAreaInsets).width
         
-        layout.itemSize = CGSize(width: width - 52, height: 100)
-        layout.sectionInset = UIEdgeInsets(top: 8, left: 18, bottom: 16, right: 18)
+        layout.itemSize = CGSize(width: width - 42, height: 100)
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 4, bottom: 16, right: 4)
         
         return layout
     }
@@ -186,7 +186,7 @@ class VoteListViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalTo(categoryButton)
             make.bottom.equalToSuperview().inset(20)
             make.top.equalTo(totalCountLabel.snp.bottom).offset(4)
         }
