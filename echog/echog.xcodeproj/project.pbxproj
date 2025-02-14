@@ -98,6 +98,7 @@
 		92E697442D5DA38C0059D3AE /* VoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697432D5DA3860059D3AE /* VoteView.swift */; };
 		92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */; };
 		92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */; };
+		92E6976D2D5F5D0C0059D3AE /* SelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6976C2D5F5D060059D3AE /* SelectionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,7 @@
 		92E697432D5DA3860059D3AE /* VoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteView.swift; sourceTree = "<group>"; };
 		92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteSelectLineView.swift; sourceTree = "<group>"; };
 		92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResultLineView.swift; sourceTree = "<group>"; };
+		92E6976C2D5F5D060059D3AE /* SelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -345,6 +347,7 @@
 		920470892C9A90AD00D547FB /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				92E6976C2D5F5D060059D3AE /* SelectionButton.swift */,
 				92DFD4CE2D545A9F008CFE95 /* SubButton.swift */,
 				92DFD4702D43D09A008CFE95 /* CellButton.swift */,
 				9204708A2C9A90C900D547FB /* MainButton.swift */,
@@ -873,6 +876,7 @@
 				920470A52C9BBC6B00D547FB /* UIImage+.swift in Sources */,
 				92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */,
 				920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */,
+				92E6976D2D5F5D0C0059D3AE /* SelectionButton.swift in Sources */,
 				92DFD3FF2D335198008CFE95 /* Coordinator.swift in Sources */,
 				920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */,
 				92E6973F2D5D8E350059D3AE /* VoteViewerViewController.swift in Sources */,
