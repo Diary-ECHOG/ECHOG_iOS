@@ -39,6 +39,18 @@ class TextFieldView: UIStackView {
     
     private var cancellables = Set<AnyCancellable>()
     
+    convenience init(placeHolder: String) {
+        self.init(frame: .zero)
+        self.axis = .vertical
+        self.spacing = 8
+        self.mainTextField.placeholder = placeHolder
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 10
+        self.backgroundColor = .white
+        
+        configureMainTextField()
+    }
+    
     convenience init(title: String, placeHolder: String, isNeedSecure: Bool) {
         self.init(frame: .zero)
         self.axis = .vertical
@@ -46,6 +58,7 @@ class TextFieldView: UIStackView {
         self.mainTextField.placeholder = placeHolder
         self.mainTextField.smartDashesType = .no
         self.titleLabel.text = title
+        self.backgroundColor = .white
         
         if isNeedSecure {
             let secureModeButton = UIButton()
@@ -62,23 +75,30 @@ class TextFieldView: UIStackView {
             
         }
         
-        configureUI()
+        configureTitleLabel()
+        configureMainTextField()
+        configureDescriptionLabel()
     }
     
-    private func configureUI() {
+    private func configureTitleLabel() {
         self.addArrangedSubview(titleLabel)
-        self.addArrangedSubview(mainTextField)
-        self.addSubview(descriptionLabel)
-        
         
         titleLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
         }
+    }
+    
+    private func configureMainTextField() {
+        self.addArrangedSubview(mainTextField)
         
         mainTextField.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(40)
+            make.height.equalTo(48)
         }
+    }
+    
+    private func configureDescriptionLabel() {
+        self.addSubview(descriptionLabel)
         
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(mainTextField.snp.bottom).offset(4)
