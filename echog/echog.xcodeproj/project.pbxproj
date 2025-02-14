@@ -98,6 +98,7 @@
 		92E697442D5DA38C0059D3AE /* VoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697432D5DA3860059D3AE /* VoteView.swift */; };
 		92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */; };
 		92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */; };
+		92E697562D5DFB3D0059D3AE /* LogInCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,7 @@
 		92E697432D5DA3860059D3AE /* VoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteView.swift; sourceTree = "<group>"; };
 		92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteSelectLineView.swift; sourceTree = "<group>"; };
 		92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResultLineView.swift; sourceTree = "<group>"; };
+		92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCompleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -596,6 +598,7 @@
 		92DFD44C2D34F180008CFE95 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -882,6 +885,7 @@
 				92365B862D073439001D4A71 /* InformationViewController.swift in Sources */,
 				92365B882D073453001D4A71 /* UITextField+.swift in Sources */,
 				92DFD44E2D3537C7008CFE95 /* DiaryViewerViewController.swift in Sources */,
+				92E697562D5DFB3D0059D3AE /* LogInCompleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
