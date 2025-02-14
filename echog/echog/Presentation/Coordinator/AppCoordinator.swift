@@ -24,7 +24,6 @@ class AppCoordinator: Coordinator {
     lazy var networkManager: NetworkManager = NetworkManager(baseURLResolver: baseURLManager)
     
     func start() {
-//        startInformationCoordinator()
         startOnBoardingCoordinator()
     }
     
@@ -49,7 +48,11 @@ class AppCoordinator: Coordinator {
     }
     
     func startLoginCoordinator() {
-        
+        let logInCoordinator = LogInCoordinator(navigationController: navigationController, networkManager: networkManager)
+        children.removeAll()
+        logInCoordinator.parentCoordinator = self
+        children.append(logInCoordinator)
+        logInCoordinator.start()
     }
     
     func startHomeCoordinator() {

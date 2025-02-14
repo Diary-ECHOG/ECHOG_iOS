@@ -24,6 +24,7 @@ class TextFieldView: UIStackView {
         text.layer.borderColor = UIColor.border.cgColor
         text.layer.borderWidth = 1
         text.textColor = .textSub
+        text.backgroundColor = .white
         text.addLeftPadding()
         
         return text
