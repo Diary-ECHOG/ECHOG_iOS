@@ -8,10 +8,10 @@
 struct RegisterDTO: Decodable {
     let statusCode: String
     let message: String
-    let data: DataClass
+    let data: RegisterDataClass
 }
 
-struct DataClass: Decodable {
+struct RegisterDataClass: Decodable {
     let createdAt: String
     let updatedAt: String
     let id: String

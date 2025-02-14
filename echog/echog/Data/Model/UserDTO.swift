@@ -8,6 +8,12 @@
 import Foundation
 
 struct UserDTO: Decodable {
+    let statusCode: String
+    let message: String
+    let data: UserDataClass
+}
+
+struct UserDataClass: Decodable {
     let email: String
     let nickname: String
     let token: String
