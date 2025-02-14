@@ -29,7 +29,7 @@ struct InformationReducer: ReducerProtocol {
         case codeCheckSuccess
         case codeCheckFailure
         case passwordCheckSuccess
-        case passworkdCheckFailure
+        case passwordCheckFailure
         case passwordFormPass(String)
         case passwordFormUnPass
         case goToNextStep
@@ -110,7 +110,7 @@ struct InformationReducer: ReducerProtocol {
                 return Just(Mutation.passwordCheckSuccess)
                     .eraseToAnyPublisher()
             } else {
-                return Just(Mutation.passworkdCheckFailure)
+                return Just(Mutation.passwordCheckFailure)
                     .eraseToAnyPublisher()
             }
         case .checkCanGoNext(isCodeCheckSuccess: let isCodeCheckSuccess, isCheckPasswordSuccess: let isCheckPasswordSuccess):
@@ -158,7 +158,7 @@ struct InformationReducer: ReducerProtocol {
             newState.isCodeCheckSuccess = .failure
         case .passwordCheckSuccess:
             newState.isPasswordCheckSuccess = .success
-        case .passworkdCheckFailure:
+        case .passwordCheckFailure:
             newState.isPasswordCheckSuccess = .failure
         case .passwordFormPass(let password):
             newState.password = password
