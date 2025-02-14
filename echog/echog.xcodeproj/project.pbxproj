@@ -98,6 +98,7 @@
 		92E697442D5DA38C0059D3AE /* VoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697432D5DA3860059D3AE /* VoteView.swift */; };
 		92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */; };
 		92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */; };
+		92E6976B2D5F23D20059D3AE /* VoteCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */; };
 		92E6976D2D5F5D0C0059D3AE /* SelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6976C2D5F5D060059D3AE /* SelectionButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -225,6 +226,7 @@
 		92E697432D5DA3860059D3AE /* VoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteView.swift; sourceTree = "<group>"; };
 		92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteSelectLineView.swift; sourceTree = "<group>"; };
 		92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResultLineView.swift; sourceTree = "<group>"; };
+		92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCreationViewController.swift; sourceTree = "<group>"; };
 		92E6976C2D5F5D060059D3AE /* SelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -547,6 +549,7 @@
 		92DFD3E62D310445008CFE95 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */,
 				92DFD44D2D3537C0008CFE95 /* DiaryViewerViewController.swift */,
 				92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */,
 			);
@@ -860,6 +863,7 @@
 				92DFD4512D354303008CFE95 /* DiaryViewerState.swift in Sources */,
 				92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */,
 				92DFD4C92D532197008CFE95 /* OnBoardingStore.swift in Sources */,
+				92E6976B2D5F23D20059D3AE /* VoteCreationViewController.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
 				92E697442D5DA38C0059D3AE /* VoteView.swift in Sources */,
 				92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */,
