@@ -98,17 +98,15 @@
 		92E697442D5DA38C0059D3AE /* VoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697432D5DA3860059D3AE /* VoteView.swift */; };
 		92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */; };
 		92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */; };
-    92E697522D5DEDBF0059D3AE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697512D5DEDB80059D3AE /* LogInViewController.swift */; };
-    92E697542D5DFA650059D3AE /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697532D5DFA5F0059D3AE /* LogInCoordinator.swift */; };
-    92E697562D5DFB3D0059D3AE /* LogInCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */; };
-    92E697582D5E03090059D3AE /* PasswordFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697572D5E02F00059D3AE /* PasswordFinderViewController.swift */; };
-    92E6975A2D5E05CE0059D3AE /* PasswordCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697592D5E05C20059D3AE /* PasswordCompleteViewController.swift */; };
-    92E6975C2D5E15140059D3AE /* LogInReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6975B2D5E150E0059D3AE /* LogInReducer.swift */; };
-    92E6975E2D5E15B80059D3AE /* LogInStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6975D2D5E15B50059D3AE /* LogInStore.swift */; };
-
-    92E6976B2D5F23D20059D3AE /* VoteCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */; };
-    92E6976D2D5F5D0C0059D3AE /* SelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6976C2D5F5D060059D3AE /* SelectionButton.swift */; };
-
+		92E697522D5DEDBF0059D3AE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697512D5DEDB80059D3AE /* LogInViewController.swift */; };
+		92E697542D5DFA650059D3AE /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697532D5DFA5F0059D3AE /* LogInCoordinator.swift */; };
+		92E697562D5DFB3D0059D3AE /* LogInCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */; };
+		92E697582D5E03090059D3AE /* PasswordFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697572D5E02F00059D3AE /* PasswordFinderViewController.swift */; };
+		92E6975A2D5E05CE0059D3AE /* PasswordCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697592D5E05C20059D3AE /* PasswordCompleteViewController.swift */; };
+		92E6975C2D5E15140059D3AE /* LogInReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6975B2D5E150E0059D3AE /* LogInReducer.swift */; };
+		92E6975E2D5E15B80059D3AE /* LogInStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6975D2D5E15B50059D3AE /* LogInStore.swift */; };
+		92E6976B2D5F23D20059D3AE /* VoteCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */; };
+		92E6976D2D5F5D0C0059D3AE /* SelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6976C2D5F5D060059D3AE /* SelectionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,17 +233,15 @@
 		92E697432D5DA3860059D3AE /* VoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteView.swift; sourceTree = "<group>"; };
 		92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteSelectLineView.swift; sourceTree = "<group>"; };
 		92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResultLineView.swift; sourceTree = "<group>"; };
-    92E697512D5DEDB80059D3AE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-    92E697532D5DFA5F0059D3AE /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
-    92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCompleteViewController.swift; sourceTree = "<group>"; };
-    92E697572D5E02F00059D3AE /* PasswordFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFinderViewController.swift; sourceTree = "<group>"; };
-    92E697592D5E05C20059D3AE /* PasswordCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCompleteViewController.swift; sourceTree = "<group>"; };
-    92E6975B2D5E150E0059D3AE /* LogInReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInReducer.swift; sourceTree = "<group>"; };
-    92E6975D2D5E15B50059D3AE /* LogInStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInStore.swift; sourceTree = "<group>"; };
-
-    92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCreationViewController.swift; sourceTree = "<group>"; };
-    92E6976C2D5F5D060059D3AE /* SelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButton.swift; sourceTree = "<group>"; };
-
+		92E697512D5DEDB80059D3AE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		92E697532D5DFA5F0059D3AE /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
+		92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCompleteViewController.swift; sourceTree = "<group>"; };
+		92E697572D5E02F00059D3AE /* PasswordFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFinderViewController.swift; sourceTree = "<group>"; };
+		92E697592D5E05C20059D3AE /* PasswordCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCompleteViewController.swift; sourceTree = "<group>"; };
+		92E6975B2D5E150E0059D3AE /* LogInReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInReducer.swift; sourceTree = "<group>"; };
+		92E6975D2D5E15B50059D3AE /* LogInStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInStore.swift; sourceTree = "<group>"; };
+		92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCreationViewController.swift; sourceTree = "<group>"; };
+		92E6976C2D5F5D060059D3AE /* SelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -384,10 +380,8 @@
 				92DFD44C2D34F180008CFE95 /* LogIn */,
 				92DFD3E62D310445008CFE95 /* Diary */,
 				92DFD4E62D5615AC008CFE95 /* Vote */,
-				92DFD3F02D3227DF008CFE95 /* Intent */,
 				92365BDF2D1D737A001D4A71 /* MyPage */,
 				9204706B2C9A6FC200D547FB /* CalendarViewController.swift */,
-				92365B9A2D0833DA001D4A71 /* HomeViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -567,9 +561,12 @@
 		92DFD3E62D310445008CFE95 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD4532D35430F008CFE95 /* DiaryViewerIntent.swift */,
+				92DFD4502D3542FE008CFE95 /* DiaryViewerState.swift */,
 				92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */,
 				92DFD44D2D3537C0008CFE95 /* DiaryViewerViewController.swift */,
 				92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */,
+				92365B9A2D0833DA001D4A71 /* HomeViewController.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -582,14 +579,6 @@
 				92DFD3EC2D321A2C008CFE95 /* OnBoardingViewController.swift */,
 			);
 			path = OnBoarding;
-			sourceTree = "<group>";
-		};
-		92DFD3F02D3227DF008CFE95 /* Intent */ = {
-			isa = PBXGroup;
-			children = (
-				92DFD44F2D3542F1008CFE95 /* DiaryViewer */,
-			);
-			path = Intent;
 			sourceTree = "<group>";
 		};
 		92DFD3F92D3276BD008CFE95 /* Information */ = {
@@ -629,15 +618,6 @@
 				92E697592D5E05C20059D3AE /* PasswordCompleteViewController.swift */,
 			);
 			path = LogIn;
-			sourceTree = "<group>";
-		};
-		92DFD44F2D3542F1008CFE95 /* DiaryViewer */ = {
-			isa = PBXGroup;
-			children = (
-				92DFD4532D35430F008CFE95 /* DiaryViewerIntent.swift */,
-				92DFD4502D3542FE008CFE95 /* DiaryViewerState.swift */,
-			);
-			path = DiaryViewer;
 			sourceTree = "<group>";
 		};
 		92DFD4AD2D51D653008CFE95 /* Builder */ = {
