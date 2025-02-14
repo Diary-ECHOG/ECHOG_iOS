@@ -99,6 +99,8 @@
 		92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */; };
 		92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */; };
 		92E697562D5DFB3D0059D3AE /* LogInCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */; };
+		92E697582D5E03090059D3AE /* PasswordFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697572D5E02F00059D3AE /* PasswordFinderViewController.swift */; };
+		92E6975A2D5E05CE0059D3AE /* PasswordCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E697592D5E05C20059D3AE /* PasswordCompleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +228,8 @@
 		92E697452D5DA8A20059D3AE /* VoteSelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteSelectLineView.swift; sourceTree = "<group>"; };
 		92E697472D5DB8AD0059D3AE /* VoteResultLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResultLineView.swift; sourceTree = "<group>"; };
 		92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCompleteViewController.swift; sourceTree = "<group>"; };
+		92E697572D5E02F00059D3AE /* PasswordFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFinderViewController.swift; sourceTree = "<group>"; };
+		92E697592D5E05C20059D3AE /* PasswordCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCompleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -599,6 +603,8 @@
 			isa = PBXGroup;
 			children = (
 				92E697552D5DFB360059D3AE /* LogInCompleteViewController.swift */,
+				92E697572D5E02F00059D3AE /* PasswordFinderViewController.swift */,
+				92E697592D5E05C20059D3AE /* PasswordCompleteViewController.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -831,6 +837,7 @@
 				920470812C9A762200D547FB /* Font.swift in Sources */,
 				92DFD4852D467E6A008CFE95 /* BottomSheetProtocol.swift in Sources */,
 				92DFD4E92D561611008CFE95 /* VoteListViewController.swift in Sources */,
+				92E697582D5E03090059D3AE /* PasswordFinderViewController.swift in Sources */,
 				92DFD4062D335A8B008CFE95 /* OnBoardingCoordinator.swift in Sources */,
 				9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */,
 				92365B872D073447001D4A71 /* TextFieldView.swift in Sources */,
@@ -856,6 +863,7 @@
 				92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */,
 				92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */,
 				92365BFF2D2EC56E001D4A71 /* MyVoteCell.swift in Sources */,
+				92E6975A2D5E05CE0059D3AE /* PasswordCompleteViewController.swift in Sources */,
 				92E697412D5D9D440059D3AE /* ChipLabel.swift in Sources */,
 				92DFD4512D354303008CFE95 /* DiaryViewerState.swift in Sources */,
 				92DFD4A22D51C11A008CFE95 /* UserEmailRequestNetworkBuilder.swift in Sources */,
