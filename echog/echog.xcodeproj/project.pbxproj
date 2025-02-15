@@ -278,7 +278,6 @@
 				92DFD4E72D5615BE008CFE95 /* Interface */,
 				920470912C9ACBA700D547FB /* Presentation */,
 				920470932C9ACBBF00D547FB /* Data */,
-				92DD8F062CEC417D001197D0 /* Infrastructure */,
 				9204707C2C9A75DD00D547FB /* Design System */,
 				920470702C9A6FC400D547FB /* Assets.xcassets */,
 				920470722C9A6FC400D547FB /* LaunchScreen.storyboard */,
@@ -423,13 +422,6 @@
 				92365BDB2D1D043A001D4A71 /* MyPageViewController.swift */,
 			);
 			path = MyPage;
-			sourceTree = "<group>";
-		};
-		92DD8F062CEC417D001197D0 /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		92DD8F482CEC9942001197D0 /* User */ = {
