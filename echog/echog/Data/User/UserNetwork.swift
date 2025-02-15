@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Network
+import NetworkModule
 
 final class UserNetwork {
     private let networkManager: NetworkManager

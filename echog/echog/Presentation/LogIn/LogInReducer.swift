@@ -7,7 +7,7 @@
 
 import Combine
 import Foundation
-import Network
+import NetworkModule
 import KeyChainModule
 
 struct LogInReducer: ReducerProtocol {

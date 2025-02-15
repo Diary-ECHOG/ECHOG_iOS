@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Network
+import NetworkModule
 
 struct UserCodeCheckNetworkBuilder: NetworkBuilderProtocol {
     typealias Response = DefalutDTO

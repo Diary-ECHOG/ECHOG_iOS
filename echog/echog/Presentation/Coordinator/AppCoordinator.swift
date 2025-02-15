@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Network
+import NetworkModule
 
 class AppCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
