@@ -7,6 +7,7 @@
 
 import Combine
 import UIKit
+import Network
 
 struct InformationReducer: ReducerProtocol {
     enum Intent {

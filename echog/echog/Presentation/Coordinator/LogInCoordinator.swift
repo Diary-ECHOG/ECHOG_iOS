@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Network
 
 protocol LogInNavigation: AnyObject {
     func pushLogInViewController()
@@ -29,7 +30,7 @@ class LogInCoordinator: Coordinator {
 
 extension LogInCoordinator: LogInNavigation {
     func pushLogInViewController() {
-        let logInViewController = LogInViewController()
+        let logInViewController = LogInViewController(reducer: LogInReducer(networkManager: networkManager))
         
         navigationController.pushViewController(logInViewController, animated: true)
     }

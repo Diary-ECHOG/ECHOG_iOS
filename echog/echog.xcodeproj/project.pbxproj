@@ -37,22 +37,9 @@
 		92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BE02D1D7387001D4A71 /* MyVoteListViewController.swift */; };
 		92365BFD2D2EBBCF001D4A71 /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BFC2D2EBBC4001D4A71 /* UnderlineSegmentedControl.swift */; };
 		92365BFF2D2EC56E001D4A71 /* MyVoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BFE2D2EC565001D4A71 /* MyVoteCell.swift */; };
-		92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F082CEC41BB001197D0 /* HTTP.swift */; };
-		92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */; };
-		92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F272CEC82FA001197D0 /* NetworkSerializable.swift */; };
-		92DD8F2A2CEC830F001197D0 /* NetworkDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F292CEC830E001197D0 /* NetworkDeserializable.swift */; };
-		92DD8F2F2CEC8365001197D0 /* JSONNetworkSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F2E2CEC8363001197D0 /* JSONNetworkSerializer.swift */; };
-		92DD8F312CEC8371001197D0 /* JSONNetworkDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F302CEC8370001197D0 /* JSONNetworkDeserializer.swift */; };
-		92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F372CEC87D1001197D0 /* NetworkError.swift */; };
-		92DD8F3A2CEC8A38001197D0 /* NetworkBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F392CEC8A36001197D0 /* NetworkBuilderProtocol.swift */; };
-		92DD8F3E2CEC93EE001197D0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F3D2CEC93E9001197D0 /* NetworkManager.swift */; };
-		92DD8F412CEC9579001197D0 /* BaseURLResolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F402CEC9577001197D0 /* BaseURLResolvable.swift */; };
-		92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */; };
-		92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F442CEC9595001197D0 /* BaseURLType.swift */; };
-		92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */; };
+		92656B7E2D6039ED00FE4337 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 92656B7D2D6039ED00FE4337 /* Network */; };
 		92DD8F4A2CEC995C001197D0 /* UserLogInNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F492CEC9952001197D0 /* UserLogInNetworkBuilder.swift */; };
 		92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F4C2CEC997F001197D0 /* UserDTO.swift */; };
-		92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F4E2CEC9B93001197D0 /* KeyChain.swift */; };
 		92DD8F512CEC9BDA001197D0 /* UserNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F502CEC9BD5001197D0 /* UserNetwork.swift */; };
 		92DD8F6D2CEDA40B001197D0 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F532CECAC43001197D0 /* MockURLProtocol.swift */; };
 		92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */; };
@@ -173,22 +160,8 @@
 		92365BFC2D2EBBC4001D4A71 /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
 		92365BFE2D2EC565001D4A71 /* MyVoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteCell.swift; sourceTree = "<group>"; };
 		923741FC2CE35EC800A7BE19 /* EchogUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EchogUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92DD8F082CEC41BB001197D0 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
-		92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPluginProtocol.swift; sourceTree = "<group>"; };
-		92DD8F272CEC82FA001197D0 /* NetworkSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSerializable.swift; sourceTree = "<group>"; };
-		92DD8F292CEC830E001197D0 /* NetworkDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializable.swift; sourceTree = "<group>"; };
-		92DD8F2E2CEC8363001197D0 /* JSONNetworkSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkSerializer.swift; sourceTree = "<group>"; };
-		92DD8F302CEC8370001197D0 /* JSONNetworkDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkDeserializer.swift; sourceTree = "<group>"; };
-		92DD8F372CEC87D1001197D0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		92DD8F392CEC8A36001197D0 /* NetworkBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBuilderProtocol.swift; sourceTree = "<group>"; };
-		92DD8F3D2CEC93E9001197D0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		92DD8F402CEC9577001197D0 /* BaseURLResolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLResolvable.swift; sourceTree = "<group>"; };
-		92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLRegistrable.swift; sourceTree = "<group>"; };
-		92DD8F442CEC9595001197D0 /* BaseURLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLType.swift; sourceTree = "<group>"; };
-		92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLManager.swift; sourceTree = "<group>"; };
 		92DD8F492CEC9952001197D0 /* UserLogInNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogInNetworkBuilder.swift; sourceTree = "<group>"; };
 		92DD8F4C2CEC997F001197D0 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
-		92DD8F4E2CEC9B93001197D0 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		92DD8F502CEC9BD5001197D0 /* UserNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
 		92DD8F532CECAC43001197D0 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		92DD8F5C2CECB2DE001197D0 /* NetworkTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92656B7E2D6039ED00FE4337 /* Network in Frameworks */,
 				92E697252D5CCED60059D3AE /* SnapKit in Frameworks */,
 				92E697202D5CCE750059D3AE /* Lottie in Frameworks */,
 			);
@@ -454,78 +428,8 @@
 		92DD8F062CEC417D001197D0 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				92DD8F4E2CEC9B93001197D0 /* KeyChain.swift */,
-				92DD8F072CEC418C001197D0 /* Network */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		92DD8F072CEC418C001197D0 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				92DD8F3D2CEC93E9001197D0 /* NetworkManager.swift */,
-				92DD8F372CEC87D1001197D0 /* NetworkError.swift */,
-				92DD8F082CEC41BB001197D0 /* HTTP.swift */,
-				92DD8F3F2CEC9566001197D0 /* BaseURL */,
-				92DD8F3C2CEC8AB6001197D0 /* Plugin */,
-				92DD8F2B2CEC8325001197D0 /* Serializer */,
-				92DD8F3B2CEC8AA0001197D0 /* Builder */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		92DD8F2B2CEC8325001197D0 /* Serializer */ = {
-			isa = PBXGroup;
-			children = (
-				92DD8F2D2CEC8356001197D0 /* Implementation */,
-				92DD8F2C2CEC8330001197D0 /* Interface */,
-			);
-			path = Serializer;
-			sourceTree = "<group>";
-		};
-		92DD8F2C2CEC8330001197D0 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				92DD8F272CEC82FA001197D0 /* NetworkSerializable.swift */,
-				92DD8F292CEC830E001197D0 /* NetworkDeserializable.swift */,
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
-		92DD8F2D2CEC8356001197D0 /* Implementation */ = {
-			isa = PBXGroup;
-			children = (
-				92DD8F2E2CEC8363001197D0 /* JSONNetworkSerializer.swift */,
-				92DD8F302CEC8370001197D0 /* JSONNetworkDeserializer.swift */,
-			);
-			path = Implementation;
-			sourceTree = "<group>";
-		};
-		92DD8F3B2CEC8AA0001197D0 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				92DD8F392CEC8A36001197D0 /* NetworkBuilderProtocol.swift */,
-			);
-			path = Builder;
-			sourceTree = "<group>";
-		};
-		92DD8F3C2CEC8AB6001197D0 /* Plugin */ = {
-			isa = PBXGroup;
-			children = (
-				92DD8F252CEC8238001197D0 /* NetworkPluginProtocol.swift */,
-			);
-			path = Plugin;
-			sourceTree = "<group>";
-		};
-		92DD8F3F2CEC9566001197D0 /* BaseURL */ = {
-			isa = PBXGroup;
-			children = (
-				92DD8F462CEC95A7001197D0 /* BaseURLManager.swift */,
-				92DD8F442CEC9595001197D0 /* BaseURLType.swift */,
-				92DD8F422CEC9586001197D0 /* BaseURLRegistrable.swift */,
-				92DD8F402CEC9577001197D0 /* BaseURLResolvable.swift */,
-			);
-			path = BaseURL;
 			sourceTree = "<group>";
 		};
 		92DD8F482CEC9942001197D0 /* User */ = {
@@ -678,6 +582,7 @@
 			packageProductDependencies = (
 				92E6971F2D5CCE750059D3AE /* Lottie */,
 				92E697242D5CCED60059D3AE /* SnapKit */,
+				92656B7D2D6039ED00FE4337 /* Network */,
 			);
 			productName = echog;
 			productReference = 920470642C9A6FC200D547FB /* echog.app */;
@@ -764,6 +669,7 @@
 			packageReferences = (
 				92E6971E2D5CCE750059D3AE /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				92E697232D5CCED60059D3AE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				92656B7C2D6039ED00FE4337 /* XCLocalSwiftPackageReference "Network" */,
 			);
 			productRefGroup = 920470652C9A6FC200D547FB /* Products */;
 			projectDirPath = "";
@@ -813,8 +719,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92365B892D073465001D4A71 /* UIControl+.swift in Sources */,
-				92DD8F312CEC8371001197D0 /* JSONNetworkDeserializer.swift in Sources */,
-				92DD8F2F2CEC8365001197D0 /* JSONNetworkSerializer.swift in Sources */,
 				92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */,
 				92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */,
 				92365BC02D1BC201001D4A71 /* DiaryCell.swift in Sources */,
@@ -823,16 +727,13 @@
 				92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */,
 				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,
 				92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */,
-				92DD8F452CEC9596001197D0 /* BaseURLType.swift in Sources */,
 				92DD8F4D2CEC9984001197D0 /* UserDTO.swift in Sources */,
 				92E697352D5CDF180059D3AE /* VoteCell.swift in Sources */,
-				92DD8F3A2CEC8A38001197D0 /* NetworkBuilderProtocol.swift in Sources */,
 				92365BA52D09B0C4001D4A71 /* DiaryDTO.swift in Sources */,
 				92DFD4C72D531D7C008CFE95 /* OnBoardingReducer.swift in Sources */,
 				92DFD4B32D522850008CFE95 /* View.swift in Sources */,
 				92DD8F4A2CEC995C001197D0 /* UserLogInNetworkBuilder.swift in Sources */,
 				92DFD4972D4CE2C7008CFE95 /* TermsViewController.swift in Sources */,
-				92DD8F432CEC9587001197D0 /* BaseURLRegistrable.swift in Sources */,
 				92365BFD2D2EBBCF001D4A71 /* UnderlineSegmentedControl.swift in Sources */,
 				92DFD4CF2D545AA5008CFE95 /* SubButton.swift in Sources */,
 				92DFD40E2D33CAE7008CFE95 /* InformationReducer.swift in Sources */,
@@ -844,10 +745,8 @@
 				92DFD4062D335A8B008CFE95 /* OnBoardingCoordinator.swift in Sources */,
 				9204706C2C9A6FC200D547FB /* CalendarViewController.swift in Sources */,
 				92365B872D073447001D4A71 /* TextFieldView.swift in Sources */,
-				92DD8F2A2CEC830F001197D0 /* NetworkDeserializable.swift in Sources */,
 				9204708B2C9A90CA00D547FB /* MainButton.swift in Sources */,
 				92DFD4B52D522925008CFE95 /* ReducerProtocol.swift in Sources */,
-				92DD8F382CEC87D5001197D0 /* NetworkError.swift in Sources */,
 				92DFD4712D43D09F008CFE95 /* CellButton.swift in Sources */,
 				92DFD3ED2D321A35008CFE95 /* OnBoardingViewController.swift in Sources */,
 				92DFD4D32D5500AF008CFE95 /* UserRegisterNetworkBuilder.swift in Sources */,
@@ -855,11 +754,9 @@
 				92365BDC2D1D0440001D4A71 /* MyPageViewController.swift in Sources */,
 				92E6972B2D5CD09A0059D3AE /* WelcomeViewController.swift in Sources */,
 				92365BDE2D1D72BC001D4A71 /* MyPage.swift in Sources */,
-				92DD8F282CEC82FC001197D0 /* NetworkSerializable.swift in Sources */,
 				92DFD4012D335256008CFE95 /* AppCoordinator.swift in Sources */,
 				920470682C9A6FC200D547FB /* AppDelegate.swift in Sources */,
 				92DFD4D12D545DDA008CFE95 /* UserCodeCheckNetworkBuilder.swift in Sources */,
-				92DD8F3E2CEC93EE001197D0 /* NetworkManager.swift in Sources */,
 				92DFD4A42D51C1A4008CFE95 /* DefalutDTO.swift in Sources */,
 				92DFD4BB2D52E14A008CFE95 /* StoreProtocol.swift in Sources */,
 				92DFD4542D354316008CFE95 /* DiaryViewerIntent.swift in Sources */,
@@ -875,20 +772,15 @@
 				92E6976B2D5F23D20059D3AE /* VoteCreationViewController.swift in Sources */,
 				920470852C9A76F700D547FB /* UIFontMetrics+.swift in Sources */,
 				92E697442D5DA38C0059D3AE /* VoteView.swift in Sources */,
-				92DD8F4F2CEC9B9A001197D0 /* KeyChain.swift in Sources */,
-				92DD8F472CEC95A8001197D0 /* BaseURLManager.swift in Sources */,
 				9204709F2C9BB5CC00D547FB /* ToastProtocol.swift in Sources */,
 				92DFD4042D335475008CFE95 /* InformationCoordinator.swift in Sources */,
 				92E697522D5DEDBF0059D3AE /* LogInViewController.swift in Sources */,
 				92DFD4662D4350DC008CFE95 /* DiaryHomeCoordinator.swift in Sources */,
 				92DFD3F82D327653008CFE95 /* InformationLoadingViewController.swift in Sources */,
 				92DFD4BD2D52E243008CFE95 /* InformationStore.swift in Sources */,
-				92DD8F262CEC8243001197D0 /* NetworkPluginProtocol.swift in Sources */,
 				92DFD3F42D323391008CFE95 /* UIGestureRecognizer+.swift in Sources */,
-				92DD8F412CEC9579001197D0 /* BaseURLResolvable.swift in Sources */,
 				92DFD4832D450C71008CFE95 /* UILabel+.swift in Sources */,
 				920470A52C9BBC6B00D547FB /* UIImage+.swift in Sources */,
-				92DD8F092CEC41C2001197D0 /* HTTP.swift in Sources */,
 				920470A92C9BC45B00D547FB /* PopUpView.swift in Sources */,
 				92E6976D2D5F5D0C0059D3AE /* SelectionButton.swift in Sources */,
 				92DFD3FF2D335198008CFE95 /* Coordinator.swift in Sources */,
@@ -1239,6 +1131,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		92656B7C2D6039ED00FE4337 /* XCLocalSwiftPackageReference "Network" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Network;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		92E6971E2D5CCE750059D3AE /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1259,6 +1158,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		92656B7D2D6039ED00FE4337 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
 		92E6971F2D5CCE750059D3AE /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 92E6971E2D5CCE750059D3AE /* XCRemoteSwiftPackageReference "lottie-ios" */;

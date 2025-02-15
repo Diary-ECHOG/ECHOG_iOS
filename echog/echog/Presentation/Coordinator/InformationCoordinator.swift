@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Network
 
 protocol InformationNavigation: AnyObject {
     func pushInformationLoadingViewController()

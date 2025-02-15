@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Network
 
 struct UserEmailRequestNetworkBuilder: NetworkBuilderProtocol {
     typealias Response = DefalutDTO
