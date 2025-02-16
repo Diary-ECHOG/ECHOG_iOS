@@ -7,7 +7,7 @@
 
 import Combine
 import Foundation
-import NetworkModule
+import NetworkFeatureKit
 import KeyChainModule
 
 struct LogInReducer: ReducerProtocol {
@@ -28,11 +28,6 @@ struct LogInReducer: ReducerProtocol {
     var initialState = State()
     
     weak var delegate: LogInCoordinator?
-    private let userNetwork: UserNetwork
-    
-    init(networkManager: NetworkManager) {
-        self.userNetwork = UserNetwork(networkManager: networkManager)
-    }
     
     func mutate(action: Intent) -> AnyPublisher<Mutation, Never>? {
         switch action {
@@ -40,7 +35,7 @@ struct LogInReducer: ReducerProtocol {
             return Future<Mutation, Never> { promise in
                 Task { @MainActor in
                     do {
-                        let user = try await userNetwork.login(email: email, password: password)
+                        let user = try await UserNetwork.shared.login(email: email, password: password)
                         //성공하면 키체인에 토큰들 저장한 후 완료 페이지로 이동
                         KeyChain.create(key: .accessToken, data: user.data.token)
                         KeyChain.create(key: .refreshToken, data: user.data.refreshToken)

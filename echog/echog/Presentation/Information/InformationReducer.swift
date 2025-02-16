@@ -7,7 +7,7 @@
 
 import Combine
 import UIKit
-import NetworkModule
+import NetworkFeatureKit
 
 struct InformationReducer: ReducerProtocol {
     enum Intent {
@@ -55,11 +55,6 @@ struct InformationReducer: ReducerProtocol {
     let initialState = State()
     
     weak var delegate: InformationCoordinator?
-    private let userNetwork: UserNetwork
-    
-    init(networkManager: NetworkManager) {
-        self.userNetwork = UserNetwork(networkManager: networkManager)
-    }
     
     func mutate(action: Intent) -> AnyPublisher<Mutation, Never>? {
         switch action {
@@ -78,7 +73,7 @@ struct InformationReducer: ReducerProtocol {
             return Future<Mutation, Never> { promise in
                 Task {
                     do {
-                        _ = try await userNetwork.emailCodeRequest(email: newEmail)
+                        _ = try await UserNetwork.shared.emailCodeRequest(email: newEmail)
                         promise(.success(.sendEmailSuccess(newEmail)))
                     } catch {
                         promise(.success(.sendEmailFailure))
@@ -90,7 +85,7 @@ struct InformationReducer: ReducerProtocol {
             return Future<Mutation, Never> { promise in
                 Task {
                     do {
-                        _ = try await userNetwork.checkCode(email: email, code: code)
+                        _ = try await UserNetwork.shared.checkCode(email: email, code: code)
                         promise(.success(.codeCheckSuccess))
                     } catch {
                         promise(.success(.codeCheckFailure))
@@ -129,7 +124,7 @@ struct InformationReducer: ReducerProtocol {
             return Future<Mutation, Never> { promise in
                 Task { @MainActor in
                     do {
-                        _ = try await userNetwork.register(email: email, password: password, agreement: true)
+                        _ = try await UserNetwork.shared.register(email: email, password: password, agreement: true)
                         promise(.success(Mutation.registerSuccess))
                         delegate?.pushWelcomeViewController()
                     } catch {

@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import NetworkModule
+import NetworkKit
+import NetworkFeatureKit
 
 class AppCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
@@ -22,10 +23,11 @@ class AppCoordinator: Coordinator {
         
         return base
     }()
-    lazy var networkManager: NetworkManager = NetworkManager(baseURLResolver: baseURLManager)
     
     func start() {
         startOnBoardingCoordinator()
+        
+        UserNetwork.shared.configureNetworkManager(baseURLManager)
     }
     
     init(navigationController: UINavigationController) {
@@ -41,7 +43,7 @@ class AppCoordinator: Coordinator {
     }
     
     func startInformationCoordinator() {
-        let informationCoordinator = InformationCoordinator(navigationController: navigationController, networkManager: networkManager)
+        let informationCoordinator = InformationCoordinator(navigationController: navigationController)
         children.removeAll()
         informationCoordinator.parentCoordinator = self
         children.append(informationCoordinator)
@@ -49,7 +51,7 @@ class AppCoordinator: Coordinator {
     }
     
     func startLoginCoordinator() {
-        let logInCoordinator = LogInCoordinator(navigationController: navigationController, networkManager: networkManager)
+        let logInCoordinator = LogInCoordinator(navigationController: navigationController)
         children.removeAll()
         logInCoordinator.parentCoordinator = self
         children.append(logInCoordinator)
@@ -60,4 +62,3 @@ class AppCoordinator: Coordinator {
         
     }
 }
-

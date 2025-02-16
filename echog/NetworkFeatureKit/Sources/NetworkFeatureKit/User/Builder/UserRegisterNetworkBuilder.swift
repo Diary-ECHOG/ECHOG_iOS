@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import NetworkModule
+import NetworkKit
 
 struct UserRegisterNetworkBuilder: NetworkBuilderProtocol {
     typealias Response = RegisterDTO
