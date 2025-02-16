@@ -1,6 +1,15 @@
 {
-  "originHash" : "dd3c8f0f2500525975f202c4be1c8a673c6655791220b2384434e18320a3cb11",
+  "originHash" : "9dbfc18162c3babd383f450107e08010d603ebe973ea19f0c7d8aa2b9e27708b",
   "pins" : [
+    {
+      "identity" : "keychainmodule",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mint3382/KeyChainModule.git",
+      "state" : {
+        "revision" : "52663ba05e35474c0fc55a0d615f2bb6339317f1",
+        "version" : "1.0.1"
+      }
+    },
     {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",

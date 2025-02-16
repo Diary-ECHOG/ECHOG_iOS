@@ -15,11 +15,9 @@ class LogInCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
-    var networkManager: NetworkManager
     
-    init(navigationController: UINavigationController, networkManager: NetworkManager) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.networkManager = networkManager
     }
     
     func start() {
@@ -29,7 +27,7 @@ class LogInCoordinator: Coordinator {
 
 extension LogInCoordinator: LogInNavigation {
     func pushLogInViewController() {
-        let logInViewController = LogInViewController()
+        let logInViewController = LogInViewController(reducer: LogInReducer())
         
         navigationController.pushViewController(logInViewController, animated: true)
     }

@@ -16,11 +16,9 @@ class InformationCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
-    var networkManager: NetworkManager
     
-    init(navigationController: UINavigationController, networkManager: NetworkManager) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.networkManager = networkManager
     }
     
     func start() {
@@ -30,7 +28,7 @@ class InformationCoordinator: Coordinator {
 
 extension InformationCoordinator: InformationNavigation {
     func pushInformationLoadingViewController() {
-        var reducer = InformationReducer(networkManager: networkManager)
+        var reducer = InformationReducer()
         reducer.delegate = self
         
         let informationLoadingViewController = InformationLoadingViewController(reducer: reducer)
@@ -38,7 +36,7 @@ extension InformationCoordinator: InformationNavigation {
     }
     
     func pushInformationViewController() {
-        var reducer = InformationReducer(networkManager: networkManager)
+        var reducer = InformationReducer()
         reducer.delegate = self
         
         let informationViewController = InformationViewController(reducer: reducer)
@@ -46,7 +44,7 @@ extension InformationCoordinator: InformationNavigation {
     }
     
     func pushWelcomeViewController() {
-        var reducer = InformationReducer(networkManager: networkManager)
+        var reducer = InformationReducer()
         reducer.delegate = self
         
         let welcomeViewController = WelcomeViewController()
