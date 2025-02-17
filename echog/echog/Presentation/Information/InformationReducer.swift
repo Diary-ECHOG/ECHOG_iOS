@@ -20,6 +20,7 @@ struct InformationReducer: ReducerProtocol {
         case checkCanGoNext(isCodeCheckSuccess: TryState, isCheckPasswordSuccess: TryState)
         case showTermPage(InformationStore)
         case goToNextPage(email: String, password: String)
+        case goToLogIn
     }
     
     enum Mutation {
@@ -132,6 +133,9 @@ struct InformationReducer: ReducerProtocol {
                     }
                 }
             }.eraseToAnyPublisher()
+        case .goToLogIn:
+            delegate?.goToLogInViewController()
+            return nil
         }
     }
     
@@ -182,7 +186,7 @@ struct InformationReducer: ReducerProtocol {
     }
     
     private func checkPasswordForm(_ text: String) -> Bool {
-        let pattern = "^[a-zA-Z0-9]{0,8}$"
+        let pattern = "^[a-zA-Z0-9]{8,15}$"
         let predicate = NSPredicate(format:"SELF MATCHES %@", pattern)
         return predicate.evaluate(with: text)
     }

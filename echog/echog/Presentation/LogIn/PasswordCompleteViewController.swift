@@ -5,11 +5,15 @@
 //  Created by minsong kim on 2/13/25.
 //
 
+import Combine
 import UIKit
 import SnapKit
 import Lottie
 
-final class PasswordCompleteViewController: UIViewController {
+final class PasswordCompleteViewController: UIViewController, View {
+    var store: LogInStore
+    private var cancellables = Set<AnyCancellable>()
+    
     private let checkAnimationView: LottieAnimationView = {
         let view = LottieAnimationView(name: "join_check")
         
@@ -35,12 +39,30 @@ final class PasswordCompleteViewController: UIViewController {
     
     private let logInButton = MainButton(title: "로그인")
     
+    required init(reducer: LogInReducer) {
+        self.store = LogInStore(reducer: reducer)
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
-        view.backgroundColor = .white
         configureUI()
         checkAnimationView.play()
+    }
+    
+    private func bind() {
+        logInButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToLogInPage)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureUI() {
@@ -66,8 +88,8 @@ final class PasswordCompleteViewController: UIViewController {
     }
 }
 
-#Preview {
-    let vc = PasswordCompleteViewController()
-    
-    return vc
-}
+//#Preview {
+//    let vc = PasswordCompleteViewController()
+//    
+//    return vc
+//}

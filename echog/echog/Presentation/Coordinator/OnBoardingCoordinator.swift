@@ -8,7 +8,7 @@
 import UIKit
 
 protocol OnBoardingNavigation: AnyObject {
-    func goToInformationViewController()
+    func goToLogInViewController()
 }
 
 class OnBoardingCoordinator: Coordinator {
@@ -34,9 +34,9 @@ extension OnBoardingCoordinator: OnBoardingNavigation {
         navigationController.pushViewController(onBoardingViewController, animated: false)
     }
     
-    func goToInformationViewController() {
+    func goToLogInViewController() {
         let appCoordinator = parentCoordinator as? AppCoordinator
-        appCoordinator?.startInformationCoordinator()
+        appCoordinator?.startLoginCoordinator()
         appCoordinator?.childDidFinish(self)
     }
 }

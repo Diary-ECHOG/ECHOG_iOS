@@ -9,7 +9,9 @@ import Combine
 import UIKit
 import SnapKit
 
-final class LogInViewController: UIViewController, View, UITextFieldDelegate {
+final class LogInViewController: UIViewController, View, UITextFieldDelegate, ToastProtocol {
+    var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
+    
     var store: LogInStore
     private var cancellables = Set<AnyCancellable>()
     
@@ -70,6 +72,7 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         
         emailTextField.mainTextField.delegate = self
         passwordTextField.mainTextField.delegate = self
@@ -79,6 +82,9 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
         configureButtons()
         configureLogInButton()
         registerForKeyboardNotifications()
+        
+        setUpBind()
+        bind()
     }
     
     deinit {
@@ -111,7 +117,7 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
     
     private func render(_ state: LogInReducer.State) {
         if state.isLogInSuccess == .failure {
-            //팝업 띄우기
+            self.showToast(icon: .colorXmark, message: "로그인에 실패했어요.")
         }
     }
     
@@ -126,6 +132,18 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
                 let password = passwordTextField.mainTextField.text ?? ""
                 
                 store.dispatch(.goToLogIn(email: email, password: password))
+            }
+            .store(in: &cancellables)
+        
+        findPasswordButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToFindPassword)
+            }
+            .store(in: &cancellables)
+        
+        signInButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToSignIn)
             }
             .store(in: &cancellables)
     }

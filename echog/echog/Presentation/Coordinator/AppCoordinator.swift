@@ -58,6 +58,14 @@ class AppCoordinator: Coordinator {
         logInCoordinator.start()
     }
     
+    func startPasswordCoordinator() {
+        let passwordCoordinator = PasswordCoordinator(navigationController: navigationController)
+        children.removeAll()
+        passwordCoordinator.parentCoordinator = self
+        children.append(passwordCoordinator)
+        passwordCoordinator.start()
+    }
+    
     func startHomeCoordinator() {
         
     }

@@ -27,32 +27,38 @@ class LogInCoordinator: Coordinator {
 
 extension LogInCoordinator: LogInNavigation {
     func pushLogInViewController() {
-        let logInViewController = LogInViewController(reducer: LogInReducer())
+        var reducer = LogInReducer()
+        reducer.delegate = self
+        
+        let logInViewController = LogInViewController(reducer: reducer)
         
         navigationController.pushViewController(logInViewController, animated: true)
     }
     
     func pushLogInCompleteViewController() {
-        let logInCompleteViewController = LogInCompleteViewController()
+        var reducer = LogInReducer()
+        reducer.delegate = self
+        
+        let logInCompleteViewController = LogInCompleteViewController(reducer: reducer)
         
         navigationController.pushViewController(logInCompleteViewController, animated: true)
     }
     
-    func pushPasswordFinderViewController() {
-        let passwordFinderViewController = PasswordFinderViewController()
-        
-        navigationController.pushViewController(passwordFinderViewController, animated: true)
-    }
-    
-    func pushPasswordCompleteViewController() {
-        let passwordCompleteViewController = PasswordCompleteViewController()
-        
-        navigationController.pushViewController(passwordCompleteViewController, animated: true)
+    func goToPasswordViewController() {
+        let appCoordinator = parentCoordinator as? AppCoordinator
+        appCoordinator?.startPasswordCoordinator()
+        appCoordinator?.childDidFinish(self)
     }
     
     func goToSignInViewController() {
         let appCoordinator = parentCoordinator as? AppCoordinator
         appCoordinator?.startInformationCoordinator()
+        appCoordinator?.childDidFinish(self)
+    }
+    
+    func goToDiaryHomeViewController() {
+        let appCoordinator = parentCoordinator as? AppCoordinator
+        appCoordinator?.startHomeCoordinator()
         appCoordinator?.childDidFinish(self)
     }
 }

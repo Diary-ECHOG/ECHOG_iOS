@@ -37,7 +37,7 @@ struct OnBoardingReducer: ReducerProtocol {
             return Just(Mutation(rawValue: page + 1) ?? .secret)
                 .eraseToAnyPublisher()
         case .goToStart:
-            delegate?.goToInformationViewController()
+            delegate?.goToLogInViewController()
             return nil
         }
     }

@@ -236,13 +236,13 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
         
         emailSendButton.snp.makeConstraints { make in
             make.width.equalTo(70)
-            make.height.equalTo(40)
+            make.height.equalTo(48)
             make.bottom.equalTo(emailTextField.snp.bottom)
         }
         
         codeCheckButton.snp.makeConstraints { make in
             make.width.equalTo(70)
-            make.height.equalTo(40)
+            make.height.equalTo(48)
             make.bottom.equalTo(codeTextField.snp.bottom)
         }
         

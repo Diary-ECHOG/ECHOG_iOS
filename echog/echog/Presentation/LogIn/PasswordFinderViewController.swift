@@ -37,6 +37,7 @@ final class PasswordFinderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         configureButton()
         configureLabels()

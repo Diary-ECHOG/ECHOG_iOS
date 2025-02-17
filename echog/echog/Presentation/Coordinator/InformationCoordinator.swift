@@ -47,7 +47,7 @@ extension InformationCoordinator: InformationNavigation {
         var reducer = InformationReducer()
         reducer.delegate = self
         
-        let welcomeViewController = WelcomeViewController()
+        let welcomeViewController = WelcomeViewController(reducer: reducer)
         navigationController.pushViewController(welcomeViewController, animated: true)
     }
     

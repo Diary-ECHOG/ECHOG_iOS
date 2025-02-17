@@ -15,6 +15,8 @@ struct LogInReducer: ReducerProtocol {
         case goToLogIn(email: String, password: String)
         case goToFindPassword
         case goToSignIn
+        case goToDiaryHome
+        case goToLogInPage
     }
     
     enum Mutation {
@@ -27,7 +29,7 @@ struct LogInReducer: ReducerProtocol {
     
     var initialState = State()
     
-    weak var delegate: LogInCoordinator?
+    weak var delegate: Coordinator?
     
     func mutate(action: Intent) -> AnyPublisher<Mutation, Never>? {
         switch action {
@@ -39,7 +41,7 @@ struct LogInReducer: ReducerProtocol {
                         //성공하면 키체인에 토큰들 저장한 후 완료 페이지로 이동
                         KeyChain.create(key: .accessToken, data: user.data.token)
                         KeyChain.create(key: .refreshToken, data: user.data.refreshToken)
-                        delegate?.pushLogInCompleteViewController()
+                        (delegate as? LogInCoordinator)?.pushLogInCompleteViewController()
                     } catch {
                         promise(.success(.logInFailure))
                     }
@@ -47,10 +49,16 @@ struct LogInReducer: ReducerProtocol {
             }
             .eraseToAnyPublisher()
         case .goToFindPassword:
-            delegate?.pushPasswordFinderViewController()
+            (delegate as? LogInCoordinator)?.goToPasswordViewController()
             return nil
         case .goToSignIn:
-            delegate?.goToSignInViewController()
+            (delegate as? LogInCoordinator)?.goToSignInViewController()
+            return nil
+        case .goToDiaryHome:
+            (delegate as? LogInCoordinator)?.goToDiaryHomeViewController()
+            return nil
+        case .goToLogInPage:
+            (delegate as? PasswordCoordinator)?.goToLogInViewController()
             return nil
         }
     }
