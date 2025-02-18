@@ -24,8 +24,8 @@ public final class DiaryNetwork: @unchecked Sendable {
         return try await networkManager.fetchData(builder)
     }
     
-    public func writeDiary(id: UUID, title: String, content: String) async throws -> DiaryDTO {
-        let builder = DiaryWriteNetworkBuilder(parameters: ["id": id, "title": title, "content": content])
+    public func writeDiary(title: String, content: String) async throws -> DiaryDTO {
+        let builder = DiaryWriteNetworkBuilder(parameters: ["title": title, "content": content])
         return try await networkManager.fetchData(builder)
     }
     
