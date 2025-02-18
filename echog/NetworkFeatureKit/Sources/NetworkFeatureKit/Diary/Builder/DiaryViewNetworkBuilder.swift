@@ -21,6 +21,6 @@ struct DiaryViewNetworkBuilder: NetworkBuilderProtocol {
     var useAuthorization: Bool { true }
     
     init(page: Int, size: Int) {
-        self.queries = [URLQueryItem(name: "page", value: "\(page)")]
+        self.queries = [URLQueryItem(name: "page", value: "\(page)"), URLQueryItem(name: "size", value: "\(size)")]
     }
 }

@@ -14,7 +14,7 @@ struct DiaryDeleteNetworkBuilder: NetworkBuilderProtocol {
     var baseURL: BaseURLType { .api }
     var path: String = "/api/diary/delete/"
     var queries: [URLQueryItem]? = nil
-    var method: HTTPMethod { .post }
+    var method: HTTPMethod { .delete }
     let parameters: [String: Any] = [:]
     let deserializer: NetworkDeserializable = JSONNetworkDeserializer(decoder: JSONDecoder())
 
