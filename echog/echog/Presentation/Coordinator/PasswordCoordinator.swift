@@ -34,10 +34,12 @@ extension PasswordCoordinator: PasswordNavigation {
     }
     
     func pushPasswordCompleteViewController() {
+        //MARK: - reducer 위치 수정 필요
         var reducer = LogInReducer()
         reducer.delegate = self
+        let store = LogInStore(reducer: reducer)
         
-        let passwordCompleteViewController = PasswordCompleteViewController(reducer: reducer)
+        let passwordCompleteViewController = PasswordCompleteViewController(store: store)
         
         navigationController.pushViewController(passwordCompleteViewController, animated: true)
     }

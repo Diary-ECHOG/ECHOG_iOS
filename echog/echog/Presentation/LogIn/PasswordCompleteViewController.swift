@@ -39,8 +39,8 @@ final class PasswordCompleteViewController: UIViewController, View {
     
     private let logInButton = MainButton(title: "로그인")
     
-    required init(reducer: LogInReducer) {
-        self.store = LogInStore(reducer: reducer)
+    required init(store: LogInStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }

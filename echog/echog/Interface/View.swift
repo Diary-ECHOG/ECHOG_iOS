@@ -7,8 +7,7 @@
 
 protocol View: AnyObject {
     associatedtype Store: StoreProtocol
-    associatedtype Reducer: ReducerProtocol
     
     var store: Store { get set }
-    init(reducer: Reducer)
+    init(store: Store)
 }

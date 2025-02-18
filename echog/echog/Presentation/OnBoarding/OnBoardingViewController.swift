@@ -13,8 +13,8 @@ class OnBoardingViewController: UIViewController, View {
     var store: OnBoardingStore
     private var cancellables = Set<AnyCancellable>()
     
-    required init(reducer: OnBoardingReducer) {
-        self.store = OnBoardingStore(reducer: reducer)
+    required init(store: OnBoardingStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,7 +41,7 @@ class OnBoardingViewController: UIViewController, View {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         configureBackgoundView()
         configureView()

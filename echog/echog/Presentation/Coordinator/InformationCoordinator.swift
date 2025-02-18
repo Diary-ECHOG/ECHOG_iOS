@@ -16,9 +16,12 @@ class InformationCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
+    private var reducer = InformationReducer()
+    private lazy var store = InformationStore(reducer: reducer)
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        reducer.delegate = self
     }
     
     func start() {
@@ -28,26 +31,17 @@ class InformationCoordinator: Coordinator {
 
 extension InformationCoordinator: InformationNavigation {
     func pushInformationLoadingViewController() {
-        var reducer = InformationReducer()
-        reducer.delegate = self
-        
-        let informationLoadingViewController = InformationLoadingViewController(reducer: reducer)
+        let informationLoadingViewController = InformationLoadingViewController(store: store)
         navigationController.pushViewController(informationLoadingViewController, animated: true)
     }
     
     func pushInformationViewController() {
-        var reducer = InformationReducer()
-        reducer.delegate = self
-        
-        let informationViewController = InformationViewController(reducer: reducer)
+        let informationViewController = InformationViewController(store: store)
         navigationController.pushViewController(informationViewController, animated: true)
     }
     
     func pushWelcomeViewController() {
-        var reducer = InformationReducer()
-        reducer.delegate = self
-        
-        let welcomeViewController = WelcomeViewController(reducer: reducer)
+        let welcomeViewController = WelcomeViewController(store: store)
         navigationController.pushViewController(welcomeViewController, animated: true)
     }
     

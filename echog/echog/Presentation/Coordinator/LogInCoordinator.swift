@@ -15,9 +15,12 @@ class LogInCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
+    private var reducer = LogInReducer()
+    private lazy var store = LogInStore(reducer: reducer)
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        reducer.delegate = self
     }
     
     func start() {
@@ -27,19 +30,13 @@ class LogInCoordinator: Coordinator {
 
 extension LogInCoordinator: LogInNavigation {
     func pushLogInViewController() {
-        var reducer = LogInReducer()
-        reducer.delegate = self
-        
-        let logInViewController = LogInViewController(reducer: reducer)
+        let logInViewController = LogInViewController(store: store)
         
         navigationController.pushViewController(logInViewController, animated: true)
     }
     
     func pushLogInCompleteViewController() {
-        var reducer = LogInReducer()
-        reducer.delegate = self
-        
-        let logInCompleteViewController = LogInCompleteViewController(reducer: reducer)
+        let logInCompleteViewController = LogInCompleteViewController(store: store)
         
         navigationController.pushViewController(logInCompleteViewController, animated: true)
     }
@@ -58,7 +55,7 @@ extension LogInCoordinator: LogInNavigation {
     
     func goToDiaryHomeViewController() {
         let appCoordinator = parentCoordinator as? AppCoordinator
-        appCoordinator?.startHomeCoordinator()
+        appCoordinator?.startDiaryCoordinator()
         appCoordinator?.childDidFinish(self)
     }
 }

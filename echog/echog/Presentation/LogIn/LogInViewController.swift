@@ -9,7 +9,7 @@ import Combine
 import UIKit
 import SnapKit
 
-final class LogInViewController: UIViewController, View, UITextFieldDelegate, ToastProtocol {
+final class LogInViewController: UIViewController, View, ToastProtocol {
     var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
     
     var store: LogInStore
@@ -60,8 +60,8 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate, To
     
     private var activeTextField: UITextField?
     
-    required init(reducer: LogInReducer) {
-        self.store = LogInStore(reducer: reducer)
+    required init(store: LogInStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -72,7 +72,7 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate, To
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         emailTextField.mainTextField.delegate = self
         passwordTextField.mainTextField.delegate = self
@@ -215,14 +215,6 @@ extension LogInViewController {
         
         let keyboardFrame = keyboardFrameValue.cgRectValue
         
-        //logInButton
-        logInButton.layer.cornerRadius = 0
-        logInButton.snp.remakeConstraints { make in
-            make.bottom.equalTo(self.view.keyboardLayoutGuide.snp.top)
-            make.height.equalTo(50)
-            make.width.equalTo(self.view.frame.width)
-        }
-        
         // activeField의 frame을 현재 뷰의 좌표계로 변환
         let fieldFrameInView = activeField.convert(activeField.bounds, to: self.view)
         let keyboardTopY = self.view.frame.height - keyboardFrame.height
@@ -240,12 +232,26 @@ extension LogInViewController {
         UIView.animate(withDuration: 0.3) {
             self.view.frame.origin.y = 0
         }
-        
-        logInButton.layer.cornerRadius = 10
-        logInButton.snp.remakeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalTo(self.view.keyboardLayoutGuide.snp.top)
-            make.height.equalTo(50)
+    }
+}
+
+extension LogInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField.mainTextField {
+            emailTextField.mainTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == activeTextField {
+            activeTextField = nil
         }
     }
 }

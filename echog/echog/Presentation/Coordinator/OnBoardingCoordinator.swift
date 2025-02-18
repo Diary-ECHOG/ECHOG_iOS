@@ -15,9 +15,12 @@ class OnBoardingCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
+    private var reducer = OnBoardingReducer()
+    private lazy var store = OnBoardingStore(reducer: reducer)
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        reducer.delegate = self
     }
     
     func start() {
@@ -27,10 +30,7 @@ class OnBoardingCoordinator: Coordinator {
 
 extension OnBoardingCoordinator: OnBoardingNavigation {
     func goToOnBoardingViewController() {
-        var reducer = OnBoardingReducer()
-        reducer.delegate = self
-        
-        let onBoardingViewController = OnBoardingViewController(reducer: reducer)
+        let onBoardingViewController = OnBoardingViewController(store: store)
         navigationController.pushViewController(onBoardingViewController, animated: false)
     }
     

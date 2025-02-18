@@ -22,8 +22,8 @@ class LogInCompleteViewController: UIViewController, View {
         return label
     }()
     
-    required init(reducer: LogInReducer) {
-        self.store = LogInStore(reducer: reducer)
+    required init(store: LogInStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }

@@ -23,8 +23,8 @@ class InformationLoadingViewController: UIViewController {
         return label
     }()
     
-    required init(reducer: InformationReducer) {
-        self.store = InformationStore(reducer: reducer)
+    required init(store: InformationStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,7 +35,7 @@ class InformationLoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         configureTitleLabel()
         setUpTapGesture()

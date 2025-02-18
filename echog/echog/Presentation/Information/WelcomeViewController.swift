@@ -9,7 +9,7 @@ import Combine
 import UIKit
 import Lottie
 
-final class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController, View {
     var store: InformationStore
     private var cancellables = Set<AnyCancellable>()
     
@@ -25,8 +25,8 @@ final class WelcomeViewController: UIViewController {
         return label
     }()
     
-    required init(reducer: InformationReducer) {
-        self.store = InformationStore(reducer: reducer)
+    required init(store: InformationStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,7 +38,7 @@ final class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemBackground
         self.view.addSubview(animationView)
         configureTitleLabel()
         
