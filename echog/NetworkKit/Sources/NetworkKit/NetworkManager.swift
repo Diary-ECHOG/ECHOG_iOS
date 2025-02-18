@@ -58,7 +58,11 @@ public class NetworkManager {
         }
         
         request.httpMethod = builder.method.typeName
-        request.httpBody = try await builder.serializer.serialize(builder.parameters)
+        
+        if builder.method != .get {
+            request.httpBody = try await builder.serializer.serialize(builder.parameters)
+        }
+        
         return request
     }
 }
