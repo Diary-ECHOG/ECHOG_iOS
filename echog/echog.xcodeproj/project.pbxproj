@@ -30,7 +30,7 @@
 		92365B872D073447001D4A71 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365B592D05DEC3001D4A71 /* TextFieldView.swift */; };
 		92365B882D073453001D4A71 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365B5D2D06A12B001D4A71 /* UITextField+.swift */; };
 		92365B892D073465001D4A71 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365B5B2D06A066001D4A71 /* UIControl+.swift */; };
-		92365B9B2D0833DA001D4A71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365B9A2D0833DA001D4A71 /* HomeViewController.swift */; };
+		92365B9B2D0833DA001D4A71 /* DiaryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365B9A2D0833DA001D4A71 /* DiaryHomeViewController.swift */; };
 		92365BC02D1BC201001D4A71 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BBF2D1BC1FB001D4A71 /* DiaryCell.swift */; };
 		92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BC12D1C16A0001D4A71 /* HeaderView.swift */; };
 		92365BDC2D1D0440001D4A71 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92365BDB2D1D043A001D4A71 /* MyPageViewController.swift */; };
@@ -143,7 +143,7 @@
 		92365B592D05DEC3001D4A71 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		92365B5B2D06A066001D4A71 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
 		92365B5D2D06A12B001D4A71 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		92365B9A2D0833DA001D4A71 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		92365B9A2D0833DA001D4A71 /* DiaryHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryHomeViewController.swift; sourceTree = "<group>"; };
 		92365BBF2D1BC1FB001D4A71 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		92365BC12D1C16A0001D4A71 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		92365BDB2D1D043A001D4A71 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -443,10 +443,10 @@
 			children = (
 				92656BF42D62C7EB00FE4337 /* DiaryStore.swift */,
 				92656BF22D62C7DD00FE4337 /* DiaryReducer.swift */,
+				92365B9A2D0833DA001D4A71 /* DiaryHomeViewController.swift */,
 				92E6976A2D5F23CA0059D3AE /* VoteCreationViewController.swift */,
 				92DFD44D2D3537C0008CFE95 /* DiaryViewerViewController.swift */,
 				92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */,
-				92365B9A2D0833DA001D4A71 /* HomeViewController.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -688,7 +688,7 @@
 				92E697482D5DB8B40059D3AE /* VoteResultLineView.swift in Sources */,
 				92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */,
 				92365BC02D1BC201001D4A71 /* DiaryCell.swift in Sources */,
-				92365B9B2D0833DA001D4A71 /* HomeViewController.swift in Sources */,
+				92365B9B2D0833DA001D4A71 /* DiaryHomeViewController.swift in Sources */,
 				92E697332D5CDA7C0059D3AE /* VoteDTO.swift in Sources */,
 				92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */,
 				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,

@@ -28,6 +28,7 @@ class AppCoordinator: Coordinator {
         startOnBoardingCoordinator()
         
         UserNetwork.shared.configureNetworkManager(baseURLManager)
+        DiaryNetwork.shared.configureNetworkManager(baseURLManager)
     }
     
     init(navigationController: UINavigationController) {
@@ -66,7 +67,19 @@ class AppCoordinator: Coordinator {
         passwordCoordinator.start()
     }
     
-    func startHomeCoordinator() {
+    func startDiaryCoordinator() {
+        let diaryCoordinator = DiaryCoordinator(navigationController: navigationController)
+        children.removeAll()
+        diaryCoordinator.parentCoordinator = self
+        children.append(diaryCoordinator)
+        diaryCoordinator.start()
+    }
+    
+    func startVoteCoordinator() {
+        
+    }
+    
+    func startMyPageCoordinator() {
         
     }
 }
