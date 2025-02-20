@@ -1,22 +1,22 @@
 //
-//  UserLogInNetworkBuilder.swift
-//  echog
+//  DiaryWriteNetworkBuilder.swift
+//  NetworkFeatureKit
 //
-//  Created by minsong kim on 11/19/24.
+//  Created by minsong kim on 2/17/25.
 //
 
 import Foundation
 import NetworkKit
 
-struct UserLogInNetworkBuilder: NetworkBuilderProtocol {
-    typealias Response = UserDTO
+struct DiaryWriteNetworkBuilder: NetworkBuilderProtocol {
+    typealias Response = DiaryDTO
     
     var baseURL: BaseURLType { .api }
-    var path: String { "/api/users/login" }
+    var path: String { "/api/diary/write" }
     var queries: [URLQueryItem]? = nil
     var method: HTTPMethod { .post }
     let parameters: [String: Any]
     let deserializer: NetworkDeserializable = JSONNetworkDeserializer(decoder: JSONDecoder())
 
-    var useAuthorization: Bool { false }
+    var useAuthorization: Bool { true }
 }

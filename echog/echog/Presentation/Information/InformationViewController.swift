@@ -65,8 +65,8 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
     
     private var activeTextField: UITextField?
     
-    required init(reducer: InformationReducer) {
-        self.store = InformationStore(reducer: reducer)
+    required init(store: InformationStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -77,7 +77,7 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         emailTextField.mainTextField.delegate = self
         codeTextField.mainTextField.delegate = self
@@ -236,13 +236,13 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
         
         emailSendButton.snp.makeConstraints { make in
             make.width.equalTo(70)
-            make.height.equalTo(40)
+            make.height.equalTo(48)
             make.bottom.equalTo(emailTextField.snp.bottom)
         }
         
         codeCheckButton.snp.makeConstraints { make in
             make.width.equalTo(70)
-            make.height.equalTo(40)
+            make.height.equalTo(48)
             make.bottom.equalTo(codeTextField.snp.bottom)
         }
         
@@ -258,7 +258,7 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
         
         nextButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-20)
             make.height.equalTo(50)
         }
     }
@@ -268,14 +268,6 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
               let activeField = activeTextField else { return }
         
         let keyboardFrame = keyboardFrameValue.cgRectValue
-        
-        //nextButton
-        nextButton.layer.cornerRadius = 0
-        nextButton.snp.remakeConstraints { make in
-            make.bottom.equalTo(self.view.keyboardLayoutGuide.snp.top)
-            make.height.equalTo(50)
-            make.width.equalTo(self.view.frame.width)
-        }
         
         // activeField의 frame을 현재 뷰의 좌표계로 변환
         let fieldFrameInView = activeField.convert(activeField.bounds, to: self.view)
@@ -293,13 +285,6 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
     @objc private func keyboardWillHide(_ notification: Notification) {
         UIView.animate(withDuration: 0.3) {
             self.view.frame.origin.y = 0
-        }
-        
-        nextButton.layer.cornerRadius = 10
-        nextButton.snp.remakeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalTo(self.view.keyboardLayoutGuide.snp.top)
-            make.height.equalTo(50)
         }
     }
 }

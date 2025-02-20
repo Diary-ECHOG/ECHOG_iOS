@@ -1,0 +1,15 @@
+{
+  "originHash" : "4c3fab1f3936a83ba6706f24084228637619e1caa40061e2569fb808f5b9b198",
+  "pins" : [
+    {
+      "identity" : "keychainmodule",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mint3382/KeyChainModule.git",
+      "state" : {
+        "revision" : "52663ba05e35474c0fc55a0d615f2bb6339317f1",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}

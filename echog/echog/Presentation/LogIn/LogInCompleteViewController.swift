@@ -5,10 +5,14 @@
 //  Created by minsong kim on 2/13/25.
 //
 
+import Combine
 import UIKit
 import SnapKit
 
-class LogInCompleteViewController: UIViewController {
+class LogInCompleteViewController: UIViewController, View {
+    var store: LogInStore
+    private var cancellables = Set<AnyCancellable>()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -18,11 +22,36 @@ class LogInCompleteViewController: UIViewController {
         return label
     }()
     
+    required init(store: LogInStore) {
+        self.store = store
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         configureBackgoundView()
         configureTitleLabel()
+        
+        setUpTapGesture()
+    }
+    
+    private func setUpTapGesture() {
+        view.throttleTapGesturePublisher()
+            .sink { [weak self] _ in
+                guard let self else {
+                    return
+                }
+                
+                self.store.dispatch(.goToDiaryHome)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureBackgoundView() {
@@ -44,8 +73,8 @@ class LogInCompleteViewController: UIViewController {
     }
 }
 
-#Preview {
-    let vc = LogInCompleteViewController()
-    
-    return vc
-}
+//#Preview {
+//    let vc = LogInCompleteViewController()
+//    
+//    return vc
+//}

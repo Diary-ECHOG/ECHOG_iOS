@@ -5,10 +5,16 @@
 //  Created by minsong kim on 1/10/25.
 //
 
+import Combine
 import UIKit
 import SnapKit
 
-class DiaryEditorViewController: UIViewController {
+class DiaryEditorViewController: UIViewController, View, ToastProtocol {
+    var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
+    
+    var store: DiaryStore
+    private var cancellables = Set<AnyCancellable>()
+    
     private let cancelButton: UIButton = {
         let button = UIButton()
         button.setTitle("취소", for: .normal)
@@ -34,7 +40,12 @@ class DiaryEditorViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .mediumTitle15
-        label.text = "01월 11일 토요일"
+        
+        var formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "MM월 dd일 EEEE"
+        
+        label.text = formatter.string(from: Date())
         
         return label
     }()
@@ -94,13 +105,79 @@ class DiaryEditorViewController: UIViewController {
         return button
     }()
     
+    required init(store: DiaryStore) {
+        self.store = store
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
+        view.backgroundColor = .systemBackground
         
         configureTitleBar()
         configureTextField()
         configureBottomBar()
+        
+        setUpBind()
+        bind()
+    }
+    
+    private func setUpBind() {
+        store.$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newState in
+                self?.render(newState)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func render(_ state: DiaryReducer.State) {
+        if state.isNewDiaryUploadSuccess == .success {
+            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
+        } else if state.isNewDiaryUploadSuccess == .failure {
+            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
+        }
+        
+        if state.isDiaryUpdated == .success {
+            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
+        } else if state.isDiaryUpdated == .failure {
+            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
+        }
+        
+        if let diary = state.diary {
+            self.titleTextField.text = diary.title
+            self.contentsTextField.text = diary.content
+            self.titleLabel.text = diary.formattedDate
+        }
+    }
+    
+    private func bind() {
+        cancelButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.popPage)
+            }
+            .store(in: &cancellables)
+        
+        uploadButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                guard let self else {
+                    return
+                }
+                let title = self.titleTextField.text ?? ""
+                let content = self.contentsTextField.text ?? ""
+                
+                if let diary = store.state.diary {
+                    store.dispatch(.updateDiary(id: diary.id, title: title, content: content))
+                } else {
+                    store.dispatch(.createNewDiary(title: title, content: content))
+                }
+            }
+            .store(in: &cancellables)
     }
     
     private func configureTitleBar() {
@@ -165,8 +242,8 @@ class DiaryEditorViewController: UIViewController {
     }
 }
 
-#Preview {
-    let vc = DiaryEditorViewController()
-    
-    return vc
-}
+//#Preview {
+//    let vc = DiaryEditorViewController()
+//    
+//    return vc
+//}

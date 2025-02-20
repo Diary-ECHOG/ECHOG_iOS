@@ -30,12 +30,12 @@ public final class UserNetwork: @unchecked Sendable {
     }
     
     public func register(email: String, password: String, agreement: Bool) async throws -> RegisterDTO {
-        let builder = UserRegisterNetworkBuilder(parameters: ["nickname": "", "email": email, "passworkd": password, "agreement": agreement, "anonymous": true])
+        let builder = UserRegisterNetworkBuilder(parameters: ["nickname": "익명", "email": email, "password": password, "agreement": agreement, "anonymous": true])
         return try await networkManager.fetchData(builder)
     }
 
     public func login(email: String, password: String) async throws -> UserDTO {
-        let builder = UserLogInNetworkBuilder(loginId: email, password: password)
+        let builder = UserLogInNetworkBuilder(parameters: ["loginId": email, "password": password])
         return try await networkManager.fetchData(builder)
     }
 }

@@ -31,7 +31,7 @@ class PopUpView: UIView {
         return view
     }()
     
-    private let leftButton: UIButton = {
+    let leftButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .mediumTitle15
         button.setTitleColor(.slate700, for: .normal)
@@ -39,7 +39,7 @@ class PopUpView: UIView {
         return button
     }()
  
-    private let rightButton: UIButton = {
+    let rightButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .mediumTitle15
         button.setTitleColor(.red500, for: .normal)

@@ -10,7 +10,6 @@ import UIKit
 
 protocol PopUpProtocol where Self: UIViewController {
     var window: UIWindow? { get set }
-//    var popUpView: PopUpView { get set }
 }
 
 extension PopUpProtocol {

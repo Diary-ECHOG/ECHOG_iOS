@@ -5,11 +5,15 @@
 //  Created by minsong kim on 1/13/25.
 //
 
+import Combine
 import UIKit
 import SnapKit
 
-class DiaryViewerViewController: UIViewController, PopUpProtocol {
+class DiaryViewerViewController: UIViewController, PopUpProtocol, ToastProtocol {
     var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
+    
+    var store: DiaryStore
+    private var cancellables = Set<AnyCancellable>()
     
     private let backButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
@@ -32,7 +36,7 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol {
         
         button.menu = UIMenu(children: [
             (UIAction(title: "수정하기", image: UIImage(resource: .pencil)) { _ in
-                print("수정하기")
+                self.store.dispatch(.goToEditDiary)
             }),
             (UIAction(title: "삭제하기", image: UIImage(resource: .delete), attributes: .destructive) { _ in
                 self.showPopUp(view: self.deletePopUp)
@@ -76,10 +80,8 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol {
     
     private let voteCheckButton = CellButton(title: "일기에서 생성된 투표보기", subTitle: "3", image: UIImage(systemName: "chevron.right"))
     
-    init(date: String, title: String, content: String) {
-        titleBarLabel.text = date
-        titleLabel.text = title
-        contentsLabel.text = content
+    init(store: DiaryStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -90,11 +92,70 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         configureTitleBar()
         configureTextField()
         configureVoteCheckButton()
+        
+        setUpBind()
+        bind()
+    }
+    
+    private func setUpBind() {
+        store.$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newState in
+                self?.render(newState)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func render(_ state: DiaryReducer.State) {
+        if state.isDiaryDeleted == .failure {
+            self.showToast(icon: .colorXmark, message: "삭제에 실패했어요")
+        }
+        
+        if let diary = state.diary {
+            titleBarLabel.text = diary.formattedDate
+            titleLabel.text = diary.title
+            contentsLabel.text = diary.content
+        }
+        
+        if state.isDiaryUpdated == .success, let diary = state.diary {
+            titleBarLabel.text = diary.formattedDate
+            titleLabel.text = diary.title
+            contentsLabel.text = diary.content
+        }
+    }
+    
+    private func bind() {
+        backButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.popPage)
+            }
+            .store(in: &cancellables)
+        
+        deletePopUp.rightButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                guard let self, let diary = store.state.diary else {
+                    return
+                }
+                
+                dismissPopUp(view: deletePopUp)
+                store.dispatch(.deleteDiary(id: diary.id))
+            }
+            .store(in: &cancellables)
+        
+        deletePopUp.leftButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                guard let self else {
+                    return
+                }
+                
+                dismissPopUp(view: deletePopUp)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureTitleBar() {
@@ -151,8 +212,8 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol {
     }
 }
 
-#Preview {
-    let vc = DiaryViewerViewController(date: "01월 10일 금요일", title: "제목입니다", content: "내용입니다.")
-    
-    return vc
-}
+//#Preview {
+//    let vc = DiaryViewerViewController(date: "01월 10일 금요일", title: "제목입니다", content: "내용입니다.")
+//    
+//    return vc
+//}

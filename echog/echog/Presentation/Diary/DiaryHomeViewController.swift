@@ -1,15 +1,18 @@
 //
-//  HomeViewController.swift
+//  DiaryHomeViewController.swift
 //  echog
 //
 //  Created by minsong kim on 12/10/24.
 //
 
+import Combine
 import UIKit
 import SnapKit
+import NetworkFeatureKit
 
-class HomeViewController: UIViewController {
-    private var diaryList: [DiaryDTO] = [DiaryDTO(id: 1, createDate: Date(), title: "Title", content: "Content..", userID: 1), DiaryDTO(id: 2, createDate: Date(), title: "Title", content: "Content..", userID: 2)]
+class DiaryHomeViewController: UIViewController, View {
+    var store: DiaryStore
+    private var cancellables = Set<AnyCancellable>()
     
     private let titleView: UIImageView = {
         let view = UIImageView(image: UIImage.logo)
@@ -47,7 +50,7 @@ class HomeViewController: UIViewController {
         return button
     }()
     
-    private let DiaryAddButton: UIButton = {
+    private let diaryAddButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus")?.resize(newWidth: 25), for: .normal)
         button.tintColor = .black
@@ -63,16 +66,75 @@ class HomeViewController: UIViewController {
     
     private lazy var flowLayout = self.createFlowLayout()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
-    private var dataSource: UICollectionViewDiffableDataSource<String, DiaryDTO>?
+    private var dataSource: UICollectionViewDiffableDataSource<String, DiaryContent>?
+    
+    required init(store: DiaryStore) {
+        self.store = store
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         configureBackgoundView()
         configureNavigationBar()
         configureCollectionView()
         configureCollectionViewUI()
         configureAddButton()
+        
+        setUpBind()
+        bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        store.dispatch(.presentDiaryList(page: 0))
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let width = view.bounds.inset(by: view.safeAreaInsets).width
+        flowLayout.itemSize = CGSize(width: width - 52, height: 100)
+    }
+    
+    private func setUpBind() {
+        store.$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newState in
+                self?.render(newState)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func render(_ state: DiaryReducer.State) {
+        self.setSnapshot()
+    }
+    
+    private func bind() {
+        barVoteButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToVoteListPage)
+            }
+            .store(in: &cancellables)
+        
+        myPageButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToMyPage)
+            }
+            .store(in: &cancellables)
+        
+        diaryAddButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToCreateNewDiary)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureBackgoundView() {
@@ -112,9 +174,9 @@ class HomeViewController: UIViewController {
     }
     
     private func configureAddButton() {
-        view.addSubview(DiaryAddButton)
+        view.addSubview(diaryAddButton)
         
-        DiaryAddButton.snp.makeConstraints { make in
+        diaryAddButton.snp.makeConstraints { make in
             make.height.width.equalTo(60)
             make.bottom.equalToSuperview().inset(50)
             make.trailing.equalToSuperview().inset(12)
@@ -156,20 +218,20 @@ class HomeViewController: UIViewController {
      
     //Diffable DataSource 세팅
     private func setDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<String, DiaryDTO>(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
+        dataSource = UICollectionViewDiffableDataSource<String, DiaryContent>(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiaryCell.identifier, for: indexPath) as? DiaryCell else {
                 return UICollectionViewCell()
             }
             
-            cell.configureTexts(title: itemIdentifier.title, content: itemIdentifier.content, date: itemIdentifier.createDate.description)
+            cell.configureTexts(title: itemIdentifier.title, content: itemIdentifier.content, date: itemIdentifier.formattedDate)
             
             return cell
         }
         
         //headerView 등록 필요
-        let headerRegistration = UICollectionView.SupplementaryRegistration<HeaderView>(elementKind: UICollectionView.elementKindSectionHeader) {
-            supplementaryView, elementKind, indexPath in
-            supplementaryView.configureLabel(text: "10월")
+        let headerRegistration = UICollectionView.SupplementaryRegistration<HeaderView>(elementKind: UICollectionView.elementKindSectionHeader) { supplementaryView, elementKind, indexPath in
+            let sectionTitle = self.dataSource?.snapshot().sectionIdentifiers[indexPath.section] ?? ""
+            supplementaryView.configureLabel(text: sectionTitle)
         }
         
         dataSource?.supplementaryViewProvider = { (view, kind, index) in
@@ -178,20 +240,66 @@ class HomeViewController: UIViewController {
     }
     
     private func setSnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<String, DiaryDTO>()
-        snapshot.appendSections(["10월"])
-        //스냅샷에 아이템 추가
-        snapshot.appendItems(diaryList, toSection: "10월")
+        var snapshot = NSDiffableDataSourceSnapshot<String, DiaryContent>()
+        
+        // 다이어리들을 section별로 그룹화
+        let groupedDiaries = Dictionary(grouping: store.state.diaryList) { diary -> String in
+            return self.sectionIdentifier(for: diary)
+        }
+        
+        // 섹션 순서
+        // "오늘", "어제"는 우선 순위가 높고, 그 외는 월 내림차순 정렬
+        let sortedSections = groupedDiaries.keys.sorted { s1, s2 in
+            if s1 == "오늘" { return true }
+            if s2 == "오늘" { return false }
+            if s1 == "어제" { return true }
+            if s2 == "어제" { return false }
+            
+            // "10월"과 같이 월 정보를 비교 (문자열에서 "월" 제거)
+            let m1 = Int(s1.replacingOccurrences(of: "월", with: "")) ?? 0
+            let m2 = Int(s2.replacingOccurrences(of: "월", with: "")) ?? 0
+            return m1 > m2
+        }
+        
+        // 각 섹션에 해당하는 아이템들을 추가 (원하는 경우 아이템 정렬도 가능)
+        for section in sortedSections {
+            snapshot.appendSections([section])
+            if let items = groupedDiaries[section] {
+                let sortedItems = items.sorted { $0.formattedDate > $1.formattedDate }
+                snapshot.appendItems(sortedItems, toSection: section)
+            }
+        }
         
         dataSource?.apply(snapshot, animatingDifferences: false)
     }
-}
-
-extension HomeViewController: UICollectionViewDelegate {
-}
-
-#Preview {
-    let vc = HomeViewController()
     
-    return vc
+    private func sectionIdentifier(for diary: DiaryContent) -> String {
+        let calendar = Calendar.current
+        guard let diaryDate = diary.createdDate else {
+            return "알 수 없음"
+        }
+        
+        if calendar.isDateInToday(diaryDate) {
+            return "오늘"
+        } else if calendar.isDateInYesterday(diaryDate) {
+            return "어제"
+        } else {
+            let month = calendar.component(.month, from: diaryDate)
+            return "\(month)월"
+        }
+    }
 }
+
+extension DiaryHomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let diary = dataSource?.itemIdentifier(for: indexPath) {
+            store.dispatch(.goToDiaryViewer(id: diary.id, title: diary.title, content: diary.content, date: diary.formattedDate))
+        }
+    }
+}
+
+//#Preview {
+//    let vc = HomeViewController()
+//    
+//    return vc
+//}

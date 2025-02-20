@@ -9,7 +9,9 @@ import Combine
 import UIKit
 import SnapKit
 
-final class LogInViewController: UIViewController, View, UITextFieldDelegate {
+final class LogInViewController: UIViewController, View, ToastProtocol {
+    var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
+    
     var store: LogInStore
     private var cancellables = Set<AnyCancellable>()
     
@@ -58,8 +60,8 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
     
     private var activeTextField: UITextField?
     
-    required init(reducer: LogInReducer) {
-        self.store = LogInStore(reducer: reducer)
+    required init(store: LogInStore) {
+        self.store = store
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -70,6 +72,7 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         emailTextField.mainTextField.delegate = self
         passwordTextField.mainTextField.delegate = self
@@ -79,6 +82,9 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
         configureButtons()
         configureLogInButton()
         registerForKeyboardNotifications()
+        
+        setUpBind()
+        bind()
     }
     
     deinit {
@@ -111,7 +117,7 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
     
     private func render(_ state: LogInReducer.State) {
         if state.isLogInSuccess == .failure {
-            //팝업 띄우기
+            self.showToast(icon: .colorXmark, message: "로그인에 실패했어요.")
         }
     }
     
@@ -126,6 +132,18 @@ final class LogInViewController: UIViewController, View, UITextFieldDelegate {
                 let password = passwordTextField.mainTextField.text ?? ""
                 
                 store.dispatch(.goToLogIn(email: email, password: password))
+            }
+            .store(in: &cancellables)
+        
+        findPasswordButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToFindPassword)
+            }
+            .store(in: &cancellables)
+        
+        signInButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToSignIn)
             }
             .store(in: &cancellables)
     }
@@ -197,14 +215,6 @@ extension LogInViewController {
         
         let keyboardFrame = keyboardFrameValue.cgRectValue
         
-        //logInButton
-        logInButton.layer.cornerRadius = 0
-        logInButton.snp.remakeConstraints { make in
-            make.bottom.equalTo(self.view.keyboardLayoutGuide.snp.top)
-            make.height.equalTo(50)
-            make.width.equalTo(self.view.frame.width)
-        }
-        
         // activeField의 frame을 현재 뷰의 좌표계로 변환
         let fieldFrameInView = activeField.convert(activeField.bounds, to: self.view)
         let keyboardTopY = self.view.frame.height - keyboardFrame.height
@@ -222,12 +232,26 @@ extension LogInViewController {
         UIView.animate(withDuration: 0.3) {
             self.view.frame.origin.y = 0
         }
-        
-        logInButton.layer.cornerRadius = 10
-        logInButton.snp.remakeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalTo(self.view.keyboardLayoutGuide.snp.top)
-            make.height.equalTo(50)
+    }
+}
+
+extension LogInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField.mainTextField {
+            emailTextField.mainTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == activeTextField {
+            activeTextField = nil
         }
     }
 }

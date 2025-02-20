@@ -46,7 +46,6 @@ class TextFieldView: UIStackView {
         self.mainTextField.placeholder = placeHolder
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 10
-        self.backgroundColor = .white
         
         configureMainTextField()
     }
@@ -58,7 +57,6 @@ class TextFieldView: UIStackView {
         self.mainTextField.placeholder = placeHolder
         self.mainTextField.smartDashesType = .no
         self.titleLabel.text = title
-        self.backgroundColor = .white
         
         if isNeedSecure {
             let secureModeButton = UIButton()

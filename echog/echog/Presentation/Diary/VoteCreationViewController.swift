@@ -120,7 +120,7 @@ final class VoteCreationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         configureTextField()
         configureCategoryButton()
@@ -240,8 +240,8 @@ final class VoteCreationViewController: UIViewController {
     }
 }
 
-#Preview {
-    let vc = VoteCreationViewController()
-    
-    return vc
-}
+//#Preview {
+//    let vc = VoteCreationViewController()
+//    
+//    return vc
+//}
