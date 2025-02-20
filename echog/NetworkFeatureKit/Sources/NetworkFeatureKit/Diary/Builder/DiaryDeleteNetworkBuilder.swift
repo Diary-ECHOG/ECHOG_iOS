@@ -21,6 +21,6 @@ struct DiaryDeleteNetworkBuilder: NetworkBuilderProtocol {
     var useAuthorization: Bool { true }
     
     init(id: UUID) {
-        self.path = "/api/diary/delete/\(id)"
+        self.path = "/api/diary/delete/\(id.uuidString)"
     }
 }

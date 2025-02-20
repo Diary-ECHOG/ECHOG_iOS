@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct DiaryDTO: Decodable {
+public struct DiaryDTO: Decodable, Hashable, Sendable {
     let id: UUID
     let title: String
     let content: String
