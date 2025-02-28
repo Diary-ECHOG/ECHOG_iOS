@@ -28,19 +28,19 @@ final class LogInViewController: UIViewController, View, ToastProtocol {
     
     private let passwordTextField = TextFieldView(title: "비밀번호", placeHolder: "영문, 숫자 조합 8자", isNeedSecure: true)
     
-    private let findPasswordButton: UIButton = {
-        var titleContainer = AttributeContainer()
-        titleContainer.font = UIFont.regularTitle13
-        
-        var configuration = UIButton.Configuration.plain()
-        configuration.attributedTitle = AttributedString("비밀번호를 찾고 싶어요!", attributes: titleContainer)
-        configuration.titleAlignment = .leading
-        configuration.baseForegroundColor = .slate800
-        
-        let button = UIButton(configuration: configuration)
-        
-        return button
-    }()
+//    private let findPasswordButton: UIButton = {
+//        var titleContainer = AttributeContainer()
+//        titleContainer.font = UIFont.regularTitle13
+//        
+//        var configuration = UIButton.Configuration.plain()
+//        configuration.attributedTitle = AttributedString("비밀번호를 찾고 싶어요!", attributes: titleContainer)
+//        configuration.titleAlignment = .leading
+//        configuration.baseForegroundColor = .slate800
+//        
+//        let button = UIButton(configuration: configuration)
+//        
+//        return button
+//    }()
     
     private let signInButton: UIButton = {
         var titleContainer = AttributeContainer()
@@ -135,11 +135,11 @@ final class LogInViewController: UIViewController, View, ToastProtocol {
             }
             .store(in: &cancellables)
         
-        findPasswordButton.publisher(for: .touchUpInside)
-            .sink { [weak self] in
-                self?.store.dispatch(.goToFindPassword)
-            }
-            .store(in: &cancellables)
+//        findPasswordButton.publisher(for: .touchUpInside)
+//            .sink { [weak self] in
+//                self?.store.dispatch(.goToFindPassword)
+//            }
+//            .store(in: &cancellables)
         
         signInButton.publisher(for: .touchUpInside)
             .sink { [weak self] in
@@ -183,16 +183,16 @@ final class LogInViewController: UIViewController, View, ToastProtocol {
     
     //버튼 레이아웃 설정
     private func configureButtons() {
-        view.addSubview(findPasswordButton)
+//        view.addSubview(findPasswordButton)
         view.addSubview(signInButton)
         
-        findPasswordButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordTextField.snp.bottom).offset(8)
-            make.leading.equalTo(titleLabel)
-        }
+//        findPasswordButton.snp.makeConstraints { make in
+//            make.top.equalTo(passwordTextField.snp.bottom).offset(8)
+//            make.leading.equalTo(titleLabel)
+//        }
         
         signInButton.snp.makeConstraints { make in
-            make.centerY.equalTo(findPasswordButton)
+            make.centerY.equalTo(passwordTextField.snp.bottom).offset(16)
             make.trailing.equalTo(passwordTextField)
         }
     }
@@ -202,7 +202,7 @@ final class LogInViewController: UIViewController, View, ToastProtocol {
         view.addSubview(logInButton)
         
         logInButton.snp.makeConstraints { make in
-            make.top.equalTo(findPasswordButton.snp.bottom).offset(16)
+            make.top.equalTo(signInButton.snp.bottom).offset(8)
             make.leading.trailing.equalTo(passwordTextField)
             make.height.equalTo(48)
         }
@@ -256,8 +256,8 @@ extension LogInViewController: UITextFieldDelegate {
     }
 }
 
-//#Preview {
-//    let vc = LogInViewController()
-//    
-//    return vc
-//}
+#Preview {
+    let vc = LogInViewController(store: LogInStore(reducer: LogInReducer()))
+    
+    return vc
+}

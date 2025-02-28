@@ -13,6 +13,7 @@ import NetworkFeatureKit
 class DiaryHomeViewController: UIViewController, View {
     var store: DiaryStore
     private var cancellables = Set<AnyCancellable>()
+    private var snapshot = NSDiffableDataSourceSnapshot<String, DiaryContent>()
     
     private let titleView: UIImageView = {
         let view = UIImageView(image: UIImage.logo)
@@ -20,27 +21,27 @@ class DiaryHomeViewController: UIViewController, View {
         return view
     }()
     
-    private let barVoteButton: UIButton = {
-        var titleContainer = AttributeContainer()
-        titleContainer.font = UIFont.semiboldTitle14
-        
-        var configuration = UIButton.Configuration.bordered()
-        configuration.attributedTitle = AttributedString("투표보기", attributes: titleContainer)
-        configuration.titleAlignment = .trailing
-        configuration.baseForegroundColor = .slate800
-        configuration.baseBackgroundColor = .white
-        configuration.image = UIImage(resource: .voteCheckButton)
-        configuration.cornerStyle = .capsule
-        configuration.imagePadding = 4
-        
-        let button = UIButton(configuration: configuration)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 1.0
-        button.layer.shadowColor = UIColor.slate100.cgColor
-        button.layer.shadowOffset = .zero
-        
-        return button
-    }()
+//    private let barVoteButton: UIButton = {
+//        var titleContainer = AttributeContainer()
+//        titleContainer.font = UIFont.semiboldTitle14
+//        
+//        var configuration = UIButton.Configuration.bordered()
+//        configuration.attributedTitle = AttributedString("투표보기", attributes: titleContainer)
+//        configuration.titleAlignment = .trailing
+//        configuration.baseForegroundColor = .slate800
+//        configuration.baseBackgroundColor = .white
+//        configuration.image = UIImage(resource: .voteCheckButton)
+//        configuration.cornerStyle = .capsule
+//        configuration.imagePadding = 4
+//        
+//        let button = UIButton(configuration: configuration)
+//        button.layer.shadowOpacity = 1.0
+//        button.layer.shadowRadius = 1.0
+//        button.layer.shadowColor = UIColor.slate100.cgColor
+//        button.layer.shadowOffset = .zero
+//        
+//        return button
+//    }()
     
     private let myPageButton: UIButton = {
         let button = UIButton()
@@ -118,11 +119,11 @@ class DiaryHomeViewController: UIViewController, View {
     }
     
     private func bind() {
-        barVoteButton.publisher(for: .touchUpInside)
-            .sink { [weak self] in
-                self?.store.dispatch(.goToVoteListPage)
-            }
-            .store(in: &cancellables)
+//        barVoteButton.publisher(for: .touchUpInside)
+//            .sink { [weak self] in
+//                self?.store.dispatch(.goToVoteListPage)
+//            }
+//            .store(in: &cancellables)
         
         myPageButton.publisher(for: .touchUpInside)
             .sink { [weak self] in
@@ -149,7 +150,7 @@ class DiaryHomeViewController: UIViewController, View {
     
     private func configureNavigationBar() {
         view.addSubview(titleView)
-        view.addSubview(barVoteButton)
+//        view.addSubview(barVoteButton)
         view.addSubview(myPageButton)
         
         titleView.snp.makeConstraints { make in
@@ -165,12 +166,12 @@ class DiaryHomeViewController: UIViewController, View {
             make.height.width.equalTo(32)
         }
         
-        barVoteButton.snp.makeConstraints { make in
-            make.centerY.equalTo(titleView.snp.centerY)
-            make.height.equalTo(30)
-            make.width.equalTo(100)
-            make.trailing.equalTo(myPageButton.snp.leading).offset(-4)
-        }
+//        barVoteButton.snp.makeConstraints { make in
+//            make.centerY.equalTo(titleView.snp.centerY)
+//            make.height.equalTo(30)
+//            make.width.equalTo(100)
+//            make.trailing.equalTo(myPageButton.snp.leading).offset(-4)
+//        }
     }
     
     private func configureAddButton() {
@@ -240,53 +241,19 @@ class DiaryHomeViewController: UIViewController, View {
     }
     
     private func setSnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<String, DiaryContent>()
+        snapshot.deleteAllItems()
         
-        // 다이어리들을 section별로 그룹화
-        let groupedDiaries = Dictionary(grouping: store.state.diaryList) { diary -> String in
-            return self.sectionIdentifier(for: diary)
-        }
-        
-        // 섹션 순서
-        // "오늘", "어제"는 우선 순위가 높고, 그 외는 월 내림차순 정렬
-        let sortedSections = groupedDiaries.keys.sorted { s1, s2 in
-            if s1 == "오늘" { return true }
-            if s2 == "오늘" { return false }
-            if s1 == "어제" { return true }
-            if s2 == "어제" { return false }
+        for section in store.state.diaryList.keys {
+            if snapshot.sectionIdentifiers.contains(section) == false {
+                snapshot.appendSections([section])
+            }
             
-            // "10월"과 같이 월 정보를 비교 (문자열에서 "월" 제거)
-            let m1 = Int(s1.replacingOccurrences(of: "월", with: "")) ?? 0
-            let m2 = Int(s2.replacingOccurrences(of: "월", with: "")) ?? 0
-            return m1 > m2
-        }
-        
-        // 각 섹션에 해당하는 아이템들을 추가 (원하는 경우 아이템 정렬도 가능)
-        for section in sortedSections {
-            snapshot.appendSections([section])
-            if let items = groupedDiaries[section] {
-                let sortedItems = items.sorted { $0.formattedDate > $1.formattedDate }
-                snapshot.appendItems(sortedItems, toSection: section)
+            if let items = store.state.diaryList[section] {
+                snapshot.appendItems(items, toSection: section)
             }
         }
         
-        dataSource?.apply(snapshot, animatingDifferences: false)
-    }
-    
-    private func sectionIdentifier(for diary: DiaryContent) -> String {
-        let calendar = Calendar.current
-        guard let diaryDate = diary.createdDate else {
-            return "알 수 없음"
-        }
-        
-        if calendar.isDateInToday(diaryDate) {
-            return "오늘"
-        } else if calendar.isDateInYesterday(diaryDate) {
-            return "어제"
-        } else {
-            let month = calendar.component(.month, from: diaryDate)
-            return "\(month)월"
-        }
+        dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
 
@@ -294,6 +261,20 @@ extension DiaryHomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let diary = dataSource?.itemIdentifier(for: indexPath) {
             store.dispatch(.goToDiaryViewer(id: diary.id, title: diary.title, content: diary.content, date: diary.formattedDate))
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let frameHeight = scrollView.frame.size.height
+        
+        // threshold는 미리 로드할 시점을 조정하기 위한 값입니다.
+        let threshold: CGFloat = 20
+        
+        if offsetY > contentHeight - frameHeight - threshold, store.state.totalPage >= store.state.currentPage + 1 {
+            // 스크롤이 바닥에 근접했을 때 호출
+            store.dispatch(.scrollToBottom(store.state.currentPage + 1))
         }
     }
 }

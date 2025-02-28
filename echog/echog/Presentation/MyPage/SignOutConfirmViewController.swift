@@ -120,6 +120,7 @@ class SignOutConfirmViewController: UIViewController, ToastProtocol {
         configureButton()
         
         bind()
+        configureKeyboardGesture()
     }
     
     private func setUpBind() {
@@ -235,6 +236,17 @@ extension SignOutConfirmViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = nil
         textView.textColor = .slate800
+    }
+    
+    private func configureKeyboardGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        // 다른 터치 이벤트 방해하지 않음
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

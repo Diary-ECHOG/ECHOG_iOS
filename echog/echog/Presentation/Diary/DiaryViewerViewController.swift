@@ -71,14 +71,14 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol, ToastProtocol 
         return label
     }()
     
-    private let divideLineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .slate25
-        
-        return view
-    }()
+//    private let divideLineView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = .slate25
+//        
+//        return view
+//    }()
     
-    private let voteCheckButton = CellButton(title: "일기에서 생성된 투표보기", subTitle: "3", image: UIImage(systemName: "chevron.right"))
+//    private let voteCheckButton = CellButton(title: "일기에서 생성된 투표보기", subTitle: "3", image: UIImage(systemName: "chevron.right"))
     
     init(store: DiaryStore) {
         self.store = store
@@ -96,7 +96,7 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol, ToastProtocol 
         
         configureTitleBar()
         configureTextField()
-        configureVoteCheckButton()
+//        configureVoteCheckButton()
         
         setUpBind()
         bind()
@@ -194,22 +194,22 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol, ToastProtocol 
         }
     }
     
-    private func configureVoteCheckButton() {
-        view.addSubview(divideLineView)
-        view.addSubview(voteCheckButton)
-        
-        voteCheckButton.snp.makeConstraints { make in
-            make.height.equalTo(50)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        divideLineView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(10)
-            make.bottom.equalTo(voteCheckButton.snp.top)
-        }
-    }
+//    private func configureVoteCheckButton() {
+//        view.addSubview(divideLineView)
+//        view.addSubview(voteCheckButton)
+//        
+//        voteCheckButton.snp.makeConstraints { make in
+//            make.height.equalTo(50)
+//            make.leading.trailing.equalToSuperview()
+//            make.bottom.equalTo(view.safeAreaLayoutGuide)
+//        }
+//        
+//        divideLineView.snp.makeConstraints { make in
+//            make.leading.trailing.equalToSuperview()
+//            make.height.equalTo(10)
+//            make.bottom.equalTo(voteCheckButton.snp.top)
+//        }
+//    }
 }
 
 //#Preview {

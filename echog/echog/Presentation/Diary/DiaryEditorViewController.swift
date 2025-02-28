@@ -9,7 +9,7 @@ import Combine
 import UIKit
 import SnapKit
 
-class DiaryEditorViewController: UIViewController, View, ToastProtocol {
+class DiaryEditorViewController: UIViewController, View {
     var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
     
     var store: DiaryStore
@@ -58,52 +58,53 @@ class DiaryEditorViewController: UIViewController, View, ToastProtocol {
         return text
     }()
     
-    private let contentsTextField: UITextField = {
-        let text = UITextField()
-        text.font = .mediumTitle15
-        text.placeholder = "일기의 내용을 적어주세요."
-        
-        return text
-    }()
-    
-    private let lineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .slate300
+    private let contentsTextView: UITextView = {
+        let view = UITextView()
+        view.font = .mediumTitle15
+        view.textColor = .placeholderText
+        view.text = "일기의 내용을 적어주세요."
         
         return view
     }()
     
-    private let addImageButton: UIButton = {
-        var titleContainer = AttributeContainer()
-        titleContainer.font = UIFont.semiboldTitle14
-        
-        var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(resource: .gallery)
-        configuration.attributedTitle = AttributedString("이미지 추가", attributes: titleContainer)
-        configuration.baseForegroundColor = .black
-        configuration.imagePadding = 8
-        configuration.titleAlignment = .leading
-        
-        let button = UIButton(configuration: configuration)
-        
-        return button
-    }()
-    
-    private let addVoteButton: UIButton = {
-        var titleContainer = AttributeContainer()
-        titleContainer.font = UIFont.semiboldTitle14
-        
-        var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(resource: .voteCheckButton)
-        configuration.attributedTitle = AttributedString("투표하기", attributes: titleContainer)
-        configuration.baseForegroundColor = .black
-        configuration.imagePadding = 8
-        configuration.titleAlignment = .leading
-        
-        let button = UIButton(configuration: configuration)
-        
-        return button
-    }()
+//    private let lineView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = .slate300
+//        
+//        return view
+//    }()
+//    
+//    private let addImageButton: UIButton = {
+//        var titleContainer = AttributeContainer()
+//        titleContainer.font = UIFont.semiboldTitle14
+//        
+//        var configuration = UIButton.Configuration.plain()
+//        configuration.image = UIImage(resource: .gallery)
+//        configuration.attributedTitle = AttributedString("이미지 추가", attributes: titleContainer)
+//        configuration.baseForegroundColor = .black
+//        configuration.imagePadding = 8
+//        configuration.titleAlignment = .leading
+//        
+//        let button = UIButton(configuration: configuration)
+//        
+//        return button
+//    }()
+//    
+//    private let addVoteButton: UIButton = {
+//        var titleContainer = AttributeContainer()
+//        titleContainer.font = UIFont.semiboldTitle14
+//        
+//        var configuration = UIButton.Configuration.plain()
+//        configuration.image = UIImage(resource: .voteCheckButton)
+//        configuration.attributedTitle = AttributedString("투표하기", attributes: titleContainer)
+//        configuration.baseForegroundColor = .black
+//        configuration.imagePadding = 8
+//        configuration.titleAlignment = .leading
+//        
+//        let button = UIButton(configuration: configuration)
+//        
+//        return button
+//    }()
     
     required init(store: DiaryStore) {
         self.store = store
@@ -121,7 +122,7 @@ class DiaryEditorViewController: UIViewController, View, ToastProtocol {
         
         configureTitleBar()
         configureTextField()
-        configureBottomBar()
+//        configureBottomBar()
         
         setUpBind()
         bind()
@@ -137,21 +138,21 @@ class DiaryEditorViewController: UIViewController, View, ToastProtocol {
     }
     
     private func render(_ state: DiaryReducer.State) {
-        if state.isNewDiaryUploadSuccess == .success {
-            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
-        } else if state.isNewDiaryUploadSuccess == .failure {
-            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
-        }
-        
-        if state.isDiaryUpdated == .success {
-            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
-        } else if state.isDiaryUpdated == .failure {
-            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
-        }
+//        if state.isNewDiaryUploadSuccess == .success {
+//            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
+//        } else if state.isNewDiaryUploadSuccess == .failure {
+//            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
+//        }
+//        
+//        if state.isDiaryUpdated == .success {
+//            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
+//        } else if state.isDiaryUpdated == .failure {
+//            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
+//        }
         
         if let diary = state.diary {
             self.titleTextField.text = diary.title
-            self.contentsTextField.text = diary.content
+            self.contentsTextView.text = diary.content
             self.titleLabel.text = diary.formattedDate
         }
     }
@@ -169,7 +170,7 @@ class DiaryEditorViewController: UIViewController, View, ToastProtocol {
                     return
                 }
                 let title = self.titleTextField.text ?? ""
-                let content = self.contentsTextField.text ?? ""
+                let content = self.contentsTextView.text ?? ""
                 
                 if let diary = store.state.diary {
                     store.dispatch(.updateDiary(id: diary.id, title: title, content: content))
@@ -206,38 +207,49 @@ class DiaryEditorViewController: UIViewController, View, ToastProtocol {
     
     private func configureTextField() {
         view.addSubview(titleTextField)
-        view.addSubview(contentsTextField)
+        view.addSubview(contentsTextView)
+        contentsTextView.delegate = self
         
         titleTextField.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
         }
         
-        contentsTextField.snp.makeConstraints { make in
+        contentsTextView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
             make.top.equalTo(titleTextField.snp.bottom).offset(12)
+            make.bottom.equalToSuperview().inset(20)
         }
     }
     
-    private func configureBottomBar() {
-        view.addSubview(addImageButton)
-        view.addSubview(addVoteButton)
-        view.addSubview(lineView)
-        
-        addImageButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(8)
-            make.bottom.equalTo(view.keyboardLayoutGuide.snp.top)
-        }
-        
-        addVoteButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(8)
-            make.bottom.equalTo(view.keyboardLayoutGuide.snp.top)
-        }
-        
-        lineView.snp.makeConstraints { make in
-            make.height.equalTo(0.5)
-            make.bottom.equalTo(addVoteButton.snp.top).offset(-8)
-            make.leading.trailing.equalToSuperview()
+//    private func configureBottomBar() {
+//        view.addSubview(addImageButton)
+//        view.addSubview(addVoteButton)
+//        view.addSubview(lineView)
+//        
+//        addImageButton.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().inset(8)
+//            make.bottom.equalTo(view.keyboardLayoutGuide.snp.top)
+//        }
+//        
+//        addVoteButton.snp.makeConstraints { make in
+//            make.trailing.equalToSuperview().inset(8)
+//            make.bottom.equalTo(view.keyboardLayoutGuide.snp.top)
+//        }
+//        
+//        lineView.snp.makeConstraints { make in
+//            make.height.equalTo(0.5)
+//            make.bottom.equalTo(addVoteButton.snp.top).offset(-8)
+//            make.leading.trailing.equalToSuperview()
+//        }
+//    }
+}
+
+extension DiaryEditorViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .placeholderText {
+            textView.text = nil
+            textView.textColor = .slate800
         }
     }
 }

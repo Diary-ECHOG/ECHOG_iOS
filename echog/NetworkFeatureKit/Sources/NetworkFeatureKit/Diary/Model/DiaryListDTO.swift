@@ -46,4 +46,12 @@ public struct DiaryContent: Decodable, Hashable, Sendable {
         self.content = content
         self.createdAt = createdAt
     }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    public static func == (lhs: DiaryContent, rhs: DiaryContent) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

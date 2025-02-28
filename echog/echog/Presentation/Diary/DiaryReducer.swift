@@ -21,6 +21,7 @@ struct DiaryReducer: ReducerProtocol {
         case createNewDiary(title: String, content: String)
         case deleteDiary(id: UUID)
         case updateDiary(id: UUID, title: String, content: String)
+        case scrollToBottom(Int)
     }
     
     enum Mutation {
@@ -28,15 +29,18 @@ struct DiaryReducer: ReducerProtocol {
         case newDiaryCreateFailure
         case diaryUpdateSuccess(title: String, content: String)
         case diaryUpdateFailure
-        case presentDiaryList(list: [DiaryContent],page: Int)
+        case presentDiaryList(list: [DiaryContent], page: Int, totalPage: Int)
         case deleteDiaryFailure
         case goToDiaryViewer(id: UUID, title: String, content: String, date: String)
         case popPage
+        case updateDiaryList(list: [DiaryContent], page: Int)
     }
     
     struct State {
-        var page: Int = 0
-        var diaryList: [DiaryContent] = []
+        var currentPage: Int = 0
+        var totalPage: Int = 0
+        var isLoadingMore: Bool = false
+        var diaryList: [String: [DiaryContent]] = [:]
         var diary: DiaryContent?
         var isNewDiaryUploadSuccess: TryState = .notYet
         var isDiaryDeleted: TryState = .notYet
@@ -54,7 +58,7 @@ struct DiaryReducer: ReducerProtocol {
                 Task { @MainActor in
                     do {
                         let diaryList = try await DiaryNetwork.shared.requestDiaryList(page: page, size: 10)
-                        promise(.success(.presentDiaryList(list: diaryList.content, page: diaryList.pageNumber)))
+                        promise(.success(.presentDiaryList(list: diaryList.content, page: diaryList.pageNumber, totalPage: diaryList.totalPages)))
                     } catch {
                         print(error)
                     }
@@ -114,6 +118,17 @@ struct DiaryReducer: ReducerProtocol {
                 }
             }
             .eraseToAnyPublisher()
+        case .scrollToBottom(let page):
+            return Future<Mutation, Never> { promise in
+                Task { @MainActor in
+                    do {
+                        let diaryList = try await DiaryNetwork.shared.requestDiaryList(page: page, size: 10)
+                        promise(.success(.updateDiaryList(list: diaryList.content, page: page)))
+                    } catch {
+                        //print(error)
+                    }
+                }
+            }.eraseToAnyPublisher()
         }
     }
     
@@ -121,13 +136,13 @@ struct DiaryReducer: ReducerProtocol {
         var newState = state
         
         switch mutation {
-        case .presentDiaryList(let list, let page):
-            newState.page = page
-            if page == 0 {
-                newState.diaryList = list
-            } else {
-                newState.diaryList += list
+        case .presentDiaryList(let list, let page, let totalPages):
+            newState.currentPage = page
+            list.forEach { diary in
+                let sectionIdentifier = sectionIdentifier(for: diary)
+                newState.diaryList[sectionIdentifier, default: []].append(diary)
             }
+            newState.totalPage = totalPages
         case .newDiaryCreateSuccess:
             newState.isNewDiaryUploadSuccess = .success
         case .newDiaryCreateFailure:
@@ -146,8 +161,34 @@ struct DiaryReducer: ReducerProtocol {
         case .popPage:
             newState.diary = nil
             delegate?.popViewController()
+        case .updateDiaryList(list: let list, page: let page):
+            list.forEach { diary in
+                let sectionIdentifier = sectionIdentifier(for: diary)
+                if let index = newState.diaryList[sectionIdentifier]?.firstIndex(where: { $0.id == diary.id }) {
+                    newState.diaryList[sectionIdentifier]?[index] = diary  // 업데이트
+                } else {
+                    newState.diaryList[sectionIdentifier, default: []].append(diary)  // 추가
+                }
+            }
+            newState.currentPage = page
         }
         
         return newState
+    }
+    
+    private func sectionIdentifier(for diary: DiaryContent) -> String {
+        let calendar = Calendar.current
+        guard let diaryDate = diary.createdDate else {
+            return "알 수 없음"
+        }
+        
+        if calendar.isDateInToday(diaryDate) {
+            return "오늘"
+        } else if calendar.isDateInYesterday(diaryDate) {
+            return "어제"
+        } else {
+            let month = calendar.component(.month, from: diaryDate)
+            return "\(month)월"
+        }
     }
 }
