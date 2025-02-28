@@ -30,6 +30,7 @@
 		92325FD52D6DC1FE00F5CCE9 /* SignOutReasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325FD42D6DC1F900F5CCE9 /* SignOutReasonCell.swift */; };
 		92325FD72D6DCDEB00F5CCE9 /* SignOutConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325FD62D6DCDE100F5CCE9 /* SignOutConfirmViewController.swift */; };
 		92325FD92D6DCE1300F5CCE9 /* SignOutReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325FD82D6DCE0C00F5CCE9 /* SignOutReason.swift */; };
+		923260012D6EEA4C00F5CCE9 /* TermsCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923260002D6EEA3900F5CCE9 /* TermsCheckViewController.swift */; };
 		92365B5F2D06B108001D4A71 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9204707E2C9A760300D547FB /* Pretendard-SemiBold.otf */; };
 		92365B602D06B121001D4A71 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 920470872C9A7A7300D547FB /* Pretendard-Regular.otf */; };
 		92365B612D06B127001D4A71 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9204707F2C9A760F00D547FB /* Pretendard-Medium.otf */; };
@@ -153,6 +154,7 @@
 		92325FD42D6DC1F900F5CCE9 /* SignOutReasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutReasonCell.swift; sourceTree = "<group>"; };
 		92325FD62D6DCDE100F5CCE9 /* SignOutConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutConfirmViewController.swift; sourceTree = "<group>"; };
 		92325FD82D6DCE0C00F5CCE9 /* SignOutReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutReason.swift; sourceTree = "<group>"; };
+		923260002D6EEA3900F5CCE9 /* TermsCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsCheckViewController.swift; sourceTree = "<group>"; };
 		92365B572D05D96D001D4A71 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		92365B592D05DEC3001D4A71 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		92365B5B2D06A066001D4A71 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				92325FD22D6CB25500F5CCE9 /* SignOutReasonViewController.swift */,
 				92325FD62D6DCDE100F5CCE9 /* SignOutConfirmViewController.swift */,
 				92365BE02D1D7387001D4A71 /* MyVoteListViewController.swift */,
+				923260002D6EEA3900F5CCE9 /* TermsCheckViewController.swift */,
 				92365BDB2D1D043A001D4A71 /* MyPageViewController.swift */,
 			);
 			path = MyPage;
@@ -715,6 +718,7 @@
 				92325FD92D6DCE1300F5CCE9 /* SignOutReason.swift in Sources */,
 				92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */,
 				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,
+				923260012D6EEA4C00F5CCE9 /* TermsCheckViewController.swift in Sources */,
 				92E697462D5DA8A80059D3AE /* VoteSelectLineView.swift in Sources */,
 				92E697352D5CDF180059D3AE /* VoteCell.swift in Sources */,
 				92DFD4C72D531D7C008CFE95 /* OnBoardingReducer.swift in Sources */,
