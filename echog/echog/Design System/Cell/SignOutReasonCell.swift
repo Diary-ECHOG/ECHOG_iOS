@@ -71,4 +71,8 @@ class SignOutReasonCell: UITableViewCell {
             configureTextView()
         }
     }
+    
+    func selectedCell() {
+        checkButton.isSelected.toggle()
+    }
 }

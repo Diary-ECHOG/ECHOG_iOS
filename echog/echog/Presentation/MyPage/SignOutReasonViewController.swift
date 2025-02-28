@@ -10,6 +10,9 @@ import UIKit
 import SnapKit
 
 class SignOutReasonViewController: UIViewController {
+    var store: MyPageStore
+    private var cancellables = Set<AnyCancellable>()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .semiboldLargetitle17
@@ -39,6 +42,16 @@ class SignOutReasonViewController: UIViewController {
     
     private let nextButton = MainButton(title: "다음")
     
+    required init(store: MyPageStore) {
+        self.store = store
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -46,6 +59,22 @@ class SignOutReasonViewController: UIViewController {
         configureBar()
         configureTableView()
         configureButton()
+        
+        bind()
+    }
+    
+    private func bind() {
+        backButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.popPage)
+            }
+            .store(in: &cancellables)
+        
+        nextButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goToNextSignOutPage)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureBar() {
@@ -70,6 +99,7 @@ class SignOutReasonViewController: UIViewController {
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.separatorColor = .slate100
+        tableView.allowsMultipleSelection = false
         
         view.addSubview(tableView)
         
@@ -129,6 +159,14 @@ extension SignOutReasonViewController: UITableViewDelegate, UITableViewDataSourc
             56
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? SignOutReasonCell else {
+            return
+        }
+        
+        cell.selectedCell()
+    }
 }
 
 extension SignOutReasonViewController: UITextViewDelegate {
@@ -139,7 +177,7 @@ extension SignOutReasonViewController: UITextViewDelegate {
 }
 
 #Preview {
-    let vc = SignOutReasonViewController()
+    let vc = SignOutReasonViewController(store: MyPageStore(reducer: MyPageReducer()))
     
     return vc
 }

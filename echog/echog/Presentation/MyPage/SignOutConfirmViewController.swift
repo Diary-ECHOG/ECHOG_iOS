@@ -5,10 +5,16 @@
 //  Created by minsong kim on 2/25/25.
 //
 
+import Combine
 import UIKit
 import SnapKit
 
-class SignOutConfirmViewController: UIViewController {
+class SignOutConfirmViewController: UIViewController, ToastProtocol {
+    var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
+    
+    var store: MyPageStore
+    private var cancellables = Set<AnyCancellable>()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .semiboldLargetitle17
@@ -94,6 +100,16 @@ class SignOutConfirmViewController: UIViewController {
     
     private let signOutButton = MainButton(title: "탈퇴하기")
     
+    required init(store: MyPageStore) {
+        self.store = store
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -102,6 +118,37 @@ class SignOutConfirmViewController: UIViewController {
         configureGuideLabel()
         configureConfirmLabel()
         configureButton()
+        
+        bind()
+    }
+    
+    private func setUpBind() {
+        store.$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newState in
+                self?.render(newState)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func render(_ state: MyPageReducer.State) {
+        if state.isSignOutSuccess == .failure {
+            showToast(icon: .colorXmark, message: "탈퇴에 실패했어요.")
+        }
+    }
+    
+    private func bind() {
+        backButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.popPage)
+            }
+            .store(in: &cancellables)
+        
+        signOutButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.signOut)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureBar() {
@@ -147,6 +194,8 @@ class SignOutConfirmViewController: UIViewController {
         view.addSubview(confirmTextLabel)
         view.addSubview(signOutTextView)
         
+        signOutTextView.delegate = self
+        
         separatorSecondLine.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(0.5)
@@ -182,8 +231,15 @@ class SignOutConfirmViewController: UIViewController {
     }
 }
 
-#Preview {
-    let vc = SignOutConfirmViewController()
-    
-    return vc
+extension SignOutConfirmViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = nil
+        textView.textColor = .slate800
+    }
 }
+
+//#Preview {
+//    let vc = SignOutConfirmViewController(store: MyPageStore(reducer: MyPageReducer()))
+//    
+//    return vc
+//}
