@@ -5,10 +5,14 @@
 //  Created by minsong kim on 12/26/24.
 //
 
+import Combine
 import UIKit
 import SnapKit
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: UIViewController, View {
+    var store: MyPageStore
+    private var cancellables = Set<AnyCancellable>()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .semiboldHeadline24
@@ -34,12 +38,32 @@ class MyPageViewController: UIViewController {
         return table
     }()
     
+    required init(store: MyPageStore) {
+        self.store = store
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
         configureBar()
         configureTableView()
+        
+        bind()
+    }
+    
+    private func bind() {
+        closeButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goBackDiaryHome)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureBar() {
@@ -76,22 +100,22 @@ class MyPageViewController: UIViewController {
 
 extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        3
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        2
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        2
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "MyPageListCell")
         var content = cell.defaultContentConfiguration()
-        if indexPath.section == 0 {
-            content.text = MyPageList.allCases[indexPath.item].title
-        } else {
+//        if indexPath.section == 0 {
+//            content.text = MyPageList.allCases[indexPath.item].title
+//        } else {
             content.text = MyPageSignOut.allCases[indexPath.item].title
             content.textProperties.color = MyPageSignOut.allCases[indexPath.item].color
-        }
+//        }
     
         content.textProperties.font = .mediumTitle15
         cell.contentConfiguration = content
@@ -113,10 +137,14 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         60
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        store.dispatch(.selectMyPage(indexPath))
+    }
 }
 
-//#Preview {
-//    let vc = MyPageViewController()
-//    
-//    return vc
-//}
+#Preview {
+    let vc = MyPageViewController(store: MyPageStore(reducer: MyPageReducer()))
+    
+    return vc
+}

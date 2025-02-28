@@ -38,4 +38,9 @@ public final class UserNetwork: @unchecked Sendable {
         let builder = UserLogInNetworkBuilder(parameters: ["loginId": email, "password": password])
         return try await networkManager.fetchData(builder)
     }
+    
+    public func signOut() async throws -> DefalutDTO {
+        let builder = UserDeleteNetworkBuilder()
+        return try await networkManager.fetchData(builder)
+    }
 }

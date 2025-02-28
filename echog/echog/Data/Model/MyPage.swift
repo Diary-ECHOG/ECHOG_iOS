@@ -21,14 +21,17 @@ enum MyPageList: CaseIterable {
     }
 }
 
-enum MyPageSignOut: CaseIterable {
-    case logOut
+enum MyPageSignOut: Int,  CaseIterable {
+    case logOut = 0
+    case checkTerms
     case signOut
     
     var title: String {
         switch self {
         case .logOut:
             "로그아웃"
+        case .checkTerms:
+            "개인정보 처리방침"
         case .signOut:
             "회원탈퇴"
         }
@@ -37,9 +40,11 @@ enum MyPageSignOut: CaseIterable {
     var color: UIColor {
         switch self {
         case .logOut:
-                .black
+                .slate800
+        case .checkTerms:
+                .slate800
         case .signOut:
-                .red
+                .red500
         }
     }
 }

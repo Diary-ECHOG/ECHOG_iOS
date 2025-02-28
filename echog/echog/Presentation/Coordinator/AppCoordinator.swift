@@ -80,6 +80,10 @@ class AppCoordinator: Coordinator {
     }
     
     func startMyPageCoordinator() {
-        
+        let myPageCoordinator = MyPageCoordinator(navigationController: navigationController)
+        children.removeAll()
+        myPageCoordinator.parentCoordinator = self
+        children.append(myPageCoordinator)
+        myPageCoordinator.start()
     }
 }
