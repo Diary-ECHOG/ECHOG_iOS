@@ -23,6 +23,9 @@
 		920470AB2C9D47BC00D547FB /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */; };
 		92325B642D661C0300F5CCE9 /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92325B632D661C0300F5CCE9 /* NetworkKit */; };
 		92325B662D661C0700F5CCE9 /* NetworkFeatureKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92325B652D661C0700F5CCE9 /* NetworkFeatureKit */; };
+		92325BA02D6741B000F5CCE9 /* MyPageReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325B9F2D6741A800F5CCE9 /* MyPageReducer.swift */; };
+		92325BA22D6741B900F5CCE9 /* MyPageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325BA12D6741B500F5CCE9 /* MyPageStore.swift */; };
+		92325BA42D67425700F5CCE9 /* MyPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325BA32D67425100F5CCE9 /* MyPageCoordinator.swift */; };
 		92325FD32D6CB26B00F5CCE9 /* SignOutReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325FD22D6CB25500F5CCE9 /* SignOutReasonViewController.swift */; };
 		92325FD52D6DC1FE00F5CCE9 /* SignOutReasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325FD42D6DC1F900F5CCE9 /* SignOutReasonCell.swift */; };
 		92325FD72D6DCDEB00F5CCE9 /* SignOutConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92325FD62D6DCDE100F5CCE9 /* SignOutConfirmViewController.swift */; };
@@ -143,6 +146,9 @@
 		920470A42C9BBC6B00D547FB /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		920470A82C9BC45B00D547FB /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		920470AA2C9D47BC00D547FB /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
+		92325B9F2D6741A800F5CCE9 /* MyPageReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageReducer.swift; sourceTree = "<group>"; };
+		92325BA12D6741B500F5CCE9 /* MyPageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStore.swift; sourceTree = "<group>"; };
+		92325BA32D67425100F5CCE9 /* MyPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCoordinator.swift; sourceTree = "<group>"; };
 		92325FD22D6CB25500F5CCE9 /* SignOutReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutReasonViewController.swift; sourceTree = "<group>"; };
 		92325FD42D6DC1F900F5CCE9 /* SignOutReasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutReasonCell.swift; sourceTree = "<group>"; };
 		92325FD62D6DCDE100F5CCE9 /* SignOutConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutConfirmViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +423,8 @@
 		92365BDF2D1D737A001D4A71 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				92325BA12D6741B500F5CCE9 /* MyPageStore.swift */,
+				92325B9F2D6741A800F5CCE9 /* MyPageReducer.swift */,
 				92325FD22D6CB25500F5CCE9 /* SignOutReasonViewController.swift */,
 				92325FD62D6DCDE100F5CCE9 /* SignOutConfirmViewController.swift */,
 				92365BE02D1D7387001D4A71 /* MyVoteListViewController.swift */,
@@ -489,6 +497,7 @@
 		92DFD4022D335448008CFE95 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				92325BA32D67425100F5CCE9 /* MyPageCoordinator.swift */,
 				92656BF82D62D10500FE4337 /* PasswordCoordinator.swift */,
 				92E697532D5DFA5F0059D3AE /* LogInCoordinator.swift */,
 				92DFD4652D4350D4008CFE95 /* DiaryHomeCoordinator.swift */,
@@ -702,6 +711,7 @@
 				92365BC02D1BC201001D4A71 /* DiaryCell.swift in Sources */,
 				92365B9B2D0833DA001D4A71 /* DiaryHomeViewController.swift in Sources */,
 				92E697332D5CDA7C0059D3AE /* VoteDTO.swift in Sources */,
+				92325BA22D6741B900F5CCE9 /* MyPageStore.swift in Sources */,
 				92325FD92D6DCE1300F5CCE9 /* SignOutReason.swift in Sources */,
 				92DFD3F62D3236C8008CFE95 /* UIView+.swift in Sources */,
 				92365BC22D1C16A4001D4A71 /* HeaderView.swift in Sources */,
@@ -735,6 +745,7 @@
 				92365BE12D1D7390001D4A71 /* MyVoteListViewController.swift in Sources */,
 				92365BFF2D2EC56E001D4A71 /* MyVoteCell.swift in Sources */,
 				92E6975A2D5E05CE0059D3AE /* PasswordCompleteViewController.swift in Sources */,
+				92325BA42D67425700F5CCE9 /* MyPageCoordinator.swift in Sources */,
 				92E697542D5DFA650059D3AE /* LogInCoordinator.swift in Sources */,
 				92325FD52D6DC1FE00F5CCE9 /* SignOutReasonCell.swift in Sources */,
 				92E697412D5D9D440059D3AE /* ChipLabel.swift in Sources */,
@@ -750,6 +761,7 @@
 				92656BF92D62D10C00FE4337 /* PasswordCoordinator.swift in Sources */,
 				92DFD4662D4350DC008CFE95 /* DiaryHomeCoordinator.swift in Sources */,
 				92DFD3F82D327653008CFE95 /* InformationLoadingViewController.swift in Sources */,
+				92325BA02D6741B000F5CCE9 /* MyPageReducer.swift in Sources */,
 				92DFD4BD2D52E243008CFE95 /* InformationStore.swift in Sources */,
 				92DFD3F42D323391008CFE95 /* UIGestureRecognizer+.swift in Sources */,
 				92DFD4832D450C71008CFE95 /* UILabel+.swift in Sources */,
