@@ -956,6 +956,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BMG3X5CM6G;
+				EAGER_LINKING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = echog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -984,6 +985,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BMG3X5CM6G;
+				EAGER_LINKING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = echog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
