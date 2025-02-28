@@ -171,8 +171,8 @@ extension SignOutReasonViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension SignOutReasonViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-            textView.text = nil
-            textView.textColor = .slate800
+        textView.text = nil
+        textView.textColor = .slate800
     }
 }
 

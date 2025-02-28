@@ -54,6 +54,16 @@ class MyPageViewController: UIViewController, View {
         
         configureBar()
         configureTableView()
+        
+        bind()
+    }
+    
+    private func bind() {
+        closeButton.publisher(for: .touchUpInside)
+            .sink { [weak self] in
+                self?.store.dispatch(.goBackDiaryHome)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureBar() {

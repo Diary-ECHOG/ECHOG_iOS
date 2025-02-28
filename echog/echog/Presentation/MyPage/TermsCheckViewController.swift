@@ -52,6 +52,7 @@ class TermsCheckViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         configureBar()
         configureView()

@@ -238,7 +238,7 @@ extension LogInViewController {
 extension LogInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField.mainTextField {
-            emailTextField.mainTextField.becomeFirstResponder()
+            passwordTextField.mainTextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
         }

@@ -17,6 +17,7 @@ struct MyPageReducer: ReducerProtocol {
         case goToNextSignOutPage
         case popPage
         case signOut
+        case goBackDiaryHome
     }
     
     enum Mutation {
@@ -67,6 +68,9 @@ struct MyPageReducer: ReducerProtocol {
                 }
             }
             .eraseToAnyPublisher()
+        case .goBackDiaryHome:
+            delegate?.goToDiaryViewController()
+            return nil
         }
     }
     
