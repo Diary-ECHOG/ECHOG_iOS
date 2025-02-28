@@ -249,7 +249,6 @@ class DiaryHomeViewController: UIViewController, View {
             }
             
             if let items = store.state.diaryList[section] {
-//                let sortedItems = items.sorted { $0.formattedDate > $1.formattedDate }
                 snapshot.appendItems(items, toSection: section)
             }
         }

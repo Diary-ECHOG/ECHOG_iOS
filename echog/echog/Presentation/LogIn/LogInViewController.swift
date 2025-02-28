@@ -192,7 +192,7 @@ final class LogInViewController: UIViewController, View, ToastProtocol {
 //        }
         
         signInButton.snp.makeConstraints { make in
-            make.centerY.equalTo(passwordTextField.snp.bottom).offset(8)
+            make.centerY.equalTo(passwordTextField.snp.bottom).offset(16)
             make.trailing.equalTo(passwordTextField)
         }
     }
@@ -202,7 +202,7 @@ final class LogInViewController: UIViewController, View, ToastProtocol {
         view.addSubview(logInButton)
         
         logInButton.snp.makeConstraints { make in
-            make.top.equalTo(signInButton.snp.bottom).offset(16)
+            make.top.equalTo(signInButton.snp.bottom).offset(8)
             make.leading.trailing.equalTo(passwordTextField)
             make.height.equalTo(48)
         }
@@ -256,8 +256,8 @@ extension LogInViewController: UITextFieldDelegate {
     }
 }
 
-//#Preview {
-//    let vc = LogInViewController()
-//    
-//    return vc
-//}
+#Preview {
+    let vc = LogInViewController(store: LogInStore(reducer: LogInReducer()))
+    
+    return vc
+}
