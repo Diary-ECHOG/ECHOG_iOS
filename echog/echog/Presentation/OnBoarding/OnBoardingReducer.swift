@@ -29,7 +29,7 @@ struct OnBoardingReducer: ReducerProtocol {
     
     weak var delegate: OnBoardingCoordinator?
     
-    let initialState: State = State(page: 0, image: UIImage(resource: .logo), title: "", isStartButton: false)
+    let initialState: State = State(page: 1, image: UIImage(resource: .diary), title: "나의 일기를 작성하고", isStartButton: false)
     
     func mutate(action: Intent) -> AnyPublisher<Mutation, Never>? {
         switch action {
