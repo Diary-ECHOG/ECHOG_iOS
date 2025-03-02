@@ -57,3 +57,44 @@ extension UITapGestureRecognizer {
         }
     }
 }
+
+extension UIGestureRecognizer {
+    struct GesturePublisher: Publisher {
+        typealias Output = UIGestureRecognizer
+        typealias Failure = Never
+        
+        let gestureRecognizer: UIGestureRecognizer
+        
+        func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, UIGestureRecognizer == S.Input {
+            let subscription = GestureSubscription(subscriber: subscriber, gestureRecognizer: gestureRecognizer)
+            subscriber.receive(subscription: subscription)
+        }
+    }
+    
+    private class GestureSubscription<S: Subscriber>: Subscription where S.Input == UIGestureRecognizer, S.Failure == Never {
+        var subscriber: S?
+        let gestureRecognizer: UIGestureRecognizer
+        
+        init(subscriber: S, gestureRecognizer: UIGestureRecognizer) {
+            self.subscriber = subscriber
+            self.gestureRecognizer = gestureRecognizer
+            gestureRecognizer.addTarget(self, action: #selector(handleGesture))
+        }
+        
+        func request(_ demand: Subscribers.Demand) {
+            // 별도의 요청 처리는 필요하지 않습니다.
+        }
+        
+        func cancel() {
+            subscriber = nil
+        }
+        
+        @objc func handleGesture() {
+            _ = subscriber?.receive(gestureRecognizer)
+        }
+    }
+    
+    func publisher() -> GesturePublisher {
+        return GesturePublisher(gestureRecognizer: self)
+    }
+}

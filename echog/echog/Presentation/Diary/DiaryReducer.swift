@@ -31,6 +31,7 @@ struct DiaryReducer: ReducerProtocol {
         case diaryUpdateFailure
         case presentDiaryList(list: [DiaryContent], page: Int, totalPage: Int)
         case deleteDiaryFailure
+        case deleteDiarySuccess
         case goToDiaryViewer(id: UUID, title: String, content: String, date: String)
         case popPage
         case updateDiaryList(list: [DiaryContent], page: Int)
@@ -45,6 +46,7 @@ struct DiaryReducer: ReducerProtocol {
         var isNewDiaryUploadSuccess: TryState = .notYet
         var isDiaryDeleted: TryState = .notYet
         var isDiaryUpdated: TryState = .notYet
+        var shouldLoadSnapshot: Bool = true
     }
     
     var initialState = State()
@@ -99,7 +101,7 @@ struct DiaryReducer: ReducerProtocol {
                 Task { @MainActor in
                     do {
                         _ = try await DiaryNetwork.shared.deleteDiary(id: id)
-                        delegate?.popViewController()
+                        promise(.success(.deleteDiarySuccess))
                     } catch {
                         promise(.success(.deleteDiaryFailure))
                     }
@@ -144,17 +146,29 @@ struct DiaryReducer: ReducerProtocol {
             }
             newState.totalPage = totalPages
         case .newDiaryCreateSuccess:
+            newState.diaryList = [:]
+            newState.shouldLoadSnapshot = true
             newState.isNewDiaryUploadSuccess = .success
         case .newDiaryCreateFailure:
             newState.isNewDiaryUploadSuccess = .failure
         case .diaryUpdateSuccess(let title, let content):
             newState.diary?.title = title
             newState.diary?.content = content
+            newState.diaryList = [:]
+            newState.currentPage = 0
+            newState.shouldLoadSnapshot = true
             delegate?.popViewController()
         case .diaryUpdateFailure:
             newState.isDiaryUpdated = .failure
+            newState.shouldLoadSnapshot = false
         case .deleteDiaryFailure:
             newState.isDiaryDeleted = .failure
+            newState.shouldLoadSnapshot = false
+        case .deleteDiarySuccess:
+            newState.diaryList = [:]
+            newState.shouldLoadSnapshot = true
+            newState.isDiaryDeleted = .success
+            delegate?.popViewController()
         case .goToDiaryViewer(let id, let title, let content, let date):
             newState.diary = DiaryContent(id: id, title: title, content: content, createdAt: date)
             delegate?.pushDiaryViewerViewController()
@@ -171,6 +185,7 @@ struct DiaryReducer: ReducerProtocol {
                 }
             }
             newState.currentPage = page
+            newState.shouldLoadSnapshot = true
         }
         
         return newState

@@ -32,13 +32,13 @@ extension LogInCoordinator: LogInNavigation {
     func pushLogInViewController() {
         let logInViewController = LogInViewController(store: store)
         
-        navigationController.pushViewController(logInViewController, animated: true)
+        navigationController.pushViewController(logInViewController, animated: false)
     }
     
     func pushLogInCompleteViewController() {
         let logInCompleteViewController = LogInCompleteViewController(store: store)
         
-        navigationController.pushViewController(logInCompleteViewController, animated: true)
+        navigationController.pushViewController(logInCompleteViewController, animated: false)
     }
     
     func goToPasswordViewController() {
