@@ -40,7 +40,7 @@ extension DiaryCoordinator: DiaryNavigation {
     }
     
     func popViewController() {
-        navigationController.popViewController(animated: false)
+        navigationController.popViewController(animated: true)
     }
     
     func pushDiaryViewerViewController() {

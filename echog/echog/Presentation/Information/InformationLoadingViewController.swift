@@ -23,6 +23,13 @@ class InformationLoadingViewController: UIViewController {
         return label
     }()
     
+    private let swipeGesture: UISwipeGestureRecognizer = {
+        let gesture = UISwipeGestureRecognizer()
+        gesture.direction = .right
+        
+        return gesture
+    }()
+    
     required init(store: InformationStore) {
         self.store = store
         
@@ -36,6 +43,7 @@ class InformationLoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        view.addGestureRecognizer(swipeGesture)
         
         configureTitleLabel()
         setUpTapGesture()
@@ -49,6 +57,13 @@ class InformationLoadingViewController: UIViewController {
                 }
                 
                 self.store.dispatch(.goToFillInformation)
+            }
+            .store(in: &cancellables)
+        
+        swipeGesture.publisher()
+            .filter { $0.state == .ended }
+            .sink { [weak self] _ in
+                self?.store.dispatch(.goToLogIn)
             }
             .store(in: &cancellables)
     }

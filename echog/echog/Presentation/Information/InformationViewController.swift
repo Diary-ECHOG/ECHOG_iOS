@@ -65,6 +65,13 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
     
     private var activeTextField: UITextField?
     
+    private let swipeGesture: UISwipeGestureRecognizer = {
+        let gesture = UISwipeGestureRecognizer()
+        gesture.direction = .right
+        
+        return gesture
+    }()
+    
     required init(store: InformationStore) {
         self.store = store
         
@@ -83,6 +90,7 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
         codeTextField.mainTextField.delegate = self
         passwordTextField.mainTextField.delegate = self
         checkPasswordTextField.mainTextField.delegate = self
+        view.addGestureRecognizer(swipeGesture)
         
         configureUI()
         setUpBind()
@@ -216,6 +224,13 @@ class InformationViewController: UIViewController, View, ToastProtocol, BottomSh
             .sink { [weak self] in
                 guard let self = self else { return }
                 self.store.dispatch(.showTermPage(self.store))
+            }
+            .store(in: &cancellables)
+        
+        swipeGesture.publisher()
+            .filter { $0.state == .ended }
+            .sink { [weak self] _ in
+                self?.store.dispatch(.goToLogIn)
             }
             .store(in: &cancellables)
     }

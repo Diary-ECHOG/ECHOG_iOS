@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 import SnapKit
-//import WebKit
+import WebKit
 
 class TermsViewController: UIViewController, ToastProtocol {
     var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
@@ -24,6 +24,14 @@ class TermsViewController: UIViewController, ToastProtocol {
         label.textAlignment = .center
         
         return label
+    }()
+    
+    private let webView: WKWebView = {
+        let configuration = WKWebViewConfiguration()
+        let view = WKWebView(frame: .zero, configuration: configuration)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
     }()
     
     private let nextButton = MainButton(title: "확인", isEnabled: true)
@@ -43,6 +51,9 @@ class TermsViewController: UIViewController, ToastProtocol {
         view.backgroundColor = .systemBackground
         
         configureTitleLabel()
+        configureWebView()
+        loadWebView()
+        
         setUpBind()
         bind()
     }
@@ -88,6 +99,27 @@ class TermsViewController: UIViewController, ToastProtocol {
             make.bottom.equalToSuperview().offset(-50)
             make.height.equalTo(50)
         }
+    }
+    
+    private func configureWebView() {
+        view.addSubview(webView)
+        
+        webView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.bottom.equalTo(nextButton.snp.top).inset(8)
+        }
+    }
+    
+    private func loadWebView() {
+        //웹 링크 띄우기
+        let link = "https://marchens.notion.site/echog-terms?pvs=4"
+        guard let url = URL(string: link) else {
+            return
+        }
+        let request = URLRequest(url: url)
+        
+        webView.load(request)
     }
 }
 

@@ -62,6 +62,6 @@ extension MyPageCoordinator: MyPageNavigation {
     }
     
     func popViewController() {
-        navigationController.popViewController(animated: false)
+        navigationController.popViewController(animated: true)
     }
 }
