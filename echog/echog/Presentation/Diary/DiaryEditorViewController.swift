@@ -9,7 +9,7 @@ import Combine
 import UIKit
 import SnapKit
 
-class DiaryEditorViewController: UIViewController, View {
+class DiaryEditorViewController: UIViewController, View, ToastProtocol {
     var window: UIWindow? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
     
     var store: DiaryStore
@@ -139,17 +139,19 @@ class DiaryEditorViewController: UIViewController, View {
     }
     
     private func render(_ state: DiaryReducer.State) {
-//        if state.isNewDiaryUploadSuccess == .success {
+        if state.isNewDiaryUploadSuccess == .success {
 //            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
-//        } else if state.isNewDiaryUploadSuccess == .failure {
-//            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
-//        }
+            store.dispatch(.presentDiaryList(page: 0))
+        } else if state.isNewDiaryUploadSuccess == .failure {
+            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
+        }
 //        
-//        if state.isDiaryUpdated == .success {
+        if state.isDiaryUpdated == .success {
+            store.dispatch(.presentDiaryList(page: 0))
 //            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
-//        } else if state.isDiaryUpdated == .failure {
-//            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
-//        }
+        } else if state.isDiaryUpdated == .failure {
+            self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
+        }
         
         if let diary = state.diary {
             self.titleTextField.text = diary.title
@@ -248,8 +250,10 @@ class DiaryEditorViewController: UIViewController, View {
 
 extension DiaryEditorViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == .placeholderText {
+        if textView.textColor == .placeholderText && textView.text == "일기의 내용을 적어주세요." {
             textView.text = nil
+            textView.textColor = .slate800
+        } else {
             textView.textColor = .slate800
         }
     }

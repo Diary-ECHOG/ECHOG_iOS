@@ -13,7 +13,6 @@ import NetworkFeatureKit
 class DiaryHomeViewController: UIViewController, View {
     var store: DiaryStore
     private var cancellables = Set<AnyCancellable>()
-    private var snapshot = NSDiffableDataSourceSnapshot<String, DiaryContent>()
     
     private let titleView: UIImageView = {
         let view = UIImageView(image: UIImage.logo)
@@ -96,7 +95,9 @@ class DiaryHomeViewController: UIViewController, View {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        store.dispatch(.presentDiaryList(page: 0))
+        if store.state.diaryList.isEmpty {
+            store.dispatch(.presentDiaryList(page: 0))
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -115,7 +116,9 @@ class DiaryHomeViewController: UIViewController, View {
     }
     
     private func render(_ state: DiaryReducer.State) {
-        self.setSnapshot()
+        if state.shouldLoadSnapshot {
+            self.setSnapshot()
+        }
     }
     
     private func bind() {
@@ -241,7 +244,7 @@ class DiaryHomeViewController: UIViewController, View {
     }
     
     private func setSnapshot() {
-        snapshot.deleteAllItems()
+        var snapshot = NSDiffableDataSourceSnapshot<String, DiaryContent>()
         
         let sortedSections = store.state.diaryList.keys.sorted { s1, s2 in
             if s1 == "오늘" { return true }

@@ -114,6 +114,8 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol, ToastProtocol 
     private func render(_ state: DiaryReducer.State) {
         if state.isDiaryDeleted == .failure {
             self.showToast(icon: .colorXmark, message: "삭제에 실패했어요")
+        } else if state.isDiaryDeleted == .success {
+            self.showToast(icon: .colorCheck, message: "삭제에 성공했어요")
         }
         
         if let diary = state.diary {
