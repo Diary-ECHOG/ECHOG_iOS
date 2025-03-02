@@ -61,6 +61,7 @@ class DiaryEditorViewController: UIViewController, View {
     private let contentsTextView: UITextView = {
         let view = UITextView()
         view.font = .mediumTitle15
+        view.textContainer.lineFragmentPadding = 0
         view.textColor = .placeholderText
         view.text = "일기의 내용을 적어주세요."
         
@@ -254,8 +255,8 @@ extension DiaryEditorViewController: UITextViewDelegate {
     }
 }
 
-//#Preview {
-//    let vc = DiaryEditorViewController()
-//    
-//    return vc
-//}
+#Preview {
+    let vc = DiaryEditorViewController(store: DiaryStore(reducer: DiaryReducer()))
+    
+    return vc
+}

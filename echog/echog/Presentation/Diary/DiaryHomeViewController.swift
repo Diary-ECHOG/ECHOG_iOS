@@ -243,7 +243,19 @@ class DiaryHomeViewController: UIViewController, View {
     private func setSnapshot() {
         snapshot.deleteAllItems()
         
-        for section in store.state.diaryList.keys {
+        let sortedSections = store.state.diaryList.keys.sorted { s1, s2 in
+            if s1 == "오늘" { return true }
+            if s2 == "오늘" { return false }
+            if s1 == "어제" { return true }
+            if s2 == "어제" { return false }
+            
+            // "10월"과 같이 월 정보를 비교 (문자열에서 "월" 제거)
+            let m1 = Int(s1.replacingOccurrences(of: "월", with: "")) ?? 0
+            let m2 = Int(s2.replacingOccurrences(of: "월", with: "")) ?? 0
+            return m1 > m2
+        }
+        
+        for section in sortedSections {
             if snapshot.sectionIdentifiers.contains(section) == false {
                 snapshot.appendSections([section])
             }
@@ -254,6 +266,10 @@ class DiaryHomeViewController: UIViewController, View {
         }
         
         dataSource?.apply(snapshot, animatingDifferences: true)
+    }
+    
+    private func updateSnapshot() {
+        
     }
 }
 

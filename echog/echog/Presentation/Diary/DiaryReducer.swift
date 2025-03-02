@@ -140,7 +140,11 @@ struct DiaryReducer: ReducerProtocol {
             newState.currentPage = page
             list.forEach { diary in
                 let sectionIdentifier = sectionIdentifier(for: diary)
-                newState.diaryList[sectionIdentifier, default: []].append(diary)
+                if let index = newState.diaryList[sectionIdentifier]?.firstIndex(where: { $0.id == diary.id }) {
+                    newState.diaryList[sectionIdentifier]?[index] = diary  // 업데이트
+                } else {
+                    newState.diaryList[sectionIdentifier, default: []].append(diary)  // 추가
+                }
             }
             newState.totalPage = totalPages
         case .newDiaryCreateSuccess:

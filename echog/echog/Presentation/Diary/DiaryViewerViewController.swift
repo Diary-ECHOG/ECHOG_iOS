@@ -212,8 +212,8 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol, ToastProtocol 
 //    }
 }
 
-//#Preview {
-//    let vc = DiaryViewerViewController(date: "01월 10일 금요일", title: "제목입니다", content: "내용입니다.")
-//    
-//    return vc
-//}
+#Preview {
+    let vc = DiaryViewerViewController(store: DiaryStore(reducer: DiaryReducer()))
+    
+    return vc
+}
