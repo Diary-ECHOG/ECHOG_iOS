@@ -51,6 +51,7 @@
 		92656BF92D62D10C00FE4337 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92656BF82D62D10500FE4337 /* PasswordCoordinator.swift */; };
 		92656C162D6354A800FE4337 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 92656C152D6354A800FE4337 /* Lottie */; };
 		92656C192D6354B500FE4337 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92656C182D6354B500FE4337 /* SnapKit */; };
+		928E3B342D7480C8004451E4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928E3B332D7480C8004451E4 /* Colors.xcassets */; };
 		92DD8F6D2CEDA40B001197D0 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F532CECAC43001197D0 /* MockURLProtocol.swift */; };
 		92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */; };
 		92DFD3ED2D321A35008CFE95 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3EC2D321A2C008CFE95 /* OnBoardingViewController.swift */; };
@@ -173,6 +174,7 @@
 		92656BF22D62C7DD00FE4337 /* DiaryReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReducer.swift; sourceTree = "<group>"; };
 		92656BF42D62C7EB00FE4337 /* DiaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStore.swift; sourceTree = "<group>"; };
 		92656BF82D62D10500FE4337 /* PasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinator.swift; sourceTree = "<group>"; };
+		928E3B332D7480C8004451E4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		92DD8F532CECAC43001197D0 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		92DD8F5C2CECB2DE001197D0 /* NetworkTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditorViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				920470A32C9BBC5B00D547FB /* Extension */,
 				920470882C9A909A00D547FB /* Compoment */,
 				9204707D2C9A75F000D547FB /* Font */,
+				928E3B352D748498004451E4 /* Colors */,
 			);
 			path = "Design System";
 			sourceTree = "<group>";
@@ -441,6 +444,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		928E3B352D748498004451E4 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				928E3B332D7480C8004451E4 /* Colors.xcassets */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		92DD8F4B2CEC9979001197D0 /* Model */ = {
@@ -682,6 +693,7 @@
 				92365B612D06B127001D4A71 /* Pretendard-Medium.otf in Resources */,
 				92365B602D06B121001D4A71 /* Pretendard-Regular.otf in Resources */,
 				92E6972F2D5CD3C00059D3AE /* particle.json in Resources */,
+				928E3B342D7480C8004451E4 /* Colors.xcassets in Resources */,
 				920470742C9A6FC400D547FB /* LaunchScreen.storyboard in Resources */,
 				920470712C9A6FC400D547FB /* Assets.xcassets in Resources */,
 			);
@@ -968,7 +980,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.traum.marchen.echog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -997,7 +1009,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.traum.marchen.echog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
