@@ -258,12 +258,10 @@ class DiaryHomeViewController: UIViewController, View {
             return m1 > m2
         }
         
+        snapshot.appendSections(sortedSections)
+        
         for section in sortedSections {
-            if snapshot.sectionIdentifiers.contains(section) == false {
-                snapshot.appendSections([section])
-            }
-            
-            if let items = store.state.diaryList[section] {
+            if let items = store.state.diaryList[section], items.isEmpty == false {
                 snapshot.appendItems(items, toSection: section)
             }
         }
