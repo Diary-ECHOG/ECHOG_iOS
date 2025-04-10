@@ -8,6 +8,7 @@
 import UIKit
 import NetworkKit
 import NetworkFeatureKit
+import KeyChainModule
 
 class AppCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
@@ -25,10 +26,16 @@ class AppCoordinator: Coordinator {
     }()
     
     func start() {
-        startOnBoardingCoordinator()
-        
         UserNetwork.shared.configureNetworkManager(baseURLManager)
         DiaryNetwork.shared.configureNetworkManager(baseURLManager)
+        
+        let isLogin = try? KeyChainModule.read(key: .isLogin) ?? ""
+        
+        if isLogin == "true" {
+            startDiaryCoordinator()
+        } else {
+            startOnBoardingCoordinator()
+        }
     }
     
     init(navigationController: UINavigationController) {
