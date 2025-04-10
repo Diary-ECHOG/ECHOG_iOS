@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "048A2A67-F678-4006-A3E0-F334F422A78D",
+      "name" : "Configuration 1",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:echog.xcodeproj",
+          "identifier" : "92DD8F5B2CECB2DE001197D0",
+          "name" : "NetworkTest"
+        }
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:echog.xcodeproj",
+        "identifier" : "92DD8F5B2CECB2DE001197D0",
+        "name" : "NetworkTest"
+      }
+    }
+  ],
+  "version" : 1
+}

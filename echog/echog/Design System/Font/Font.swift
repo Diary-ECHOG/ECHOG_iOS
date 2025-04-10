@@ -9,15 +9,12 @@ import Foundation
 
 enum Font {
     enum Name {
-        case sbAggroMedium
         case pretendardSemiBold
         case pretendardRegular
         case pretendardMedium
         
         var file: String {
             switch self {
-            case .sbAggroMedium:
-                "SB-Aggro-Medium"
             case .pretendardSemiBold:
                 "Pretendard-SemiBold"
             case .pretendardRegular:
@@ -29,10 +26,11 @@ enum Font {
     }
     
     enum Size: CGFloat {
-        case _12 = 12
+        case _13 = 13
         case _14 = 14
-        case _16 = 16
-        case _18 = 18
-        case _20 = 20
+        case _15 = 15
+        case _17 = 17
+        case _22 = 22
+        case _24 = 24
     }
 }

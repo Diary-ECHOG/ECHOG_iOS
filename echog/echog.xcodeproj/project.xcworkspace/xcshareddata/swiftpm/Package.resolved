@@ -1,0 +1,33 @@
+{
+  "originHash" : "3b2be84d8d18205cc5c5473d27ec3bc30120ea040c259a2b8032ff160cf5e350",
+  "pins" : [
+    {
+      "identity" : "keychainmodule",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mint3382/KeyChainModule.git",
+      "state" : {
+        "revision" : "52663ba05e35474c0fc55a0d615f2bb6339317f1",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "047aa81b77adcbf583a966dfef620d17650cc656",
+        "version" : "4.5.1"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    }
+  ],
+  "version" : 3
+}
