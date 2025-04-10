@@ -19,7 +19,7 @@ public struct DiaryContent: Decodable, Hashable, Sendable {
     public let id: UUID
     public var title: String
     public var content: String
-    let createdAt: String
+    public let createdAt: String
     public var createdDate: Date? {
         let formatter = DateFormatter()
         
