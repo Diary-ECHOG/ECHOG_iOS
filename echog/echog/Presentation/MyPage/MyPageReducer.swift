@@ -38,8 +38,9 @@ struct MyPageReducer: ReducerProtocol {
             let page = MyPageSignOut(rawValue: indexPath.row)
             
             if page == .logOut {
-                KeyChain.delete(key: .accessToken)
-                KeyChain.delete(key: .refreshToken)
+                try? KeyChainModule.delete(key: .accessToken)
+                try? KeyChainModule.delete(key: .refreshToken)
+                try? KeyChainModule.delete(key: .isLogin)
                 delegate?.goToLogInViewController()
             } else if page == .checkTerms {
                 delegate?.pushTermsViewController()
@@ -59,8 +60,11 @@ struct MyPageReducer: ReducerProtocol {
                 Task { @MainActor in
                     do {
                         _ = try await UserNetwork.shared.signOut()
-                        KeyChain.delete(key: .accessToken)
-                        KeyChain.delete(key: .refreshToken)
+                        try KeyChainModule.delete(key: .accessToken)
+                        try KeyChainModule.delete(key: .refreshToken)
+                        try KeyChainModule.delete(key: .isLogin)
+                        delegate?.goToLogInViewController()
+                    } catch is KeyChainError {
                         delegate?.goToLogInViewController()
                     } catch {
                         promise(.success(.signOutFailure))

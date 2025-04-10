@@ -53,7 +53,7 @@ public class NetworkManager {
         }
         
         if builder.useAuthorization {
-            let accesstoken = KeyChain.read(key: .accessToken) ?? ""
+            let accesstoken = try KeyChainModule.read(key: .accessToken) ?? ""
             request.setValue("Bearer \(accesstoken)", forHTTPHeaderField: "Authorization")
         }
         
