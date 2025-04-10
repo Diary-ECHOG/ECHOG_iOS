@@ -119,13 +119,13 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol, ToastProtocol 
         }
         
         if let diary = state.diary {
-            titleBarLabel.text = diary.formattedDate
+            titleBarLabel.text = diary.createdAt
             titleLabel.text = diary.title
             contentsLabel.text = diary.content
         }
         
         if state.isDiaryUpdated == .success, let diary = state.diary {
-            titleBarLabel.text = diary.formattedDate
+            titleBarLabel.text = diary.createdAt
             titleLabel.text = diary.title
             contentsLabel.text = diary.content
         }
