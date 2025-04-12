@@ -135,7 +135,7 @@ struct DiaryReducer: ReducerProtocol {
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
-        var newState = state
+        var newState = State()
         
         switch mutation {
         case .presentDiaryList(let list, let page, let totalPages):
@@ -146,16 +146,12 @@ struct DiaryReducer: ReducerProtocol {
             }
             newState.totalPage = totalPages
         case .newDiaryCreateSuccess:
-            newState.diaryList = [:]
             newState.shouldLoadSnapshot = true
             newState.isNewDiaryUploadSuccess = .success
         case .newDiaryCreateFailure:
             newState.isNewDiaryUploadSuccess = .failure
         case .diaryUpdateSuccess(let title, let content):
-            newState.diary?.title = title
-            newState.diary?.content = content
-            newState.diaryList = [:]
-            newState.currentPage = 0
+            newState.diary = DiaryContent(id: state.diary?.id ?? UUID(), title: title, content: content, createdAt: state.diary?.createdAt ?? "")
             newState.shouldLoadSnapshot = true
             delegate?.popViewController()
         case .diaryUpdateFailure:
@@ -165,7 +161,6 @@ struct DiaryReducer: ReducerProtocol {
             newState.isDiaryDeleted = .failure
             newState.shouldLoadSnapshot = false
         case .deleteDiarySuccess:
-            newState.diaryList = [:]
             newState.shouldLoadSnapshot = true
             newState.isDiaryDeleted = .success
             delegate?.popViewController()
@@ -173,9 +168,10 @@ struct DiaryReducer: ReducerProtocol {
             newState.diary = DiaryContent(id: id, title: title, content: content, createdAt: date)
             delegate?.pushDiaryViewerViewController()
         case .popPage:
-            newState.diary = nil
             delegate?.popViewController()
         case .updateDiaryList(list: let list, page: let page):
+            newState = state
+            
             list.forEach { diary in
                 let sectionIdentifier = sectionIdentifier(for: diary)
                 if let index = newState.diaryList[sectionIdentifier]?.firstIndex(where: { $0.id == diary.id }) {
