@@ -67,6 +67,7 @@ class DiaryViewerViewController: UIViewController, PopUpProtocol, ToastProtocol 
         let label = UILabel()
         label.font = .regularTitle15
         label.textColor = .slate600
+        label.numberOfLines = 0
         
         return label
     }()
