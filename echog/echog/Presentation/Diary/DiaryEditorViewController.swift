@@ -140,7 +140,7 @@ class DiaryEditorViewController: UIViewController, View, ToastProtocol {
     
     private func render(_ state: DiaryReducer.State) {
         if state.isNewDiaryUploadSuccess == .success {
-//            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
+            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
             store.dispatch(.presentDiaryList(page: 0))
         } else if state.isNewDiaryUploadSuccess == .failure {
             self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
@@ -148,7 +148,7 @@ class DiaryEditorViewController: UIViewController, View, ToastProtocol {
 //        
         if state.isDiaryUpdated == .success {
             store.dispatch(.presentDiaryList(page: 0))
-//            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
+            self.showToast(icon: .colorCheck, message: "일기가 저장되었어요.")
         } else if state.isDiaryUpdated == .failure {
             self.showToast(icon: .colorXmark, message: "저장에 실패했어요.")
         }
@@ -156,7 +156,7 @@ class DiaryEditorViewController: UIViewController, View, ToastProtocol {
         if let diary = state.diary {
             self.titleTextField.text = diary.title
             self.contentsTextView.text = diary.content
-            self.titleLabel.text = diary.formattedDate
+            self.titleLabel.text = diary.createdAt
         }
     }
     
