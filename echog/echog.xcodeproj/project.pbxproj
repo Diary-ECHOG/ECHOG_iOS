@@ -51,6 +51,10 @@
 		92656BF92D62D10C00FE4337 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92656BF82D62D10500FE4337 /* PasswordCoordinator.swift */; };
 		92656C162D6354A800FE4337 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 92656C152D6354A800FE4337 /* Lottie */; };
 		92656C192D6354B500FE4337 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92656C182D6354B500FE4337 /* SnapKit */; };
+		9279071F2DC48DC600C0FD0A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9279071E2DC48DC600C0FD0A /* FirebaseAnalytics */; };
+		927907212DC48DC600C0FD0A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 927907202DC48DC600C0FD0A /* FirebaseAnalyticsOnDeviceConversion */; };
+		927907232DC48DC600C0FD0A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 927907222DC48DC600C0FD0A /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		927907252DC48DC600C0FD0A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 927907242DC48DC600C0FD0A /* FirebaseCrashlytics */; };
 		928E3B342D7480C8004451E4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928E3B332D7480C8004451E4 /* Colors.xcassets */; };
 		92DD8F6D2CEDA40B001197D0 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD8F532CECAC43001197D0 /* MockURLProtocol.swift */; };
 		92DFD3E82D310458008CFE95 /* DiaryEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFD3E72D310451008CFE95 /* DiaryEditorViewController.swift */; };
@@ -233,8 +237,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				92325B642D661C0300F5CCE9 /* NetworkKit in Frameworks */,
+				927907212DC48DC600C0FD0A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				92656C192D6354B500FE4337 /* SnapKit in Frameworks */,
 				92656C162D6354A800FE4337 /* Lottie in Frameworks */,
+				927907232DC48DC600C0FD0A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				927907252DC48DC600C0FD0A /* FirebaseCrashlytics in Frameworks */,
+				9279071F2DC48DC600C0FD0A /* FirebaseAnalytics in Frameworks */,
 				92325B662D661C0700F5CCE9 /* NetworkFeatureKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +582,7 @@
 				920470612C9A6FC200D547FB /* Frameworks */,
 				920470622C9A6FC200D547FB /* Resources */,
 				923741F52CDDCAC700A7BE19 /* Embed Frameworks */,
+				927907262DC48ECF00C0FD0A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -585,6 +594,10 @@
 				92656C182D6354B500FE4337 /* SnapKit */,
 				92325B632D661C0300F5CCE9 /* NetworkKit */,
 				92325B652D661C0700F5CCE9 /* NetworkFeatureKit */,
+				9279071E2DC48DC600C0FD0A /* FirebaseAnalytics */,
+				927907202DC48DC600C0FD0A /* FirebaseAnalyticsOnDeviceConversion */,
+				927907222DC48DC600C0FD0A /* FirebaseAnalyticsWithoutAdIdSupport */,
+				927907242DC48DC600C0FD0A /* FirebaseCrashlytics */,
 			);
 			productName = echog;
 			productReference = 920470642C9A6FC200D547FB /* echog.app */;
@@ -671,6 +684,7 @@
 			packageReferences = (
 				92656C142D6354A800FE4337 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				92656C172D6354B500FE4337 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9279071D2DC48DC600C0FD0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 920470652C9A6FC200D547FB /* Products */;
 			projectDirPath = "";
@@ -714,6 +728,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		927907262DC48ECF00C0FD0A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		920470602C9A6FC200D547FB /* Sources */ = {
@@ -967,6 +1006,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = BMG3X5CM6G;
 				EAGER_LINKING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1152,6 +1192,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		9279071D2DC48DC600C0FD0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1172,6 +1220,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 92656C172D6354B500FE4337 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		9279071E2DC48DC600C0FD0A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9279071D2DC48DC600C0FD0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		927907202DC48DC600C0FD0A /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9279071D2DC48DC600C0FD0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		927907222DC48DC600C0FD0A /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9279071D2DC48DC600C0FD0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		927907242DC48DC600C0FD0A /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9279071D2DC48DC600C0FD0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
