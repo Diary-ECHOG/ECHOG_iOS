@@ -51,6 +51,7 @@
 		92656BF92D62D10C00FE4337 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92656BF82D62D10500FE4337 /* PasswordCoordinator.swift */; };
 		92656C162D6354A800FE4337 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 92656C152D6354A800FE4337 /* Lottie */; };
 		92656C192D6354B500FE4337 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92656C182D6354B500FE4337 /* SnapKit */; };
+		9279071C2DC48D0B00C0FD0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9279071B2DC48D0B00C0FD0A /* GoogleService-Info.plist */; };
 		9279071F2DC48DC600C0FD0A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9279071E2DC48DC600C0FD0A /* FirebaseAnalytics */; };
 		927907212DC48DC600C0FD0A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 927907202DC48DC600C0FD0A /* FirebaseAnalyticsOnDeviceConversion */; };
 		927907232DC48DC600C0FD0A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 927907222DC48DC600C0FD0A /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -178,6 +179,7 @@
 		92656BF22D62C7DD00FE4337 /* DiaryReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReducer.swift; sourceTree = "<group>"; };
 		92656BF42D62C7EB00FE4337 /* DiaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStore.swift; sourceTree = "<group>"; };
 		92656BF82D62D10500FE4337 /* PasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinator.swift; sourceTree = "<group>"; };
+		9279071B2DC48D0B00C0FD0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		928E3B332D7480C8004451E4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		92DD8F532CECAC43001197D0 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		92DD8F5C2CECB2DE001197D0 /* NetworkTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +292,7 @@
 		920470662C9A6FC200D547FB /* echog */ = {
 			isa = PBXGroup;
 			children = (
+				9279071B2DC48D0B00C0FD0A /* GoogleService-Info.plist */,
 				92DD8F662CECB396001197D0 /* Mock */,
 				9204707B2C9A75D000D547FB /* Application */,
 				92DFD4E72D5615BE008CFE95 /* Interface */,
@@ -704,6 +707,7 @@
 			files = (
 				92E697292D5CD02B0059D3AE /* join_check.json in Resources */,
 				92365B5F2D06B108001D4A71 /* Pretendard-SemiBold.otf in Resources */,
+				9279071C2DC48D0B00C0FD0A /* GoogleService-Info.plist in Resources */,
 				92365B612D06B127001D4A71 /* Pretendard-Medium.otf in Resources */,
 				92365B602D06B121001D4A71 /* Pretendard-Regular.otf in Resources */,
 				92E6972F2D5CD3C00059D3AE /* particle.json in Resources */,
