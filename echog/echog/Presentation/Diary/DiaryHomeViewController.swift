@@ -50,8 +50,8 @@ class DiaryHomeViewController: UIViewController, View {
         return button
     }()
     
-    private let diaryAddButton: UIButton = {
-        let button = UIButton()
+    private let diaryAddButton: ShadowButton = {
+        let button = ShadowButton()
         button.setImage(UIImage(systemName: "plus")?.resize(newWidth: 25), for: .normal)
         button.tintColor = .black
         button.backgroundColor = .white
