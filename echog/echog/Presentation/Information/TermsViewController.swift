@@ -52,6 +52,7 @@ class TermsViewController: UIViewController, ToastProtocol {
         
         configureTitleLabel()
         configureWebView()
+        configureNextButton()
         loadWebView()
         
         setUpBind()
@@ -87,18 +88,23 @@ class TermsViewController: UIViewController, ToastProtocol {
     
     private func configureTitleLabel() {
         view.addSubview(titleLabel)
-        view.addSubview(nextButton)
         
         titleLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
         }
-        
+    }
+    
+    private func configureNextButton() {
+        view.addSubview(nextButton)
+
         nextButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().offset(-50)
             make.height.equalTo(50)
         }
+        
+        view.bringSubviewToFront(nextButton)
     }
     
     private func configureWebView() {
