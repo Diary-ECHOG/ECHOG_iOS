@@ -70,7 +70,6 @@ class OnBoardingViewController: UIViewController, View {
             self.updateTitleUI(title: state.title, isStartButton: state.isStartButton)
             
         }, completion: nil)
-        
     }
     
     private func updateImageUI(image: UIImage?) {
