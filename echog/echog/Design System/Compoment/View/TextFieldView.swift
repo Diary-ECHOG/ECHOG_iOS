@@ -91,7 +91,7 @@ class TextFieldView: UIStackView {
         
         mainTextField.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(48)
+            make.height.equalTo(40)
         }
     }
     
