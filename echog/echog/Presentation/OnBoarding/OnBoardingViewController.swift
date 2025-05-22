@@ -8,6 +8,7 @@
 import Combine
 import UIKit
 import SnapKit
+import SwiftUI
 
 class OnBoardingViewController: UIViewController, View {
     var store: OnBoardingStore
@@ -60,7 +61,9 @@ class OnBoardingViewController: UIViewController, View {
     
     private func render(_ state: OnBoardingReducer.State) {
         //뷰 관리
-        updateUI(image: state.image, title: state.title, isStartButton: state.isStartButton)
+        withAnimation {
+            updateUI(image: state.image, title: state.title, isStartButton: state.isStartButton)
+        }
     }
     
     private func updateUI(image: UIImage?, title: String?, isStartButton: Bool?) {
