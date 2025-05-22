@@ -15,9 +15,8 @@ class InformationLoadingViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "먼저 당신의 정보를\n알고 싶어요"
+        label.setTextWithLineSpacing("먼저 당신의 정보를\n알고 싶어요", font: .semiboldSubheadline22, lineSpacing: 8)
         label.textAlignment = .center
-        label.font = .semiboldSubheadline22
         label.numberOfLines = 2
         
         return label

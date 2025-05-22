@@ -17,9 +17,8 @@ final class WelcomeViewController: UIViewController, View {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "가입을\n축하합니다!"
+        label.setTextWithLineSpacing("가입을\n축하합니다!", font: .semiboldSubheadline22, lineSpacing: 8)
         label.textAlignment = .center
-        label.font = .semiboldSubheadline22
         label.numberOfLines = 2
         
         return label
