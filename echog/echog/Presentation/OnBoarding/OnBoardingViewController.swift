@@ -61,13 +61,23 @@ class OnBoardingViewController: UIViewController, View {
     
     private func render(_ state: OnBoardingReducer.State) {
         //뷰 관리
-        withAnimation {
-            updateUI(image: state.image, title: state.title, isStartButton: state.isStartButton)
-        }
+        UIView.transition(with: titleImageView, duration: 0.35, options: .transitionCrossDissolve, animations: {
+            self.updateImageUI(image: state.image)
+            
+        }, completion: nil)
+        
+        UIView.transition(with: titleLabel, duration: 0.35, options: .transitionCrossDissolve, animations: {
+            self.updateTitleUI(title: state.title, isStartButton: state.isStartButton)
+            
+        }, completion: nil)
+        
     }
     
-    private func updateUI(image: UIImage?, title: String?, isStartButton: Bool?) {
+    private func updateImageUI(image: UIImage?) {
         titleImageView.image = image
+    }
+    
+    private func updateTitleUI(title: String?, isStartButton: Bool?) {
         titleLabel.text = title
         
         if let isStartButton, isStartButton == true {
